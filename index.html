@@ -179,16 +179,35 @@
     // ===== 送信設定 =====
     // 1) メーラーを開かずに送る場合：FORM_ENDPOINTにGAS等のWebhook URLを設定
     // 2) 未設定の場合：mailtoで matsumoto-kobe@tkcnf.or.jp 宛のメール作成を開く
-    const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwVKF4tpNMK24WwvpS0qjCCG33fiFsHFRM0yBl2aH7MtEipWCiz779zHmw--Uxu-l1ICw/exec"; // 例）"https://script.google.com/macros/s/AKfycbxxxx/exec"
+    const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbySuhCXslmSb2ThYQx1aWhBxZbP05hmW6OiyjdC_Nca8Lt7RVH6NpGYc0MpkpcGeU8HaQ/exec"; // 例）"https://script.google.com/macros/s/AKfycbxxxx/exec"
 
-    document.getElementById('leadForm').addEventListener('submit', async(e)=>{
+    document.getElementById('leadForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const fd = new FormData(e.currentTarget);
       const payload = Object.fromEntries(fd.entries());
-      try{
-        if(FORM_ENDPOINT){
-          // no-corsで静かに送る（レスポンスは読めないが送信は完了）
-          await fetch(FORM_ENDPOINT, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(payload) });
+
+      const subject = 'PDF送付依頼（松本会計ツール）';
+      const body = JSON.stringify(payload, null, 2);
+      const mailto = `mailto:matsumoto-kobe@tkcnf.or.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      try {
+        const post = fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+        const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 6000));
+        await Promise.race([post, timeout]);
+        alert('送信しました。PDFをメールでお送りします。');
+        window.dataLayer.push({ event: 'lead_submitted', utm: sessionStorage.getItem('utm') || '' });
+        e.currentTarget.reset();
+      } catch (err) {
+        // フォールバック：メーラーを開く
+        location.href = mailto;
+        alert('送信に時間がかかっているため、メール作成画面を開きました。お手数ですがそのまま送信してください。');
+      }
+    });
           alert('送信しました。PDFをメールでお送りします。');
           window.dataLayer.push({event:'lead_submitted', utm: sessionStorage.getItem('utm')||''});
           e.currentTarget.reset();
