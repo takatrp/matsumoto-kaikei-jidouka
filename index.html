@@ -1,225 +1,137 @@
 <!doctype html>
-
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>無料ツールで“黒字体質”を体験｜松本会計</title>
-  <meta name="description" content="松本会計の無料Webツール集。人件費の見える化、売上相当額計算、自動化効果試算、変動損益の見える化など。結果PDF＆15分無料診断の予約まで1ページで完結。" />
-  <link rel="canonical" href="https://example.com/" />
-  <meta property="og:title" content="無料ツールで“黒字体質”を体験｜松本会計" />
-  <meta property="og:description" content="人件費の見える化／売上相当額／自動化効果など、経営判断に直結する無料ツールを公開。結果PDFと15分無料診断へ。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com/" />
-  <meta property="og:image" content="https://example.com/ogp.png" />
-  <style>
-    :root{ --brand:#578899; --brand-ink:#2d3a42; --bg:#f7fafb; --ink:#112026; --muted:#5f7380; --card:#ffffff; --shadow:0 10px 30px rgba(17,32,38,.08); --radius:18px; }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;color:var(--ink);background:var(--bg)}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    header{position:sticky;top:0;background:rgba(247,250,251,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid rgba(0,0,0,.05);z-index:5}
-    .nav{display:flex;align-items:center;justify-content:space-between}
-    .logo{display:flex;gap:10px;align-items:center;font-weight:700;font-size:18px;color:var(--brand-ink)}
-    .badge{background:var(--brand);color:#fff;padding:2px 8px;border-radius:999px;font-size:12px}
-    .cta{display:flex;gap:10px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;border:1px solid rgba(0,0,0,.06);box-shadow:var(--shadow);background:#fff;font-weight:700}
-    .btn.primary{background:var(--brand);color:#fff;border:none}
-    .btn.ghost{background:#fff;color:var(--brand-ink)}
-    .hero{display:grid;gap:22px;grid-template-columns:1.2fr .8fr;align-items:center;padding:42px 0}
-    .hero h1{font-size:36px;line-height:1.2;margin:0;color:var(--brand-ink)}
-    .lead{color:var(--muted);font-size:16px}
-    .panel{background:linear-gradient(180deg, #fff, #f3f7f9);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-    .tools{display:grid;gap:16px;grid-template-columns:repeat(2, 1fr)}
-    .tool{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-    .tool h3{margin:0;color:var(--brand-ink)}
-    .tool p{margin:0;color:var(--muted)}
-    .tool .actions{display:flex;gap:10px;margin-top:auto}
-    .how{display:grid;gap:14px;grid-template-columns:repeat(3, 1fr)}
-    .how .step{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-    .case{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
-    .case .kpi{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-    .kpi strong{font-size:28px;color:var(--brand-ink)}
-    form.lead{display:grid;gap:10px;background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-    .row{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-    input,button,select{font:inherit}
-    input,select{width:100%;padding:12px 12px;border:1px solid rgba(0,0,0,.12);border-radius:12px;background:#fff}
-    footer{margin-top:40px;padding:24px 0;color:#6b7f8c;border-top:1px solid rgba(0,0,0,.06)}
-    @media (max-width:960px){ .hero{grid-template-columns:1fr} .tools{grid-template-columns:1fr} .how{grid-template-columns:1fr} .case{grid-template-columns:1fr} .row{grid-template-columns:1fr} }
-  </style>
-  <script type="application/ld+json" id="jsonld">
-  {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"松本会計","url":"https://example.com/","logo":"https://example.com/logo.png"},{"@type":"WebSite","url":"https://example.com/","name":"松本会計 ツール集"},{"@type":"ItemList","name":"無料Webツール","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"人件費見える化ツール","applicationCategory":"BusinessApplication","url":"https://takatrp.github.io/time-unit-cost/"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"売上相当額の計算","applicationCategory":"BusinessApplication","url":"https://takatrp.github.io/convert-to-sales/"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"自動化効果試算","applicationCategory":"BusinessApplication","url":"https://takatrp.github.io/jidouka-kouka/"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"変動損益の見える化（ボール版）","applicationCategory":"BusinessApplication","url":"https://takatrp.github.io/hendou_PL/"}}]}]}
-  </script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>黒字体質をつくる3分診断｜松本会計</title>
+<style>
+  :root{--main:#578899;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans JP",sans-serif;line-height:1.6;margin:0;color:#222;}
+  header{background:linear-gradient(180deg,var(--main),#6a9fb1);color:#fff;padding:28px 16px;}
+  header h1{font-size:1.6rem;margin:0 0 8px;}
+  header p{margin:0 0 12px;opacity:.95}
+  .cta{display:flex;gap:8px;flex-wrap:wrap}
+  .cta a,.cta button{background:#fff;color:#134;border:none;padding:10px 14px;border-radius:8px;font-weight:700;text-decoration:none}
+  main{padding:18px 14px;max-width:860px;margin:auto}
+  section{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;margin:12px 0;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+  h2{font-size:1.2rem;margin:.2rem 0 .6rem;color:#123}
+  .grid{display:grid;gap:10px;grid-template-columns:1fr; }
+  .tool{border:1px solid #eef;border-radius:10px;padding:10px}
+  label{display:block;margin:6px 0 2px;font-weight:600}
+  input[type="number"],input[type="text"],input[type="email"]{width:100%;padding:10px;border:1px solid #ccd;border-radius:8px;font-size:16px}
+  .note{font-size:.9rem;color:#555}
+  .btn{background:var(--main);color:#fff;border:none;padding:12px 14px;border-radius:10px;font-size:1rem;font-weight:700;width:100%}
+  .kpi{display:flex;gap:8px;flex-wrap:wrap}
+  .pill{background:#eef6f9;border:1px solid #d7e6ec;border-radius:999px;padding:6px 10px;font-size:.9rem}
+  .result{background:#f7fbfd;border:1px dashed #cfe1ea;border-radius:10px;padding:10px;margin-top:10px}
+  footer{padding:20px 14px;color:#666;font-size:.9rem}
+  small a{color:#456}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <div class="logo"><span>松本会計</span><span class="badge">無料ツール集</span></div>
-      <div class="cta">
-        <a class="btn ghost" href="#lead" data-cta="lead-top">結果をPDFで受け取る</a>
-        <a class="btn primary" href="#reserve" data-cta="reserve-top">15分無料診断を予約</a>
-      </div>
-    </div>
-  </header>
+<header>
+  <h1>“黒字体質”は作れる。3分診断で自社の利益構造が見える</h1>
+  <p>時間単価・限界利益率・固定費・自動化余地をその場で可視化。最短で黒字に近づく打ち手を提示します。</p>
+  <div class="cta">
+    <a href="#diag">無料診断をはじめる</a>
+    <a href="#contact">60分無料面談を予約</a>
+  </div>
+</header>
 
-  <main class="container">
-    <section class="hero">
+<main>
+  <section class="grid">
+    <div class="tool">
+      <h2>4つの可視化ツールで“利益の作り方”がわかる</h2>
+      <div class="kpi">
+        <a class="pill" href="https://takatrp.github.io/time-unit-cost/" target="_blank">人件費の見える化</a>
+        <a class="pill" href="https://takatrp.github.io/hendou-PL/" target="_blank">限界利益×固定費</a>
+        <a class="pill" href="https://takatrp.github.io/convert-to-sales/" target="_blank">経費→必要売上</a>
+        <a class="pill" href="https://takatrp.github.io/jidouka-kouka/" target="_blank">自動化の回収</a>
+      </div>
+      <p class="note">数字を“体験”した経営者は行動が変わります。スキャナブルな見せ方は理解を速め、離脱を防ぎます。</p>
+    </div>
+  </section>
+
+  <section id="diag">
+    <h2>3分で“黒字体質スコア”を確認</h2>
+    <div class="grid">
       <div>
-        <h1>経理の時間を<strong style="color:var(--brand)">利益の時間</strong>へ。<br>無料ツールで“黒字体質”を今すぐ体験。</h1>
-        <p class="lead">人件費の見える化／売上相当額／自動化効果／変動損益の見える化など、経営判断に直結するツールを公開。匿名で試せます。結果PDFと15分無料診断まで、この1ページで完結。</p>
-        <div class="cta">
-          <a class="btn primary" href="#lead" data-cta="lead-hero">結果をPDFで受け取る</a>
-          <a class="btn" href="#tools" data-cta="try-tools">ツールを見る</a>
-        </div>
+        <label>年間売上（円）</label>
+        <input type="number" id="sales" inputmode="numeric" placeholder="例: 120000000" />
       </div>
-      <div class="panel">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="kpi"><div style="font-size:12px;color:var(--muted)">黒字申告割合（当社）</div><strong>約65%</strong></div>
-          <div class="kpi"><div style="font-size:12px;color:var(--muted)">平均導入期間</div><strong>30日</strong></div>
-          <div class="kpi"><div style="font-size:12px;color:var(--muted)">自動化で削減</div><strong>〜80h/月</strong></div>
-          <div class="kpi"><div style="font-size:12px;color:var(--muted)">対応領域</div><strong>証憑/銀行/給与/販売</strong></div>
-        </div>
+      <div>
+        <label>粗利率（%）</label>
+        <input type="number" id="gpm" step="0.1" placeholder="例: 38" />
       </div>
-    </section>
-
-```
-<section id="tools" class="tools">
-  <article class="tool">
-    <h3>人件費見える化ツール</h3>
-    <p>時給/月給/年収ベースで“1時間の真のコスト”を即時算出。会議・経理・雑務の意思決定に。</p>
-    <div class="actions">
-      <a class="btn" href="https://takatrp.github.io/time-unit-cost/" target="_blank" rel="noopener" data-tool="labor">起動する</a>
-      <a class="btn ghost" href="#lead" data-cta="lead-from-tool-labor">結果をPDFで保存</a>
+      <div>
+        <label>年間固定費（円）</label>
+        <input type="number" id="fixed" inputmode="numeric" placeholder="例: 60000000" />
+      </div>
+      <div>
+        <label>毎月のムダ時間（人×時間）</label>
+        <input type="number" id="waste" step="1" placeholder="例: 120" />
+      </div>
+      <button class="btn" onclick="calc()">結果を表示</button>
+      <div id="out" class="result" style="display:none"></div>
     </div>
-  </article>
-  <article class="tool">
-    <h3>売上相当額の計算</h3>
-    <p>その支出は“売上に直すといくら？”を限界利益率で可視化。投資判断と値決めの武器に。</p>
-    <div class="actions">
-      <a class="btn" href="https://takatrp.github.io/convert-to-sales/" target="_blank" rel="noopener" data-tool="revenue">起動する</a>
-      <a class="btn ghost" href="#lead" data-cta="lead-from-tool-revenue">結果をPDFで保存</a>
-    </div>
-  </article>
-  <article class="tool">
-    <h3>自動化効果試算</h3>
-    <p>証憑保存・銀行信販・給与・販売の自動化で、月何時間・いくら削減できるかを試算。</p>
-    <div class="actions">
-      <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener" data-tool="automation">起動する</a>
-      <a class="btn ghost" href="#lead" data-cta="lead-from-tool-automation">結果をPDFで保存</a>
-    </div>
-  </article>
-  <article class="tool">
-    <h3>変動損益の見える化（ボール版）</h3>
-    <p>“ボールがハードルを超えたら黒字”を体感。固定費・限界利益率の直感的理解に。</p>
-    <div class="actions">
-      <a class="btn" href="https://takatrp.github.io/hendou_PL/" target="_blank" rel="noopener" data-tool="cvp">起動する</a>
-      <a class="btn ghost" href="#lead" data-cta="lead-from-tool-cvp">結果をPDFで保存</a>
-    </div>
-  </article>
-</section>
+    <p class="note">※結果の詳細PDFと面談リンクをメールでお送りします（下のフォーム）。</p>
+  </section>
 
-<section style="margin-top:26px">
-  <h2 style="margin:0 0 12px;color:var(--brand-ink)">使い方</h2>
-  <div class="how">
-    <div class="step"><strong>1. 試す</strong><br><span class="lead">匿名でOK。1〜3分で完了。</span></div>
-    <div class="step"><strong>2. 結果PDF</strong><br><span class="lead">メールで受取・社内共有に。</span></div>
-    <div class="step"><strong>3. 15分診断</strong><br><span class="lead">数字の読み解きと次の一手。</span></div>
-  </div>
-</section>
+  <section id="contact">
+    <h2>結果PDFを受け取る／無料面談を予約</h2>
+    <form id="lead" method="post" action="<!-- ここにApps Scriptの /exec を設定 -->">
+      <label>会社名</label>
+      <input type="text" name="company" required />
+      <label>ご担当者名</label>
+      <input type="text" name="name" required />
+      <label>メールアドレス</label>
+      <input type="email" name="email" required />
+      <input type="hidden" name="summary" id="summary"/>
+      <button class="btn">送信してPDFを受け取る</button>
+    </form>
+    <p class="note">※送信後、結果サマリーPDFと面談URL（オンライン可）を自動送付します。</p>
+  </section>
+</main>
 
-<section id="lead" style="margin-top:26px">
-  <h2 style="margin:0 0 12px;color:var(--brand-ink)">結果をPDFで受け取る</h2>
-  <form class="lead" id="leadForm">
-    <div class="row">
-      <input name="name" placeholder="お名前" required />
-      <input name="company" placeholder="会社名（任意）" />
-    </div>
-    <div class="row">
-      <input name="email" type="email" placeholder="メールアドレス" required />
-      <select name="industry">
-        <option value="">業種（任意）</option>
-        <option>製造</option><option>小売</option><option>飲食</option><option>医療/介護</option><option>学校法人</option><option>その他</option>
-      </select>
-    </div>
-    <input name="notes" placeholder="気になる課題（任意）：例）請求書処理に時間がかかる" />
-    <button class="btn primary" type="submit">PDFをメールで受け取る</button>
-  </form>
-</section>
+<footer>
+  <small>
+    事務所情報：松本会計（所在地・連絡先を明記）｜
+    <a href="#">プライバシーポリシー</a>（利用目的の公表を含む）
+  </small>
+</footer>
 
-<section id="reserve" style="margin-top:26px">
-  <h2 style="margin:0 0 12px;color:var(--brand-ink)">15分の無料“黒字体質”診断</h2>
-  <div class="panel">
-    <p class="lead">オンライン（Zoom/Google Meet）。下のボタンから空き枠をご確認ください。</p>
-    <a class="btn primary" data-cta="reserve-link" href="https://calendar.google.com/calendar/u/0/appointments/schedules/" target="_blank" rel="noopener">予約ページを開く</a>
-  </div>
-</section>
-```
-
-  </main>
-
-  <footer>
-    <div class="container">© <span id="y"></span> 松本会計 — お客様企業の発展は私たちの喜び！</div>
-  </footer>
-
-  <script>
-    // 年表示
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // UTM保持（簡易）
-    (function(){const q=new URLSearchParams(location.search);if([...q.keys()].some(k=>/^utm_/i.test(k))){sessionStorage.setItem('utm', location.search);}})();
-
-    // GTMなどで拾いやすいクリック計測
-    window.dataLayer = window.dataLayer || [];
-    document.querySelectorAll('[data-cta], [data-tool]').forEach(el=>{
-      el.addEventListener('click', ()=>{
-        window.dataLayer.push({event:'cta', cta:el.getAttribute('data-cta')||'', tool:el.getAttribute('data-tool')||'', utm:sessionStorage.getItem('utm')||''});
-      });
-    });
-
-    // ===== 送信設定 =====
-    // 1) メーラーを開かずに送る場合：FORM_ENDPOINTにGAS等のWebhook URLを設定
-    // 2) 未設定の場合：mailtoで matsumoto-kobe@tkcnf.or.jp 宛のメール作成を開く
-    const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbySuhCXslmSb2ThYQx1aWhBxZbP05hmW6OiyjdC_Nca8Lt7RVH6NpGYc0MpkpcGeU8HaQ/exec"; // 例）"https://script.google.com/macros/s/AKfycbxxxx/exec"
-
-    document.getElementById('leadForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const fd = new FormData(e.currentTarget);
-      const payload = Object.fromEntries(fd.entries());
-
-      const subject = 'PDF送付依頼（松本会計ツール）';
-      const body = JSON.stringify(payload, null, 2);
-      const mailto = `mailto:matsumoto-kobe@tkcnf.or.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      try {
-        const post = fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload)
-        });
-        const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 6000));
-        await Promise.race([post, timeout]);
-        alert('送信しました。PDFをメールでお送りします。');
-        window.dataLayer.push({ event: 'lead_submitted', utm: sessionStorage.getItem('utm') || '' });
-        e.currentTarget.reset();
-      } catch (err) {
-        // フォールバック：メーラーを開く
-        location.href = mailto;
-        alert('送信に時間がかかっているため、メール作成画面を開きました。お手数ですがそのまま送信してください。');
-      }
-    });
-          alert('送信しました。PDFをメールでお送りします。');
-          window.dataLayer.push({event:'lead_submitted', utm: sessionStorage.getItem('utm')||''});
-          e.currentTarget.reset();
-        }else{
-          const subject = 'PDF送付依頼（松本会計ツール）';
-          const body = JSON.stringify(payload, null, 2);
-          const mailto = `mailto:matsumoto-kobe@tkcnf.or.jp?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          location.href = mailto;
-        }
-      }catch(err){ alert('送信に失敗しました。時間をおいて再度お試しください。'); }
-    });
-  </script>
-
+<script>
+function yen(n){return n.toLocaleString('ja-JP');}
+function calc(){
+  const s=Number(document.getElementById('sales').value||0);
+  const gpm=Number(document.getElementById('gpm').value||0)/100;
+  const f=Number(document.getElementById('fixed').value||0);
+  const w=Number(document.getElementById('waste').value||0);
+  if(!s||!gpm||!f){alert('売上・粗利率・固定費を入力してください');return;}
+  const cmr=gpm;                           // 限界利益率（粗利率を近似）
+  const be=f/(cmr||0.000001);              // 損益分岐売上
+  const cm=s*cmr;                          // 限界利益（粗利近似）
+  const gap=cm-f;                          // 黒字ギャップ
+  const autoSave= w * (3000);              // 粗い仮置：1h=¥3,000相当の時短価値
+  let score=60;
+  if(gap>0) score+=15; else score-=10;
+  if(cmr>=0.4) score+=10; else if(cmr<0.25) score-=8;
+  if(autoSave>600000) score+=5;
+  score=Math.max(0,Math.min(100,Math.round(score)));
+  const out=document.getElementById('out');
+  out.style.display='block';
+  out.innerHTML=
+    `<b>黒字体質スコア：</b>${score}/100<br>
+     <b>損益分岐売上：</b>¥${yen(Math.ceil(be))}<br>
+     <b>黒字ギャップ：</b>${gap>=0?'余裕':'不足'} ¥${yen(Math.abs(Math.round(gap)))}<br>
+     <b>自動化の削減余地（仮）：</b>¥${yen(Math.round(autoSave))}/月<br>
+     <hr><b>推奨アクション</b><ol>
+       <li>限界利益率の改善：単価見直し／高粗利商品の構成比UP</li>
+       <li>固定費の最適化：不採算業務の停止、外注の再設計</li>
+       <li>自動化パイロット：請求・経費・入金消込の自動化で工数削減</li>
+     </ol>`;
+  document.getElementById('summary').value=out.innerText;
+}
+</script>
 </body>
 </html>
