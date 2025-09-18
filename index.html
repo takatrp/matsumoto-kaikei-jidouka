@@ -1,100 +1,298 @@
 <!doctype html>
-<label>ある支出に必要な売上（円）</label>
-<input id="needSales" type="text" inputmode="numeric" placeholder="例）8,333,333" oninput="fmtNum(this)"/>
-</div>
-</div>
-<div class="grid-3">
-<div>
-<label>自動化で削減見込（時間/月）</label>
-<input id="hrs" type="number" inputmode="decimal" placeholder="例）25"/>
-</div>
-<div>
-<label>1分あたり人件費（円）</label>
-<input id="ppm" type="text" inputmode="numeric" placeholder="例）50" oninput="fmtNum(this)"/>
-</div>
-<div>
-<label>利益インパクト/月（円）</label>
-<input id="impact" type="text" inputmode="numeric" placeholder="自動計算" readonly />
-</div>
-</div>
-<div class="cta-row">
-<button class="btn" onclick="calcImpact()">利益インパクトを再計算</button>
-<button class="btn" onclick="window.print()">印刷 / PDF保存</button>
-</div>
-<p class="note">※提出用PDFにはこのブロックのみが綺麗に出力されます（印刷時はA4縦・余白を“最小”に設定推奨）。</p>
-</section>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>経理の時間を、利益の時間へ。｜黒字化体験LP</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="3分体験で“黒字化までの距離と最短ルート”を見える化。結果PDFを保存しその場で30分相談を予約。変動損益×自計化×自動化で黒字体質へ。">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="経理の時間を、利益の時間へ。">
+  <meta property="og:description" content="無料4ツールで黒字化までの距離を即可視化→30分相談をその場で予約。">
+  <meta property="og:locale" content="ja_JP">
+  <style>
+    :root{
+      --brand:#578899; --ink:#0c2530; --bg:#f6fbfd; --card:#fff; --muted:#6e8792;
+      --border:rgba(0,0,0,.08)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    .wrap{max-width:980px;margin:0 auto;padding:16px}
+    .hero{background:linear-gradient(180deg,#e7f2f7,transparent);padding:28px 16px;border-radius:16px}
+    .badge{display:inline-block;background:#eef5f8;border:1px solid #d7e7ef;color:var(--brand);
+      padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700}
+    .title{font-size:clamp(22px,5vw,36px);font-weight:800;margin:8px 0}
+    .subtitle{font-size:clamp(14px,3.2vw,18px);color:var(--muted);margin:0 0 16px}
+    .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      border-radius:12px;padding:12px 14px;font-weight:700;border:1px solid var(--border);background:#fff}
+    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .tools{margin:20px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .tool{background:var(--card);border-radius:14px;padding:14px;border:1px solid var(--border)}
+    .tool h3{margin:0 0 8px;font-size:16px}
+    .tool p{margin:0 12px 12px 0;color:var(--muted);font-size:14px}
+    .tool .tool-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .tool .tool-actions a,.tool .tool-actions button{flex:1}
+    .panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:16px 0}
+    .panel h2{font-size:18px;margin:0 0 8px}
+    label{display:block;font-size:13px;color:var(--muted);margin:8px 0 4px}
+    input[type="text"],input[type="number"],input[type="email"]{
+      width:100%;padding:12px;border-radius:10px;border:1px solid #d6e3ea;background:#fff;font-size:16px
+    }
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+    .note{font-size:12px;color:var(--muted)}
+    .sticky-cta{position:sticky;bottom:0;z-index:20;background:rgba(247,251,253,.9);
+      backdrop-filter:saturate(180%) blur(8px);padding:10px;border-top:1px solid var(--border)}
+    .legal{font-size:12px;color:var(--muted)}
+    .hide{display:none}
+    @media (max-width:720px){
+      .tools{grid-template-columns:1fr}
+      .cta-row{grid-template-columns:1fr}
+      .grid-2,.grid-3{grid-template-columns:1fr}
+    }
+    @media print{
+      body{background:#fff}
+      .hero,.tools,.sticky-cta,.no-print{display:none!important}
+      .panel{page-break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <noscript>このページを利用するにはJavaScriptを有効にしてください。</noscript>
+  <div class="wrap">
+    <!-- ヒーロー -->
+    <section class="hero" aria-label="導入セクション">
+      <span class="badge">無料体験</span>
+      <h1 class="title">経理の時間を、利益の時間へ。</h1>
+      <p class="subtitle">3分体験で “黒字化までの距離と最短ルート” を見える化。結果はPDFで保存、その場で30分相談を予約。</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#booking" aria-label="30分無料相談を予約へ移動">30分無料相談を予約</a>
+        <a class="btn" href="#summary" aria-label="体験結果をPDFで保存へ移動">体験結果をPDFで保存</a>
+      </div>
+    </section>
 
+    <!-- ツール群 -->
+    <section class="tools" aria-label="ツール一覧">
+      <article class="tool">
+        <h3>① 変動損益PL（損益分岐の直感化）</h3>
+        <p>固定費＝越えるべきハードル、限界利益率＝バウンド率で直感的に理解。</p>
+        <div class="tool-actions">
+          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/hendou_PL/">新規タブで開く</a>
+          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/hendou_PL/')" aria-label="ページ内でプレビュー">ページ内で試す（β）</button>
+        </div>
+      </article>
 
-<!-- 予約（Calendly/Google 予定枠） -->
-<section id="booking" class="panel">
-<h2>30分無料相談のご予約</h2>
-<p class="note">下の「今すぐ予約」から日程をご指定ください。Web会議/来所どちらでも可。</p>
-<div class="cta-row no-print">
-<a class="btn primary" id="calBtn" href="https://calendly.com/your-slug/30min" target="_blank">今すぐ予約（外部）</a>
-<a class="btn" href="#lead">メールで連絡する</a>
-</div>
-<div class="note">※貴社の予約URLに差し替えてください（`#calBtn` の `href`）。Googleカレンダーの「予約スケジュール」でも可。</div>
-</section>
+      <article class="tool">
+        <h3>② 1分あたり人件費（時間単価）</h3>
+        <p>“1分の価値”を数値化し、不採算作業の即断材料に。</p>
+        <div class="tool-actions">
+          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/time-unit-cost/">新規タブで開く</a>
+          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/time-unit-cost/')">ページ内で試す（β）</button>
+        </div>
+      </article>
 
+      <article class="tool">
+        <h3>③ 費用→必要売上換算</h3>
+        <p>◯◯円の出費＝売上△△円が必要、を即時換算。</p>
+        <div class="tool-actions">
+          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/convert-to-sales/">新規タブで開く</a>
+          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/convert-to-sales/')">ページ内で試す（β）</button>
+        </div>
+      </article>
 
-<!-- 最小フォーム（Formspree等に差し替え） -->
-<section id="lead" class="panel">
-<h2>結果PDFの受け取り（最小フォーム）</h2>
-<form id="leadForm" method="POST" action="https://formspree.io/f/xxxxreplace" class="grid-2" onsubmit="return confirmSubmit()">
-<div>
-<label>会社名（必須）</label>
-<input name="company" required placeholder="例）株式会社〇〇" />
-</div>
-<div>
-<label>メール（必須）</label>
-<input name="email" type="email" required placeholder="例）xxx@example.co.jp" />
-</div>
-<input type="hidden" name="memo_gm" id="h_gm" />
-<input type="hidden" name="memo_fc" id="h_fc" />
-<input type="hidden" name="memo_need_sales" id="h_need" />
-<input type="hidden" name="memo_impact" id="h_imp" />
-<button class="btn primary" type="submit">PDFをメールで受け取る</button>
-</form>
-<p class="note">※送信先（Formspree など）のエンドポイントを差し替えてください。GAS（Apps Script）で自動返信・PDF添付も可能。</p>
-</section>
+      <article class="tool">
+        <h3>④ 自動化効果シミュレーター</h3>
+        <p>削減時間×時間単価＝利益インパクトを可視化。</p>
+        <div class="tool-actions">
+          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">新規タブで開く</a>
+          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/jidouka-kouka/')">ページ内で試す（β）</button>
+        </div>
+      </article>
+    </section>
 
+    <!-- 体験結果サマリ（印刷/PDF用） -->
+    <section id="summary" class="panel" aria-label="体験結果サマリ">
+      <h2>体験結果サマリ（PDF/印刷用）</h2>
+      <p class="note">※埋め込みツールの数値は自動取得できないため、要点のみ転記してください（印刷/PDF保存可）。</p>
 
-<section class="panel legal">
-<strong>免責</strong>：本LPは体験の呼び水を目的とした一般的な情報提供です。実際の数値・施策は業種や個社事情により異なります。正式な助言は面談にて行います。
-</section>
+      <div class="grid-2">
+        <div>
+          <label for="cname">会社名</label>
+          <input id="cname" type="text" placeholder="例）株式会社〇〇" autocomplete="organization">
+        </div>
+        <div>
+          <label for="cemail">ご担当者メール</label>
+          <input id="cemail" type="email" placeholder="例）xxx@example.co.jp" autocomplete="email">
+        </div>
+      </div>
 
+      <div class="grid-3">
+        <div>
+          <label for="gm">限界利益率（%）</label>
+          <input id="gm" type="number" inputmode="decimal" placeholder="例）35" aria-label="限界利益率">
+        </div>
+        <div>
+          <label for="fc">固定費（月額・円）</label>
+          <input id="fc" type="text" inputmode="numeric" placeholder="例）2,500,000" oninput="fmtNum(this)" aria-label="固定費">
+        </div>
+        <div>
+          <label for="needSales">ある支出に必要な売上（円）</label>
+          <input id="needSales" type="text" inputmode="numeric" placeholder="例）8,333,333" oninput="fmtNum(this)" aria-label="必要売上">
+        </div>
+      </div>
 
-<div class="sticky-cta no-print">
-<div class="cta-row">
-<a class="btn primary" href="#booking">30分無料相談を予約</a>
-<a class="btn" href="#summary">体験結果をPDFに保存</a>
-</div>
-</div>
-</div>
+      <div class="grid-3">
+        <div>
+          <label for="hrs">自動化で削減見込（時間/月）</label>
+          <input id="hrs" type="number" inputmode="decimal" placeholder="例）25" aria-label="削減時間">
+        </div>
+        <div>
+          <label for="ppm">1分あたり人件費（円）</label>
+          <input id="ppm" type="text" inputmode="numeric" placeholder="例）50" oninput="fmtNum(this)" aria-label="1分あたり人件費">
+        </div>
+        <div>
+          <label for="impact">利益インパクト/月（円）</label>
+          <input id="impact" type="text" inputmode="numeric" placeholder="自動計算" readonly aria-readonly="true">
+        </div>
+      </div>
 
+      <div class="cta-row">
+        <button class="btn" type="button" onclick="calcImpact()">利益インパクトを再計算</button>
+        <button class="btn" type="button" onclick="window.print()">印刷 / PDF保存</button>
+      </div>
+      <p class="note">※印刷時はA4縦・余白は「最小」を推奨。</p>
+    </section>
 
-<!-- 埋め込み用モーダル（β） -->
-<div id="embedModal" class="hide" style="position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:10px;z-index:50">
-<div style="background:#fff;max-width:980px;width:100%;height:85vh;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,.15)">
-<div style="padding:8px 10px;display:flex;gap:8px;align-items:center;border-bottom:1px solid rgba(0,0,0,.06)">
-<strong style="flex:1">ツールをページ内で試す（β）</strong>
-<button class="btn" onclick="closeEmbed()">閉じる</button>
-<a id="openNew" class="btn primary" target="_blank">新規タブで開く</a>
-</div>
-<iframe id="embedFrame" src="about:blank" style="width:100%;height:100%;border:0"></iframe>
-</div>
-</div>
+    <!-- 予約 -->
+    <section id="booking" class="panel" aria-label="30分無料相談のご予約">
+      <h2>30分無料相談のご予約</h2>
+      <p class="note">下の「今すぐ予約」から日程をご指定ください。Web会議/来所いずれも可。</p>
+      <div class="cta-row no-print">
+        <a id="calBtn" class="btn primary" target="_blank" rel="noopener"
+           href="https://calendly.com/your-slug/30min">今すぐ予約（外部）</a>
+        <a class="btn" href="#lead">メールで連絡する</a>
+      </div>
+      <p class="note">※自社の予約URLに差し替えてください（上記リンク）。</p>
+    </section>
 
+    <!-- 最小フォーム -->
+    <section id="lead" class="panel" aria-label="結果PDFの受け取りフォーム">
+      <h2>結果PDFの受け取り（最小フォーム）</h2>
+      <form id="leadForm" method="POST" action="https://formspree.io/f/xxxxreplace" class="grid-2" onsubmit="return confirmSubmit()">
+        <div>
+          <label for="f_company">会社名（必須）</label>
+          <input id="f_company" name="company" required placeholder="例）株式会社〇〇" autocomplete="organization">
+        </div>
+        <div>
+          <label for="f_email">メール（必須）</label>
+          <input id="f_email" name="email" type="email" required placeholder="例）xxx@example.co.jp" autocomplete="email">
+        </div>
+        <!-- 体験メモを合わせて送信 -->
+        <input type="hidden" name="memo_gm" id="h_gm">
+        <input type="hidden" name="memo_fc" id="h_fc">
+        <input type="hidden" name="memo_need_sales" id="h_need">
+        <input type="hidden" name="memo_impact" id="h_imp">
+        <button class="btn primary" type="submit">PDFをメールで受け取る</button>
+      </form>
+      <p class="note">※送信先（Formspree 等）のエンドポイントを差し替えてください。Google Apps Scriptで自動返信＋PDF添付も可能。</p>
+    </section>
 
-<script>
-const fmtNum=(el)=>{const v=el.value.replace(/[^0-9.-]/g,'');if(v===''||isNaN(Number(v)))return;el.value=Number(v).toLocaleString()};
-const calcImpact=()=>{const hrs=parseFloat(document.getElementById('hrs').value||'0');const ppm=Number((document.getElementById('ppm').value||'').replace(/[^0-9.-]/g,''))||0;const yen=hrs*60*ppm;document.getElementById('impact').value=yen?yen.toLocaleString():'';syncHidden()};
-const syncHidden=()=>{const gm=document.getElementById('gm').value;const fc=(document.getElementById('fc').value||'').replace(/[^0-9.-]/g,'');const need=(document.getElementById('needSales').value||'').replace(/[^0-9.-]/g,'');const imp=(document.getElementById('impact').value||'').replace(/[^0-9.-]/g,'');
-document.getElementById('h_gm').value=gm;document.getElementById('h_fc').value=fc;document.getElementById('h_need').value=need;document.getElementById('h_imp').value=imp;};
-['gm','fc','needSales','impact'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',syncHidden)});
-const openEmbed=(url)=>{document.getElementById('embedFrame').src=url;document.getElementById('openNew').href=url;document.getElementById('embedModal').classList.remove('hide')};
-const closeEmbed=()=>{document.getElementById('embedFrame').src='about:blank';document.getElementById('embedModal').classList.add('hide')};
-const confirmSubmit=()=>{syncHidden();return confirm('PDF送付をリクエストします。よろしいですか？');};
-</script>
+    <!-- 免責 -->
+    <section class="panel legal" aria-label="免責">
+      <strong>免責</strong>：本LPは体験の呼び水を目的とした一般的な情報提供です。実際の数値・施策は個社事情により異なります。正式な助言は面談にて行います。
+    </section>
+
+    <!-- 追従CTA -->
+    <div class="sticky-cta no-print" role="region" aria-label="追従CTA">
+      <div class="cta-row">
+        <a class="btn primary" href="#booking">30分無料相談を予約</a>
+        <a class="btn" href="#summary">体験結果をPDFに保存</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 埋め込みプレビュー（モーダル） -->
+  <div id="embedModal" class="hide" aria-hidden="true"
+       style="position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:10px;z-index:50">
+    <div role="dialog" aria-modal="true" aria-label="ツールのページ内プレビュー"
+         style="background:#fff;max-width:980px;width:100%;height:85vh;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,.15)">
+      <div style="padding:8px 10px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--border)">
+        <strong style="flex:1">ツールをページ内で試す（β）</strong>
+        <button class="btn" type="button" onclick="closeEmbed()">閉じる</button>
+        <a id="openNew" class="btn primary" target="_blank" rel="noopener">新規タブで開く</a>
+      </div>
+      <iframe id="embedFrame" src="about:blank" style="width:100%;height:100%;border:0"></iframe>
+    </div>
+  </div>
+
+  <script>
+    // 数字フォーマット（カンマ付与）
+    function fmtNum(el){
+      const raw = (el.value || "").replace(/[^\d.-]/g,"");
+      if(raw === "" || isNaN(Number(raw))) { el.dataset.raw=""; return; }
+      el.dataset.raw = raw;
+      el.value = Number(raw).toLocaleString("ja-JP");
+      syncHidden();
+    }
+    function unformat(v){ return (v||"").toString().replace(/[^\d.-]/g,""); }
+
+    // 利益インパクト計算（hrs×60×ppm）
+    function calcImpact(){
+      const hrs = parseFloat(document.getElementById("hrs").value || "0");
+      const ppm = Number(unformat(document.getElementById("ppm").value)) || 0;
+      const yen = Math.max(0, Math.round(hrs*60*ppm));
+      document.getElementById("impact").value = yen ? yen.toLocaleString("ja-JP") : "";
+      syncHidden();
+    }
+
+    // 隠し項目へ同期（フォーム送信時用）
+    function syncHidden(){
+      const gm   = document.getElementById("gm").value || "";
+      const fc   = unformat(document.getElementById("fc").value) || "";
+      const need = unformat(document.getElementById("needSales").value) || "";
+      const imp  = unformat(document.getElementById("impact").value) || "";
+      document.getElementById("h_gm").value   = gm;
+      document.getElementById("h_fc").value   = fc;
+      document.getElementById("h_need").value = need;
+      document.getElementById("h_imp").value  = imp;
+    }
+    ["gm","fc","needSales","impact","hrs","ppm"].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.addEventListener("input", syncHidden);
+    });
+
+    // フォーム送信確認
+    function confirmSubmit(){
+      syncHidden();
+      return confirm("PDF送付をリクエストします。よろしいですか？");
+    }
+
+    // 埋め込みモーダル
+    function openEmbed(url){
+      const modal = document.getElementById("embedModal");
+      const frame = document.getElementById("embedFrame");
+      const openNew = document.getElementById("openNew");
+      openNew.href = url;
+      frame.src = url;
+      modal.classList.remove("hide");
+      modal.setAttribute("aria-hidden","false");
+      document.addEventListener("keydown", escClose);
+      modal.addEventListener("click", overlayClose);
+    }
+    function closeEmbed(){
+      const modal = document.getElementById("embedModal");
+      const frame = document.getElementById("embedFrame");
+      frame.src = "about:blank";
+      modal.classList.add("hide");
+      modal.setAttribute("aria-hidden","true");
+      document.removeEventListener("keydown", escClose);
+      modal.removeEventListener("click", overlayClose);
+    }
+    function escClose(e){ if(e.key === "Escape") closeEmbed(); }
+    function overlayClose(e){ if(e.target.id === "embedModal") closeEmbed(); }
+  </script>
 </body>
 </html>
