@@ -1,298 +1,275 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>経理の時間を、利益の時間へ。｜黒字化体験LP</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="3分体験で“黒字化までの距離と最短ルート”を見える化。結果PDFを保存しその場で30分相談を予約。変動損益×自計化×自動化で黒字体質へ。">
-  <meta name="format-detection" content="telephone=no">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="経理の時間を、利益の時間へ。">
-  <meta property="og:description" content="無料4ツールで黒字化までの距離を即可視化→30分相談をその場で予約。">
-  <meta property="og:locale" content="ja_JP">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>無料AIツールで意思決定を加速｜税理士法人松本会計</title>
+  <meta name="description" content="自計化 × 管理会計 × 継続伴走 × 自社開発AIツールで、社長の“今日の意思決定”を支える会計事務所。限界利益・価格改定・人件費・投資回収を、毎月の対話とツールで意思決定につなげます。">
+  <link rel="icon" type="image/png" href="favicon192192.png" sizes="192x192" />
   <style>
     :root{
-      --brand:#578899; --ink:#0c2530; --bg:#f6fbfd; --card:#fff; --muted:#6e8792;
-      --border:rgba(0,0,0,.08)
+      --brand:#578899; --brand-600:#497485; --brand-700:#3e6473; --ink:#0f172a; --muted:#64748b; --bg:#f8fafc; --card:#ffffff; --accent:#e6eff3;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--ink);
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif}
-    a{color:var(--brand);text-decoration:none}
-    .wrap{max-width:980px;margin:0 auto;padding:16px}
-    .hero{background:linear-gradient(180deg,#e7f2f7,transparent);padding:28px 16px;border-radius:16px}
-    .badge{display:inline-block;background:#eef5f8;border:1px solid #d7e7ef;color:var(--brand);
-      padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700}
-    .title{font-size:clamp(22px,5vw,36px);font-weight:800;margin:8px 0}
-    .subtitle{font-size:clamp(14px,3.2vw,18px);color:var(--muted);margin:0 0 16px}
-    .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      border-radius:12px;padding:12px 14px;font-weight:700;border:1px solid var(--border);background:#fff}
-    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
-    .tools{margin:20px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .tool{background:var(--card);border-radius:14px;padding:14px;border:1px solid var(--border)}
-    .tool h3{margin:0 0 8px;font-size:16px}
-    .tool p{margin:0 12px 12px 0;color:var(--muted);font-size:14px}
-    .tool .tool-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .tool .tool-actions a,.tool .tool-actions button{flex:1}
-    .panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:16px 0}
-    .panel h2{font-size:18px;margin:0 0 8px}
-    label{display:block;font-size:13px;color:var(--muted);margin:8px 0 4px}
-    input[type="text"],input[type="number"],input[type="email"]{
-      width:100%;padding:12px;border-radius:10px;border:1px solid #d6e3ea;background:#fff;font-size:16px
-    }
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-    .note{font-size:12px;color:var(--muted)}
-    .sticky-cta{position:sticky;bottom:0;z-index:20;background:rgba(247,251,253,.9);
-      backdrop-filter:saturate(180%) blur(8px);padding:10px;border-top:1px solid var(--border)}
-    .legal{font-size:12px;color:var(--muted)}
-    .hide{display:none}
-    @media (max-width:720px){
-      .tools{grid-template-columns:1fr}
-      .cta-row{grid-template-columns:1fr}
-      .grid-2,.grid-3{grid-template-columns:1fr}
-    }
-    @media print{
-      body{background:#fff}
-      .hero,.tools,.sticky-cta,.no-print{display:none!important}
-      .panel{page-break-inside:avoid}
-    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN",Meiryo,system-ui,sans-serif;color:var(--ink);background:var(--bg);}
+    a{color:inherit;text-decoration:none}
+    .underline-link{text-decoration:underline}
+    .container{max-width:1120px;margin:0 auto;padding:0 16px}
+    header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid #e2e8f0}
+    header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:48px;width:auto;display:block}
+    nav a{margin-left:20px;color:var(--muted);font-size:14px}
+    nav a:hover{color:var(--brand-700)}
+
+    .hero{background:linear-gradient(180deg,#ffffff, #f1f5f9 70%);padding:56px 0 32px}
+    .badge{display:inline-flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+    .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
+    h1{font-size:clamp(22px,5vw,42px);line-height:1.2;margin:8px 0 12px}
+    .sub{color:var(--muted);font-size:16px;line-height:1.7;max-width:760px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:14px;font-weight:600;border:1px solid transparent;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-primary:hover{background:var(--brand-600)}
+    .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
+
+    section{padding:48px 0}
+    h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 18px}
+    .lead{color:var(--muted)}
+
+    .grid{display:grid;gap:16px}
+    @media(min-width:740px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:18px;padding:18px;box-shadow:0 2px 4px rgba(0,0,0,.03)}
+    .card h3{font-size:18px;margin:0 0 8px}
+    .card p{margin:0;color:var(--muted);line-height:1.7}
+
+    .tool-pill{font-size:13px;border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:8px 12px;display:inline-block;margin:6px 6px 0 0}
+
+    .process{counter-reset:step}
+    .step{display:flex;gap:12px;margin:14px 0;align-items:flex-start}
+    .step .num{min-width:36px;height:36px;border-radius:999px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    .result-box{display:grid;gap:12px}
+    .result{background:#fff;border:1px dashed #cbd5e1;border-radius:16px;padding:14px}
+
+    .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:10px}
+    .faq summary{cursor:pointer;font-weight:600}
+
+    .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+    .cta-band .btn{background:#fff;color:var(--brand-700)}
+
+    footer{padding:24px 0 56px;color:#475569}
+    footer .credit{font-size:13px}
+    .refs{font-size:12px;color:#64748b;margin-top:12px}
+    .refs a{color:inherit;text-decoration:underline}
+  </style>
+  <style>
+    /* 追加: ヒーロー画像用 */
+    .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%);padding:56px 0 32px}
+    .hero-wrap{display:grid;gap:16px;align-items:center}
+    @media(min-width:960px){.hero-wrap{grid-template-columns:1.1fr .9fr}}
+    .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08);min-height:260px}
+    .hero-media picture, .hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(87,136,153,.55),rgba(15,23,42,.15));}
+    .hero-kicker{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    /* ヒーローのテキスト側に余白を確保（スマホでの視認性） */
+    .hero h1{margin-top:6px}
   </style>
 </head>
 <body>
-  <noscript>このページを利用するにはJavaScriptを有効にしてください。</noscript>
-  <div class="wrap">
-    <!-- ヒーロー -->
-    <section class="hero" aria-label="導入セクション">
-      <span class="badge">無料体験</span>
-      <h1 class="title">経理の時間を、利益の時間へ。</h1>
-      <p class="subtitle">3分体験で “黒字化までの距離と最短ルート” を見える化。結果はPDFで保存、その場で30分相談を予約。</p>
-      <div class="cta-row">
-        <a class="btn primary" href="#booking" aria-label="30分無料相談を予約へ移動">30分無料相談を予約</a>
-        <a class="btn" href="#summary" aria-label="体験結果をPDFで保存へ移動">体験結果をPDFで保存</a>
-      </div>
-    </section>
+  <!-- Header -->
+  <header>
+    <div class="container inner">
+      <a class="logo" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">
+        <img src="ロゴ.jpg" alt="税理士法人松本会計 ロゴ"/>
+        <span style="font-weight:700;color:var(--brand-700);font-size:14px">税理士法人松本会計</span>
+      </a>
+      <nav>
+        <a href="#why">必要性</a>
+        <a href="#ai-funnel">AIツール</a>
+        <a href="#approach">アプローチ</a>
+        <a href="#tools">ツール一覧</a>
+        <a href="#process">伴走</a>
+        <a href="#results">実績</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">公式サイト</a>
+        <a href="#contact">相談</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- ツール群 -->
-    <section class="tools" aria-label="ツール一覧">
-      <article class="tool">
-        <h3>① 変動損益PL（損益分岐の直感化）</h3>
-        <p>固定費＝越えるべきハードル、限界利益率＝バウンド率で直感的に理解。</p>
-        <div class="tool-actions">
-          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/hendou_PL/">新規タブで開く</a>
-          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/hendou_PL/')" aria-label="ページ内でプレビュー">ページ内で試す（β）</button>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <div class="badge hero-kicker">
+          <span class="chip">自計化支援</span>
+          <span class="chip">変動損益（限界利益）</span>
+          <span class="chip">継続MAS×月次対話</span>
+          <span class="chip">自社開発AI/アプリ</span>
+          <span class="chip">無料ツールあり</span>
         </div>
-      </article>
-
-      <article class="tool">
-        <h3>② 1分あたり人件費（時間単価）</h3>
-        <p>“1分の価値”を数値化し、不採算作業の即断材料に。</p>
-        <div class="tool-actions">
-          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/time-unit-cost/">新規タブで開く</a>
-          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/time-unit-cost/')">ページ内で試す（β）</button>
-        </div>
-      </article>
-
-      <article class="tool">
-        <h3>③ 費用→必要売上換算</h3>
-        <p>◯◯円の出費＝売上△△円が必要、を即時換算。</p>
-        <div class="tool-actions">
-          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/convert-to-sales/">新規タブで開く</a>
-          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/convert-to-sales/')">ページ内で試す（β）</button>
-        </div>
-      </article>
-
-      <article class="tool">
-        <h3>④ 自動化効果シミュレーター</h3>
-        <p>削減時間×時間単価＝利益インパクトを可視化。</p>
-        <div class="tool-actions">
-          <a class="btn" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">新規タブで開く</a>
-          <button class="btn" type="button" onclick="openEmbed('https://takatrp.github.io/jidouka-kouka/')">ページ内で試す（β）</button>
-        </div>
-      </article>
-    </section>
-
-    <!-- 体験結果サマリ（印刷/PDF用） -->
-    <section id="summary" class="panel" aria-label="体験結果サマリ">
-      <h2>体験結果サマリ（PDF/印刷用）</h2>
-      <p class="note">※埋め込みツールの数値は自動取得できないため、要点のみ転記してください（印刷/PDF保存可）。</p>
-
-      <div class="grid-2">
-        <div>
-          <label for="cname">会社名</label>
-          <input id="cname" type="text" placeholder="例）株式会社〇〇" autocomplete="organization">
-        </div>
-        <div>
-          <label for="cemail">ご担当者メール</label>
-          <input id="cemail" type="email" placeholder="例）xxx@example.co.jp" autocomplete="email">
+        <h1>無料AIツールで、今日の意思決定を加速。</h1>
+        <p class="sub">“お客様企業の繁栄は私たちの喜び”——リアルタイム会計×管理会計×継続伴走に、所内開発のAIツール群を組み合わせ、黒字経営を強力にご支援します。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#ai-funnel">無料ツールを使ってみる</a>
+          <a class="btn btn-outline" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">公式サイトを見る</a>
         </div>
       </div>
-
-      <div class="grid-3">
-        <div>
-          <label for="gm">限界利益率（%）</label>
-          <input id="gm" type="number" inputmode="decimal" placeholder="例）35" aria-label="限界利益率">
-        </div>
-        <div>
-          <label for="fc">固定費（月額・円）</label>
-          <input id="fc" type="text" inputmode="numeric" placeholder="例）2,500,000" oninput="fmtNum(this)" aria-label="固定費">
-        </div>
-        <div>
-          <label for="needSales">ある支出に必要な売上（円）</label>
-          <input id="needSales" type="text" inputmode="numeric" placeholder="例）8,333,333" oninput="fmtNum(this)" aria-label="必要売上">
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div>
-          <label for="hrs">自動化で削減見込（時間/月）</label>
-          <input id="hrs" type="number" inputmode="decimal" placeholder="例）25" aria-label="削減時間">
-        </div>
-        <div>
-          <label for="ppm">1分あたり人件費（円）</label>
-          <input id="ppm" type="text" inputmode="numeric" placeholder="例）50" oninput="fmtNum(this)" aria-label="1分あたり人件費">
-        </div>
-        <div>
-          <label for="impact">利益インパクト/月（円）</label>
-          <input id="impact" type="text" inputmode="numeric" placeholder="自動計算" readonly aria-readonly="true">
-        </div>
-      </div>
-
-      <div class="cta-row">
-        <button class="btn" type="button" onclick="calcImpact()">利益インパクトを再計算</button>
-        <button class="btn" type="button" onclick="window.print()">印刷 / PDF保存</button>
-      </div>
-      <p class="note">※印刷時はA4縦・余白は「最小」を推奨。</p>
-    </section>
-
-    <!-- 予約 -->
-    <section id="booking" class="panel" aria-label="30分無料相談のご予約">
-      <h2>30分無料相談のご予約</h2>
-      <p class="note">下の「今すぐ予約」から日程をご指定ください。Web会議/来所いずれも可。</p>
-      <div class="cta-row no-print">
-        <a id="calBtn" class="btn primary" target="_blank" rel="noopener"
-           href="https://calendly.com/your-slug/30min">今すぐ予約（外部）</a>
-        <a class="btn" href="#lead">メールで連絡する</a>
-      </div>
-      <p class="note">※自社の予約URLに差し替えてください（上記リンク）。</p>
-    </section>
-
-    <!-- 最小フォーム -->
-    <section id="lead" class="panel" aria-label="結果PDFの受け取りフォーム">
-      <h2>結果PDFの受け取り（最小フォーム）</h2>
-      <form id="leadForm" method="POST" action="https://formspree.io/f/xxxxreplace" class="grid-2" onsubmit="return confirmSubmit()">
-        <div>
-          <label for="f_company">会社名（必須）</label>
-          <input id="f_company" name="company" required placeholder="例）株式会社〇〇" autocomplete="organization">
-        </div>
-        <div>
-          <label for="f_email">メール（必須）</label>
-          <input id="f_email" name="email" type="email" required placeholder="例）xxx@example.co.jp" autocomplete="email">
-        </div>
-        <!-- 体験メモを合わせて送信 -->
-        <input type="hidden" name="memo_gm" id="h_gm">
-        <input type="hidden" name="memo_fc" id="h_fc">
-        <input type="hidden" name="memo_need_sales" id="h_need">
-        <input type="hidden" name="memo_impact" id="h_imp">
-        <button class="btn primary" type="submit">PDFをメールで受け取る</button>
-      </form>
-      <p class="note">※送信先（Formspree 等）のエンドポイントを差し替えてください。Google Apps Scriptで自動返信＋PDF添付も可能。</p>
-    </section>
-
-    <!-- 免責 -->
-    <section class="panel legal" aria-label="免責">
-      <strong>免責</strong>：本LPは体験の呼び水を目的とした一般的な情報提供です。実際の数値・施策は個社事情により異なります。正式な助言は面談にて行います。
-    </section>
-
-    <!-- 追従CTA -->
-    <div class="sticky-cta no-print" role="region" aria-label="追従CTA">
-      <div class="cta-row">
-        <a class="btn primary" href="#booking">30分無料相談を予約</a>
-        <a class="btn" href="#summary">体験結果をPDFに保存</a>
+      <div class="hero-media">
+        <picture>
+          <!-- モバイル用に縦寄りトリミング（安全領域を中央に） -->
+          <source media="(max-width: 640px)" srcset="hero-mk-mobile.jpg" />
+          <!-- デスクトップ用 16:9 横トリミング -->
+          <img src="hero-mk-desktop.jpg" alt="数字を意思決定に変える会計支援のイメージ（松本会計）" loading="eager" fetchpriority="high" />
+        </picture>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 埋め込みプレビュー（モーダル） -->
-  <div id="embedModal" class="hide" aria-hidden="true"
-       style="position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:10px;z-index:50">
-    <div role="dialog" aria-modal="true" aria-label="ツールのページ内プレビュー"
-         style="background:#fff;max-width:980px;width:100%;height:85vh;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(0,0,0,.15)">
-      <div style="padding:8px 10px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--border)">
-        <strong style="flex:1">ツールをページ内で試す（β）</strong>
-        <button class="btn" type="button" onclick="closeEmbed()">閉じる</button>
-        <a id="openNew" class="btn primary" target="_blank" rel="noopener">新規タブで開く</a>
+  <!-- AI Funnel -->
+  <section id="ai-funnel">
+    <div class="container">
+      <h2>“使って分かる” —— 無料AIツール → 課題可視化 → 相談へ</h2>
+      <p class="lead">まずはツールで自社の数字を触ってみてください。数分で“どこを動かせば利益が出るか”が見え、相談の解像度が上がります。</p>
+      <div class="grid grid-3">
+        <div class="card"><h3>① 体験する（無料）</h3><p>価格改定・人件費・費用→売上換算・保険→売上換算・減価償却 などをブラウザで即試算。</p><p style="margin-top:8px"><a class="btn btn-outline" href="https://takatrp.github.io/tool-portal/?utm_source=ai_lp&utm_medium=referral" target="_blank" rel="noopener">ツールポータルを開く</a></p></div>
+        <div class="card"><h3>② 気づきをメモ</h3><p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p></div>
+        <div class="card"><h3>③ 相談する</h3><p>可視化した論点をもとに、導入・運用・継続MASまで設計します。</p><p style="margin-top:8px"><a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry?utm_source=ai_lp&utm_medium=referral" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a></p></div>
       </div>
-      <iframe id="embedFrame" src="about:blank" style="width:100%;height:100%;border:0"></iframe>
     </div>
-  </div>
+  </section>
 
-  <script>
-    // 数字フォーマット（カンマ付与）
-    function fmtNum(el){
-      const raw = (el.value || "").replace(/[^\d.-]/g,"");
-      if(raw === "" || isNaN(Number(raw))) { el.dataset.raw=""; return; }
-      el.dataset.raw = raw;
-      el.value = Number(raw).toLocaleString("ja-JP");
-      syncHidden();
-    }
-    function unformat(v){ return (v||"").toString().replace(/[^\d.-]/g,""); }
+  <!-- Why -->
+  <section id="why">
+    <div class="container">
+      <h2>“記帳はできている。意思決定は加速しているか？”</h2>
+      <p class="lead">遅い月次・属人的判断・勘の価格決定――それらは経営の摩擦です。私たちは、<strong>リアルタイム会計</strong>と<strong>変動損益</strong>、そして<strong>即断を助けるツール</strong>で解消します。</p>
+      <div class="grid grid-3">
+        <div class="card"><h3>鮮度の高い数字</h3><p>銀行・信販データ受信／証憑保存／スマホ経費を活用し、月次の鮮度を“週次〜日次”へ。</p></div>
+        <div class="card"><h3>管理会計ファースト</h3><p>固定費×変動費を分け、限界利益と限界利益率で“どこを動かせば利益が出るか”を即答。</p></div>
+        <div class="card"><h3>運用定着まで伴走</h3><p>毎月の予実レビューと四半期の業績検討会で、打ち手を具体化（<a class="underline-link" href="#refs">継続MAS</a>）。</p></div>
+      </div>
+    </div>
+  </section>
 
-    // 利益インパクト計算（hrs×60×ppm）
-    function calcImpact(){
-      const hrs = parseFloat(document.getElementById("hrs").value || "0");
-      const ppm = Number(unformat(document.getElementById("ppm").value)) || 0;
-      const yen = Math.max(0, Math.round(hrs*60*ppm));
-      document.getElementById("impact").value = yen ? yen.toLocaleString("ja-JP") : "";
-      syncHidden();
-    }
+  <!-- Approach -->
+  <section id="approach">
+    <div class="container">
+      <h2>解決アプローチ｜3本柱</h2>
+      <div class="grid grid-3">
+        <div class="card"><h3>1. 自計化×リアルタイム</h3><p>社内で帳簿を付ける“自計化”を標準に。データ連携で“遅い月次”からの脱却。</p></div>
+        <div class="card"><h3>2. 管理会計×変動PL</h3><p>限界利益（率）を軸に、価格×数量×原価の3要素で意思決定を設計。</p></div>
+        <div class="card"><h3>3. 継続伴走×ツール</h3><p>毎月の対話と専用ツールで、施策の実行と検証を高速に回します。</p></div>
+      </div>
+    </div>
+  </section>
 
-    // 隠し項目へ同期（フォーム送信時用）
-    function syncHidden(){
-      const gm   = document.getElementById("gm").value || "";
-      const fc   = unformat(document.getElementById("fc").value) || "";
-      const need = unformat(document.getElementById("needSales").value) || "";
-      const imp  = unformat(document.getElementById("impact").value) || "";
-      document.getElementById("h_gm").value   = gm;
-      document.getElementById("h_fc").value   = fc;
-      document.getElementById("h_need").value = need;
-      document.getElementById("h_imp").value  = imp;
-    }
-    ["gm","fc","needSales","impact","hrs","ppm"].forEach(id=>{
-      const el = document.getElementById(id);
-      if(el) el.addEventListener("input", syncHidden);
-    });
+  <!-- Tools -->
+  <section id="tools">
+    <div class="container">
+      <h2>意思決定に直結する“所内開発ツール”</h2>
+      <p class="lead">課題に合わせて所内で即時改良。スマホ対応・軽量・実務特化。</p>
+      <div class="card">
+        <div>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=price-impact&utm_source=ai_lp" target="_blank" rel="noopener">価格改定インパクト試算</a>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=hr-cost-visual&utm_source=ai_lp" target="_blank" rel="noopener">人件費 見える化</a>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=expense-to-sales&utm_source=ai_lp" target="_blank" rel="noopener">費用→必要売上 換算</a>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=insurance-to-sales&utm_source=ai_lp" target="_blank" rel="noopener">保険→必要売上 換算</a>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=depreciation-used&utm_source=ai_lp" target="_blank" rel="noopener">減価償却・中古簡便法</a>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=interest-dividend-tax&utm_source=ai_lp" target="_blank" rel="noopener">受取利息・配当 源泉税</a>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=automation-roi&utm_source=ai_lp" target="_blank" rel="noopener">自動化効果 試算</a>
+          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=variable-pl-ball&utm_source=ai_lp" target="_blank" rel="noopener">ボールで学ぶ 変動PL</a>
+        </div>
+        <p style="margin-top:8px;color:var(--muted)">※ 各リンクはツールポータル内の該当カード（またはトップ）に遷移します。実演は面談でご案内します。</p>
+        <p style="margin-top:8px"><a class="btn btn-outline" href="https://takatrp.github.io/tool-portal/?utm_source=ai_lp" target="_blank" rel="noopener">ツールをもっと見る</a></p>
+      </div>
+    </div>
+  </section>
 
-    // フォーム送信確認
-    function confirmSubmit(){
-      syncHidden();
-      return confirm("PDF送付をリクエストします。よろしいですか？");
-    }
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <h2>伴走プロセス</h2>
+      <div class="process">
+        <div class="step"><div class="num">1</div><div><strong>現状診断</strong><br><span class="lead">会計データ×ヒアリングでボトルネックを特定</span></div></div>
+        <div class="step"><div class="num">2</div><div><strong>KPI設計</strong><br><span class="lead">限界利益・固定費・資金を指標化（価格/数量/原価）</span></div></div>
+        <div class="step"><div class="num">3</div><div><strong>仕組み化</strong><br><span class="lead">自計化・証憑・データ受信の標準化</span></div></div>
+        <div class="step"><div class="num">4</div><div><strong>継続MAS×月次対話</strong><br><span class="lead">予実差異レビュー／四半期 業績検討会／決算事前検討会</span></div></div>
+        <div class="step"><div class="num">5</div><div><strong>打ち手の実行と検証</strong><br><span class="lead">価格・人件費・投資のアクションをツールで検証</span></div></div>
+      </div>
+    </div>
+  </section>
 
-    // 埋め込みモーダル
-    function openEmbed(url){
-      const modal = document.getElementById("embedModal");
-      const frame = document.getElementById("embedFrame");
-      const openNew = document.getElementById("openNew");
-      openNew.href = url;
-      frame.src = url;
-      modal.classList.remove("hide");
-      modal.setAttribute("aria-hidden","false");
-      document.addEventListener("keydown", escClose);
-      modal.addEventListener("click", overlayClose);
-    }
-    function closeEmbed(){
-      const modal = document.getElementById("embedModal");
-      const frame = document.getElementById("embedFrame");
-      frame.src = "about:blank";
-      modal.classList.add("hide");
-      modal.setAttribute("aria-hidden","true");
-      document.removeEventListener("keydown", escClose);
-      modal.removeEventListener("click", overlayClose);
-    }
-    function escClose(e){ if(e.key === "Escape") closeEmbed(); }
-    function overlayClose(e){ if(e.target.id === "embedModal") closeEmbed(); }
-  </script>
+  <!-- Results -->
+  <section id="results">
+    <div class="container">
+      <h2>実績・比較（ベンチマーク）</h2>
+      <div class="result-box">
+        <div class="result"><strong>所内 黒字申告割合：<span style="font-size:20px">約65%</span></strong><br><span class="lead">※ 内部集計（期間・対象は面談時に開示）</span></div>
+        <div class="result">全国平均（令和5事務年度）：<strong>36.0%</strong><br><span class="lead">国税庁公表統計に基づく（詳細は下部「参考出典」へ）</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2>よくある質問</h2>
+      <details>
+        <summary>記帳代行から自計化へ移行するメリットは？</summary>
+        <div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で“どこを動かせばよいか”を即判断できます。</div>
+      </details>
+      <details>
+        <summary>継続MASとは何をするのですか？</summary>
+        <div class="content">中期・短期の計画策定、月次の予実検証、四半期の業績検討会、決算事前検討会まで“仕組み化”された伴走です（詳細は下部の出典リンク参照）。</div>
+      </details>
+      <details>
+        <summary>ツールは自社向けにカスタマイズできますか？</summary>
+        <div class="content">可能です。実務に合わせて所内で改修し、運用定着まで伴走します。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="container">
+    <div class="cta-band">
+      <div style="font-size:20px;font-weight:700">まずは“現状診断”から。</div>
+      <div class="lead" style="color:#e2e8f0">数字の鮮度・限界利益・固定費の構造を30分で可視化し、最初の一手を一緒に描きます。</div>
+      <a class="btn" href="#contact">オンライン相談を予約</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>ご相談・お問い合わせ</h2>
+      <div class="card">
+        <p class="lead" style="margin-bottom:8px">オンライン／来所どちらも対応可能です。<strong>公式サイトの専用フォーム</strong>からお送りください（reCAPTCHA対応）。</p>
+        <p><a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry?utm_source=ai_lp&utm_medium=referral" target="_blank" rel="noopener">お問い合わせ（公式フォームへ）</a></p>
+        <ul style="margin:10px 0 0 18px;color:var(--muted)">
+          <li>お急ぎの方はお電話：境港 <a class="underline-link" href="tel:0859446195">0859-44-6195</a> ／ 神戸 <a class="underline-link" href="tel:0782422177">078-242-2177</a></li>
+          <li>公式サイト：<a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">www.matsumoto-kaikei.or.jp</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Refs & Footer -->
+  <section id="refs" class="refs container">
+    <div class="card" style="background:#f8fafc">
+      <div><strong>参考出典</strong></div>
+      <ol style="margin-top:8px">
+        <li>TKC「継続MASシステム」… 四半期ごとの業績検討会・月次の実績差異検証の説明 <a href="https://www.tkc.jp/ao/system/kmas" target="_blank" rel="noopener">公式ページ</a></li>
+        <li>国税庁「令和5事務年度 法人税等の申告（課税）事績の概要」… 黒字申告割合 36.0%（資料 別表2） <a href="https://www.nta.go.jp/information/release/kokuzeicho/2024/hojin_shinkoku/pdf/hojin_shinkoku.pdf" target="_blank" rel="noopener">PDF</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="credit">Copyright (c) 2025 <a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">税理士法人松本会計事務所</a>. All Rights Reserved.</div>
+    </div>
+  </footer>
 </body>
 </html>
