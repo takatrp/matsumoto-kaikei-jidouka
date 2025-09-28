@@ -90,7 +90,7 @@
     footer{padding:24px 0 68px;color:#475569}
     footer .credit{font-size:13px}
 
-    /* Mobile bottom CTA bar */
+    /* Mobile bottom CTA bar & responsive nav */
     .mobile-cta{display:none}
     @media(max-width:740px){
       .nav-toggle{display:inline-flex}
@@ -163,16 +163,34 @@
     </div>
   </section>
 
-  <!-- AI Funnel -->
+  <!-- AI Funnel（代表ツール3種を実動） -->
   <section id="ai-funnel">
     <div class="container">
       <h2>限界利益率✕独自無料ツールで、スマホをあなたの参謀に。</h2>
       <p class="lead">まずはツールで自社の数字を触ってください。数分で“どこを動かせば利益が出るか”が見え、相談の解像度が上がります。<br>
-      <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small></p>
+        <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
+      </p>
+
+      <!-- 代表ツール（実動） -->
+      <div class="cta-row" style="margin-bottom:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" target="_blank" rel="noopener"
+           href="https://takatrp.github.io/tool-portal/?tool=price-impact&utm_source=mka_lp&utm_medium=cta&utm_campaign=top3">
+          価格改定インパクト試算
+        </a>
+        <a class="btn btn-outline" target="_blank" rel="noopener"
+           href="https://takatrp.github.io/jidouka-kouka/?utm_source=mka_lp&utm_medium=cta&utm_campaign=top3">
+          自動化効果（ROI）試算
+        </a>
+        <a class="btn btn-outline" target="_blank" rel="noopener"
+           href="https://takatrp.github.io/tool-portal/?tool=variable-pl-ball&utm_source=mka_lp&utm_medium=cta&utm_campaign=top3">
+          ボールで学ぶ変動損益計算書
+        </a>
+      </div>
+
       <div class="grid grid-3">
         <div class="card">
           <h3>① 体験する（無料）</h3>
-          <p>価格改定・人件費・費用→売上換算・保険→売上換算・減価償却 などをブラウザで即試算。</p>
+          <p>上の3ツールはそのまま動きます。その他のツールもポータルから確認可能です。</p>
           <p style="margin-top:8px">
             <a class="btn btn-outline" href="https://takatrp.github.io/tool-portal/?utm_source=mka_lp&utm_medium=referral&utm_campaign=funnel" target="_blank" rel="noopener">ツールポータルを開く</a>
           </p>
@@ -204,7 +222,7 @@
     </div>
   </section>
 
-  <!-- Tools -->
+  <!-- Tools（一覧） -->
   <section id="tools">
     <div class="container">
       <h2>意思決定に直結する“所内開発ツール”</h2>
@@ -342,7 +360,6 @@
         nav.style.display = open ? 'none' : 'flex';
         btn.setAttribute('aria-expanded', String(!open));
       });
-      // 画面幅が戻った時の復元
       const mq = window.matchMedia('(min-width: 741px)');
       mq.addEventListener('change', e => { nav.style.display = e.matches ? 'flex' : 'none'; });
     }
