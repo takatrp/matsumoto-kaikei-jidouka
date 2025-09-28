@@ -20,7 +20,7 @@
     header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid #e2e8f0}
     header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:12px}
-    .logo img{height:48px;width:auto;display:block}
+    .logo img{height:60px;width:auto;display:block}
     nav a{margin-left:20px;color:var(--muted);font-size:14px}
     nav a:hover{color:var(--brand-700)}
 
@@ -67,6 +67,11 @@
     /* モバイル時は画像をトリミングせず縮小表示 */
   @media(max-width:640px){
     .hero-wrap{grid-template-columns:1fr}
+    .hero-media{min-height:initial;overflow:visible}
+    .hero-media picture{display:block;max-width:100%}
+    .hero-media img{display:block;max-width:100%;width:100%;height:auto !important;object-fit:contain !important;aspect-ratio:auto}
+    .hero-media::after{display:none}
+  }
     .hero-media{min-height:auto;overflow:visible}
     .hero-media picture, .hero-media img{width:100%;height:auto;object-fit:contain}
     .hero-media::after{display:none}
@@ -91,7 +96,7 @@
     <div class="container inner">
       <a class="logo" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">
         <img src="ロゴ.jpg" alt="税理士法人松本会計 ロゴ"/>
-        <img src="松本会計.png" alt="税理士法人松本会計" style="height:24px;width:auto;display:block"/>
+        <img src="松本会計.png" alt="税理士法人松本会計" style="height:60px;width:auto;display:block"/>
       </a>
       <nav>
         <a href="#why">必要性</a>
