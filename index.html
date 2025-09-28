@@ -67,6 +67,11 @@
     /* モバイル時は画像をトリミングせず縮小表示 */
   @media(max-width:640px){
     .hero-wrap{grid-template-columns:1fr}
+    .hero-media{min-height:initial;overflow:hidden;border-radius:20px}
+    .hero-media picture{display:block;max-width:100%}
+    .hero-media img{display:block;max-width:100%;width:100%;height:auto !important;object-fit:contain !important}
+    .hero-media::after{display:none}
+  }
     .hero-media{min-height:initial;overflow:visible}
     .hero-media picture{display:block;max-width:100%}
     .hero-media img{display:block;max-width:100%;width:100%;height:auto !important;object-fit:contain !important;aspect-ratio:auto}
@@ -133,9 +138,7 @@
       </div>
       <div class="hero-media">
         <picture>
-          <!-- モバイル用に縦寄りトリミング（安全領域を中央に） -->
-          <source media="(max-width: 640px)" srcset="hero-mk-mobile.jpg" />
-          <!-- デスクトップ用 16:9 横トリミング -->
+          <!-- モバイルでも同じ画像を使用し、縦横比を維持して縮小表示 -->
           <img src="hero-mk-desktop.jpg" alt="数字を意思決定に変える会計支援のイメージ（松本会計）" loading="eager" fetchpriority="high" />
         </picture>
       </div>
