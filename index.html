@@ -6,6 +6,8 @@
   <title>無料AIツールで意思決定を加速｜税理士法人松本会計</title>
   <meta name="description" content="自計化 × 管理会計 × 継続伴走 × 自社開発AIツールで、社長の“今日の意思決定”を支える会計事務所。限界利益・価格改定・人件費・投資回収を、毎月の対話とツールで意思決定につなげます。">
   <link rel="icon" type="image/png" href="favicon192192.png" sizes="192x192" />
+  <link rel="shortcut icon" href="favicon192192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="favicon192192.png" />
   <style>
     :root{
       --brand:#578899; --brand-600:#497485; --brand-700:#3e6473; --ink:#0f172a; --muted:#64748b; --bg:#f8fafc; --card:#ffffff; --accent:#e6eff3;
@@ -62,6 +64,13 @@
     footer .credit{font-size:13px}
     .refs{font-size:12px;color:#64748b;margin-top:12px}
     .refs a{color:inherit;text-decoration:underline}
+    /* モバイル時は画像をトリミングせず縮小表示 */
+  @media(max-width:640px){
+    .hero-wrap{grid-template-columns:1fr}
+    .hero-media{min-height:auto;overflow:visible}
+    .hero-media picture, .hero-media img{width:100%;height:auto;object-fit:contain}
+    .hero-media::after{display:none}
+  }
   </style>
   <style>
     /* 追加: ヒーロー画像用 */
@@ -82,7 +91,7 @@
     <div class="container inner">
       <a class="logo" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">
         <img src="ロゴ.jpg" alt="税理士法人松本会計 ロゴ"/>
-        <span style="font-weight:700;color:var(--brand-700);font-size:14px">税理士法人松本会計</span>
+        <img src="松本会計.png" alt="税理士法人松本会計" style="height:24px;width:auto;display:block"/>
       </a>
       <nav>
         <a href="#why">必要性</a>
@@ -147,7 +156,7 @@
       <div class="cta-band">
         <div style="font-size:20px;font-weight:700">会計の“自動化”で、月次の遅れと手戻りを削減。</div>
         <div class="lead" style="color:#e2e8f0">銀行・信販データ受信／証憑保存／スマホ経費／ワークフロー自動化を整備し、入力を“集計”から“意思決定”へ。</div>
-        <a class="btn" href="https://takatrp.github.io/tool-portal/?tool=automation-roi&utm_source=ai_lp" target="_blank" rel="noopener">自動化効果を試算する</a>
+        <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
       </div>
     </div>
   </section>
