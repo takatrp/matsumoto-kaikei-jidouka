@@ -5,37 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
   <title>TKCシステム×オリジナルツールで、今日の意思決定を加速。｜税理士法人松本会計</title>
   <meta name="description" content="オリジナルツールで、スマホをあなたの参謀に。リアルタイム会計×自動化×管理会計×継続伴走で、黒字を増やす意思決定を支援します。" />
-  <link rel="canonical" href="https://takatrp.github.io/matsumoto-kaikei-jidouka/"/>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon192192.png" sizes="192x192" />
   <link rel="shortcut icon" type="image/png" href="favicon192192.png" />
   <link rel="apple-touch-icon" href="favicon192192.png" />
-
-  <!-- Preload LCP image -->
   <link rel="preload" as="image" href="hero-mk-desktop.jpg" imagesrcset="hero-mk-desktop.jpg 1x" />
-
-  <!-- OG / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="TKCシステム×オリジナルツールで、今日の意思決定を加速。">
   <meta property="og:description" content="オリジナルツールで、スマホをあなたの参謀に。">
   <meta property="og:image" content="https://takatrp.github.io/matsumoto-kaikei-jidouka/hero-mk-desktop.jpg">
   <meta property="og:url" content="https://takatrp.github.io/matsumoto-kaikei-jidouka/">
   <meta name="twitter:card" content="summary_large_image">
-
   <style>
-    :root{
-      --brand:#578899; --brand-600:#497485; --brand-700:#3e6473;
-      --ink:#0f172a; --muted:#64748b; --bg:#f8fafc; --card:#ffffff; --accent:#e6eff3;
-      --shadow:0 2px 6px rgba(0,0,0,.06);
-    }
+    :root{--brand:#578899;--brand-600:#497485;--brand-700:#3e6473;--ink:#0f172a;--muted:#64748b;--bg:#f8fafc;--card:#ffffff;--accent:#e6eff3;--shadow:0 2px 6px rgba(0,0,0,.06)}
     *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN",Meiryo,system-ui,sans-serif;color:var(--ink);background:var(--bg);}
+    html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN",Meiryo,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
     a{color:inherit;text-decoration:none}
     .underline-link{text-decoration:underline}
     .container{max-width:1120px;margin:0 auto;padding:0 16px}
 
-    /* Header */
     header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e2e8f0}
     header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:10px}
@@ -44,11 +31,9 @@
     nav{display:flex;align-items:center;gap:20px}
     nav a{color:var(--muted);font-size:14px}
     nav a:hover{color:var(--brand-700)}
-    /* Hamburger */
     .nav-toggle{display:none;appearance:none;background:#fff;border:1px solid #cbd5e1;border-radius:10px;padding:8px 10px;box-shadow:var(--shadow)}
     .nav-toggle span{display:block;width:20px;height:2px;background:#334155;margin:4px 0;border-radius:1px}
 
-    /* Hero */
     .hero{padding:56px 0 24px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:16px;align-items:center}
     @media(min-width:960px){.hero-wrap{grid-template-columns:1.1fr .9fr}}
@@ -58,11 +43,10 @@
     .sub{color:var(--muted);font-size:16px;line-height:1.7;max-width:760px}
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:14px;font-weight:600;border:1px solid transparent;box-shadow:var(--shadow);min-height:44px}
-    .btn-primary{background:var(--brand);color:#fff}
-    .btn-primary:hover{background:var(--brand-600)}
+    .btn-primary{background:var(--brand);color:#fff}.btn-primary:hover{background:var(--brand-600)}
     .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-    .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain} /* 縦横比維持 */
+    .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
     section{padding:48px 0}
     h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 18px}
@@ -70,27 +54,20 @@
     .grid{display:grid;gap:16px}
     @media(min-width:740px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}}
     .card{background:var(--card);border:1px solid #e2e8f0;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-    .card h3{font-size:18px;margin:0 0 8px}
-    .card p{margin:0;color:var(--muted);line-height:1.7}
+    .card h3{font-size:18px;margin:0 0 8px}.card p{margin:0;color:var(--muted);line-height:1.7}
     .tool-pill{font-size:13px;border:1px solid #e2e8f0;background:#fff;border-radius:999px;padding:8px 12px;display:inline-block;margin:6px 6px 0 0}
 
-    .process{counter-reset:step}
-    .step{display:flex;gap:12px;margin:14px 0;align-items:flex-start}
+    .process{counter-reset:step}.step{display:flex;gap:12px;margin:14px 0;align-items:flex-start}
     .step .num{min-width:36px;height:36px;border-radius:999px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
 
-    .result-box{display:grid;gap:12px}
-    .result{background:#fff;border:1px dashed #cbd5e1;border-radius:16px;padding:14px}
-
+    .result-box{display:grid;gap:12px}.result{background:#fff;border:1px dashed #cbd5e1;border-radius:16px;padding:14px}
     .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:10px}
     .faq summary{cursor:pointer;font-weight:600}
-
     .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
     .cta-band .btn{background:#fff;color:var(--brand-700)}
+    footer{padding:24px 0 68px;color:#475569}.credit{font-size:13px}
 
-    footer{padding:24px 0 68px;color:#475569}
-    footer .credit{font-size:13px}
-
-    /* Mobile bottom CTA bar & responsive nav */
+    /* モバイル固定CTA & ナビ */
     .mobile-cta{display:none}
     @media(max-width:740px){
       .nav-toggle{display:inline-flex}
@@ -99,21 +76,35 @@
       .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px}
       .mobile-cta .btn{flex:1}
     }
+
+    /* ▼ スマホ利用イメージ：横スクロール + PCグリッド + ライトボックス */
+    .screens{overflow:hidden}
+    .screens-track{
+      display:grid;grid-auto-flow:column;grid-auto-columns:80%;
+      gap:12px;overflow-x:auto;padding:6px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch
+    }
+    .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
+    .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
+    .screen figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+    @media(min-width:900px){
+      .screens-track{grid-auto-flow:initial;grid-template-columns:repeat(5,1fr);overflow:visible}
+    }
+    /* ライトボックス */
+    #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:80;align-items:center;justify-content:center;padding:20px}
+    #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="container inner">
       <a class="logo" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener" aria-label="税理士法人松本会計 公式サイトへ">
         <img class="mark" src="ロゴ.jpg" alt="税理士法人松本会計 ロゴ">
         <img class="word" src="松本会計.png" alt="税理士法人松本会計 ワードマーク">
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
       <nav id="site-nav" aria-label="グローバルナビ">
         <a href="#ai-funnel">無料ツール</a>
+        <a href="#mobile-screens">スマホUI</a>
         <a href="#approach">アプローチ</a>
         <a href="#tools">ツール一覧</a>
         <a href="#automation">自動化</a>
@@ -126,89 +117,88 @@
     </div>
   </header>
 
-  <!-- Mobile bottom CTA bar -->
   <div class="mobile-cta" role="region" aria-label="固定アクション">
     <a class="btn btn-outline" href="https://takatrp.github.io/tool-portal/" target="_blank" rel="noopener">無料ツール</a>
     <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">相談する</a>
   </div>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container hero-wrap">
       <div>
         <div class="badge">
-          <span class="chip">自計化支援</span>
-          <span class="chip">変動損益（限界利益）</span>
-          <span class="chip">継続MAS×月次対話</span>
-          <span class="chip">自動化×効率化</span>
-          <span class="chip">自社開発AI/アプリ</span>
-          <span class="chip">無料ツールあり</span>
+          <span class="chip">自計化支援</span><span class="chip">変動損益（限界利益）</span>
+          <span class="chip">継続MAS×月次対話</span><span class="chip">自動化×効率化</span>
+          <span class="chip">自社開発AI/アプリ</span><span class="chip">無料ツールあり</span>
         </div>
         <h1>TKCシステム×オリジナルツールで、今日の意思決定を加速。</h1>
         <p class="sub">“お客様企業の繁栄は私たちの喜び”——<strong>リアルタイム会計×自動化×管理会計×継続伴走</strong>に、所内開発のAIツール群を組み合わせ、黒字経営を強力にご支援します。</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#ai-funnel">無料ツールを使ってみる</a>
-          <!-- 要望により「公式サイトを見る」ボタンを削除 -->
         </div>
       </div>
       <div class="hero-media">
-        <!-- 同一画像をSP/PCで縮小表示（縦横比維持） -->
-        <img src="hero-mk-desktop.jpg"
-             alt="松本会計：数字を意思決定へつなぐ支援イメージ"
-             loading="eager" fetchpriority="high"
-             width="1920" height="1080"
-             srcset="hero-mk-desktop.jpg 1920w, hero-mk-desktop.jpg 1280w"
-             sizes="(max-width:640px) 100vw, 56vw">
+        <img src="hero-mk-desktop.jpg" alt="松本会計：数字を意思決定へつなぐ支援イメージ" loading="eager" fetchpriority="high"
+             width="1920" height="1080" srcset="hero-mk-desktop.jpg 1920w, hero-mk-desktop.jpg 1280w" sizes="(max-width:640px) 100vw, 56vw">
       </div>
     </div>
   </section>
 
-  <!-- AI Funnel（代表ツール3種を実動） -->
+  <!-- AI Funnel（代表ツール3種） -->
   <section id="ai-funnel">
     <div class="container">
       <h2>オリジナルツールで、スマホをあなたの参謀に。</h2>
       <p class="lead">まずはツールで自社の数字を触ってください。数分で“どこを動かせば利益が出るか”が見え、相談の解像度が上がります。<br>
         <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
       </p>
-
-      <!-- 代表ツール（実動） -->
       <div class="cta-row" style="margin-bottom:12px;flex-wrap:wrap">
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://takatrp.github.io/price-up-down/">
-          価格改定インパクト試算
-        </a>
-        <a class="btn btn-outline" target="_blank" rel="noopener"
-           href="https://takatrp.github.io/jidouka-kouka/">
-          自動化効果（ROI）試算
-        </a>
-        <a class="btn btn-outline" target="_blank" rel="noopener"
-           href="https://takatrp.github.io/hendou_PL/">
-          ボールで学ぶ変動損益計算書
-        </a>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定インパクト試算</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">自動化効果（ROI）試算</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/hendou_PL/">ボールで学ぶ変動損益計算書</a>
       </div>
-
       <div class="grid grid-3">
+        <div class="card"><h3>① 体験する（無料）</h3><p>上の3ツールはそのまま動きます。</p></div>
+        <div class="card"><h3>② 気づきをメモ</h3><p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p></div>
         <div class="card">
-          <h3>① 体験する（無料）</h3>
-          <p>上の3ツールはそのまま動きます。</p>
-          <!-- 要望により「ツールポータルを開く」ボタンを削除 -->
-        </div>
-        <div class="card">
-          <h3>② 気づきをメモ</h3>
-          <p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p>
-        </div>
-        <div class="card">
-          <h3>③ 相談する</h3>
-          <p>可視化した論点をもとに、導入・運用を設計します。</p>
-          <p style="margin-top:8px">
-            <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a>
-          </p>
+          <h3>③ 相談する</h3><p>可視化した論点をもとに、導入・運用を設計します。</p>
+          <p style="margin-top:8px"><a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Approach -->
+  <!-- ▼ スマホ利用イメージ：横スクロール（PCはグリッド） -->
+  <section id="mobile-screens">
+    <div class="container">
+      <h2>スマホでさっと試算。現場で意思決定。</h2>
+      <p class="lead">ポータルから各ツールへ。入力→数分で結果が見えます。現場でも“数字で会話”できます。</p>
+      <div class="screens">
+        <div class="screens-track">
+          <figure class="screen">
+            <img src="iPhoneモック0.png" alt="オリジナルツールポータルのスマホ画面" loading="lazy" decoding="async" draggable="false">
+            <figcaption>ツールポータル</figcaption>
+          </figure>
+          <figure class="screen">
+            <img src="iPhoneモック1.png" alt="費用→必要売上換算ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
+            <figcaption>費用→必要売上 換算</figcaption>
+          </figure>
+          <figure class="screen">
+            <img src="iPhoneモック2.png" alt="受取利息・受取配当の源泉税 自動表示ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
+            <figcaption>受取利息・配当 源泉税</figcaption>
+          </figure>
+          <figure class="screen">
+            <img src="iPhoneモック3.png" alt="価格改定検討ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
+            <figcaption>価格改定インパクト</figcaption>
+          </figure>
+          <figure class="screen">
+            <img src="iPhoneモック4.png" alt="人件費見える化ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
+            <figcaption>人件費 見える化</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 以降は従来どおり -->
   <section id="approach">
     <div class="container">
       <h2>解決アプローチ｜3本柱</h2>
@@ -220,7 +210,6 @@
     </div>
   </section>
 
-  <!-- Tools（一覧） -->
   <section id="tools">
     <div class="container">
       <h2>意思決定に直結する“所内開発ツール”</h2>
@@ -241,7 +230,6 @@
     </div>
   </section>
 
-  <!-- Automation Promo -->
   <section id="automation">
     <div class="container">
       <div class="cta-band">
@@ -252,7 +240,6 @@
     </div>
   </section>
 
-  <!-- Process -->
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
@@ -266,7 +253,6 @@
     </div>
   </section>
 
-  <!-- Results -->
   <section id="results">
     <div class="container">
       <h2>実績・比較（ベンチマーク）</h2>
@@ -277,26 +263,15 @@
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
-      <details>
-        <summary>記帳代行から自計化へ移行するメリットは？</summary>
-        <div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で“どこを動かせばよいか”を即判断できます。</div>
-      </details>
-      <details>
-        <summary>継続MASとは何をするのですか？</summary>
-        <div class="content">中期・短期の計画策定、月次の予実検証、四半期の業績検討会、決算事前検討会まで“仕組み化”された伴走です。</div>
-      </details>
-      <details>
-        <summary>ツールは自社向けにカスタマイズできますか？</summary>
-        <div class="content">可能です。実務に合わせて所内で改修し、運用定着まで伴走します。</div>
-      </details>
+      <details><summary>記帳代行から自計化へ移行するメリットは？</summary><div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で“どこを動かせばよいか”を即判断できます。</div></details>
+      <details><summary>継続MASとは何をするのですか？</summary><div class="content">中期・短期の計画策定、月次の予実検証、四半期の業績検討会、決算事前検討会まで“仕組み化”された伴走です。</div></details>
+      <details><summary>ツールは自社向けにカスタマイズできますか？</summary><div class="content">可能です。実務に合わせて所内で改修し、運用定着まで伴走します。</div></details>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <h2>ご相談・お問い合わせ</h2>
@@ -306,47 +281,27 @@
         <ul style="margin:10px 0 0 18px;color:var(--muted)">
           <li>お急ぎの方はお電話：境港 <a class="underline-link" href="tel:0859446195">0859-44-6195</a> ／ 神戸 <a class="underline-link" href="tel:0782422177">078-242-2177</a></li>
           <li>公式サイト：<a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">www.matsumoto-kaikei.or.jp</a></li>
-          <li>個人情報の取扱い：<a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/#privacy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="credit">Copyright (c) 2025 <a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">税理士法人松本会計事務所</a>. All Rights Reserved.</div>
-    </div>
-  </footer>
+  <footer><div class="container"><div class="credit">Copyright (c) 2025 <a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">税理士法人松本会計事務所</a>. All Rights Reserved.</div></div></footer>
 
-  <!-- FAQ構造化データ（そのまま） -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"記帳代行から自計化へ移行するメリットは？",
-       "acceptedAnswer":{"@type":"Answer","text":"意思決定の速度と再現性が上がります。変動損益（限界利益・率）で即判断できます。"}},
-      {"@type":"Question","name":"継続MASとは？",
-       "acceptedAnswer":{"@type":"Answer","text":"中期・短期の計画策定、月次の予実検証、四半期の業績検討会、決算事前検討会までを“仕組み化”した伴走です。"}},
-      {"@type":"Question","name":"ツールは自社向けにカスタマイズ可能？",
-       "acceptedAnswer":{"@type":"Answer","text":"可能です。実務に合わせて所内で改修し、運用定着まで伴走します。"}}
-    ]
-  }
-  </script>
+  <!-- Lightbox -->
+  <div id="lightbox" aria-hidden="true"><img src="" alt="拡大表示"></div>
 
-  <!-- Small JS: hamburger toggle -->
+  <!-- 小さなJS -->
   <script>
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('site-nav');
-    if(btn && nav){
-      btn.addEventListener('click', () => {
-        const open = nav.style.display === 'flex';
-        nav.style.display = open ? 'none' : 'flex';
-        btn.setAttribute('aria-expanded', String(!open));
-      });
-      const mq = window.matchMedia('(min-width: 741px)');
-      mq.addEventListener('change', e => { nav.style.display = e.matches ? 'flex' : 'none'; });
-    }
+    const btn=document.querySelector('.nav-toggle');const nav=document.getElementById('site-nav');
+    if(btn&&nav){btn.addEventListener('click',()=>{const o=nav.style.display==='flex';nav.style.display=o?'none':'flex';btn.setAttribute('aria-expanded',String(!o));});
+      const mq=window.matchMedia('(min-width: 741px)');mq.addEventListener('change',e=>{nav.style.display=e.matches?'flex':'none';});}
+    // Lightbox
+    const lb=document.getElementById('lightbox');const lbImg=lb.querySelector('img');
+    document.querySelectorAll('.screen img').forEach(img=>{
+      img.addEventListener('click',()=>{lbImg.src=img.src;lb.style.display='flex';lb.setAttribute('aria-hidden','false');});
+    });
+    lb.addEventListener('click',e=>{ if(e.target===lb){ lb.style.display='none'; lb.setAttribute('aria-hidden','true'); lbImg.src=''; }});
   </script>
 </body>
 </html>
