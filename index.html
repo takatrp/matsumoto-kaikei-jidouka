@@ -110,7 +110,7 @@
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
     .screen figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
     @media(min-width:900px){
-      .screens-track{grid-auto-flow:initial;grid-template-columns:repeat(6,1fr);overflow:visible} /* ← 6枚に最適化 */
+      .screens-track{grid-auto-flow:initial;grid-template-columns:repeat(5,1fr);overflow:visible} /* ← 5枚 */
     }
 
     /* ライトボックス */
@@ -133,7 +133,7 @@
         <a href="#ai-funnel">無料ツール</a>
         <a href="#mobile-screens">スマホUI</a>
         <a href="#approach">アプローチ</a>
-        <a href="#tools">ツール一覧</a>
+        <!-- ツール一覧リンクは削除 -->
         <a href="#automation">自動化</a>
         <a href="#process">伴走</a>
         <a href="#results">実績</a>
@@ -169,7 +169,6 @@
         </div>
       </div>
       <div class="hero-media">
-        <!-- 同一画像をSP/PCで縮小表示（縦横比維持） -->
         <img src="hero-mk-desktop.jpg"
              alt="松本会計：数字を意思決定へつなぐ支援イメージ"
              loading="eager" fetchpriority="high"
@@ -188,20 +187,10 @@
         <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
       </p>
 
-      <!-- 代表ツール（実動） -->
       <div class="cta-row" style="margin-bottom:12px;flex-wrap:wrap">
-        <a class="btn btn-primary" target="_blank" rel="noopener"
-           href="https://takatrp.github.io/price-up-down/">
-          価格改定インパクト試算
-        </a>
-        <a class="btn btn-outline" target="_blank" rel="noopener"
-           href="https://takatrp.github.io/jidouka-kouka/">
-          自動化効果（ROI）試算
-        </a>
-        <a class="btn btn-outline" target="_blank" rel="noopener"
-           href="https://takatrp.github.io/hendou_PL/">
-          ボールで学ぶ変動損益計算書
-        </a>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定インパクト試算</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">自動化効果（ROI）試算</a>
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/hendou_PL/">ボールで学ぶ変動損益計算書</a>
       </div>
 
       <div class="grid grid-3">
@@ -224,10 +213,10 @@
     </div>
   </section>
 
-  <!-- ▼ スマホ＆PC利用イメージ（横スクロール／PCは6枚グリッド） -->
+  <!-- スマホ利用イメージ（横スクロール／PCは5枚グリッド） -->
   <section id="mobile-screens">
     <div class="container">
-      <h2>スマホでさっと試算。PCでも本格運用。</h2>
+      <h2>スマホでさっと試算。現場で意思決定。</h2>
       <p class="lead">ポータルから各ツールへ。入力→数分で結果が見えます。現場でも“数字で会話”できます。</p>
       <div class="screens">
         <div class="screens-track">
@@ -251,11 +240,6 @@
             <img src="iPhoneモック4.png" alt="人件費見える化ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
             <figcaption>人件費 見える化</figcaption>
           </figure>
-          <!-- 追加：PCモック -->
-          <figure class="screen">
-            <img src="PCモックアップ.png" alt="オリジナルツールのPC画面モックアップ" loading="lazy" decoding="async" draggable="false">
-            <figcaption>PC版モックアップ</figcaption>
-          </figure>
         </div>
       </div>
     </div>
@@ -273,26 +257,7 @@
     </div>
   </section>
 
-  <!-- Tools（一覧） -->
-  <section id="tools">
-    <div class="container">
-      <h2>意思決定に直結する“所内開発ツール”</h2>
-      <p class="lead">課題に合わせて所内で即時改良。スマホ対応・軽量・実務特化。</p>
-      <div class="card">
-        <div>
-          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=price-impact" target="_blank" rel="noopener">価格改定インパクト試算</a>
-          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=hr-cost-visual" target="_blank" rel="noopener">人件費 見える化</a>
-          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=expense-to-sales" target="_blank" rel="noopener">費用→必要売上 換算</a>
-          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=insurance-to-sales" target="_blank" rel="noopener">保険→必要売上 換算</a>
-          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=depreciation-used" target="_blank" rel="noopener">減価償却・中古簡便法</a>
-          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=interest-dividend-tax" target="_blank" rel="noopener">受取利息・配当 源泉税</a>
-          <a class="tool-pill" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果 試算</a>
-          <a class="tool-pill" href="https://takatrp.github.io/tool-portal/?tool=variable-pl-ball" target="_blank" rel="noopener">ボールで学ぶ 変動PL</a>
-        </div>
-        <p style="margin-top:8px;color:var(--muted)">※ 各リンクはツールポータル（または専用ページ）に遷移します。実演は面談でご案内します。</p>
-      </div>
-    </div>
-  </section>
+  <!-- Tools セクションはご要望により削除 -->
 
   <!-- Automation Promo -->
   <section id="automation">
