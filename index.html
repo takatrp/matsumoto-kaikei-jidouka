@@ -47,19 +47,18 @@
     nav#site-nav a{color:var(--muted);font-size:14px}
     nav#site-nav a:hover{color:var(--brand-700)}
 
-    /* Hamburger button (SP only) */
+    /* Hamburger button (main-site like) */
     .nav-toggle{
-      display:none;appearance:none;background:#fff;border:1px solid #cbd5e1;
-      border-radius:9999px;padding:10px 12px;box-shadow:var(--shadow);
-      width:48px;height:40px;align-items:center;justify-content:center;gap:6px
+      display:none;appearance:none;background:#fff;border:1.5px solid #cdd6e1;
+      border-radius:12px;box-shadow:var(--shadow);
+      width:56px;height:48px;align-items:center;justify-content:center;
+      padding:0;margin:0;cursor:pointer
     }
-    .nav-toggle span{
-      display:block;width:22px;height:2px;background:#334155;border-radius:2px;
-      transition:transform .25s ease, opacity .2s ease, width .2s ease
-    }
-    .nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-    .nav-toggle.open span:nth-child(2){opacity:0;width:0}
-    .nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+    .nav-toggle svg{width:26px;height:26px;display:block}
+    .nav-toggle .ico-close{display:none}
+    .nav-toggle.open{border-color:#b8c6d4;background:#fff}
+    .nav-toggle.open .ico-list{display:none}
+    .nav-toggle.open .ico-close{display:block}
 
     /* SP: off-canvas menu */
     @media(max-width:740px){
@@ -75,6 +74,7 @@
 
       .backdrop{position:fixed; inset:0; background:#0006; display:none; z-index:80}
       .backdrop.show{display:block}
+      body.nav-open{overflow:hidden} /* 背景スクロール抑止 */
     }
 
     /* ===== Hero ===== */
@@ -153,9 +153,21 @@
         <img class="word" src="松本会計.png" alt="税理士法人松本会計 ワードマーク">
       </a>
 
-      <!-- Hamburger -->
+      <!-- Hamburger (main-site like) -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
+        <!-- list icon -->
+        <svg class="ico-list" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="3" height="3" rx="1"></rect>
+          <rect x="8" y="5.5" width="13" height="2" rx="1"></rect>
+          <rect x="3" y="10.5" width="3" height="3" rx="1"></rect>
+          <rect x="8" y="11" width="13" height="2" rx="1"></rect>
+          <rect x="3" y="16" width="3" height="3" rx="1"></rect>
+          <rect x="8" y="16.5" width="13" height="2" rx="1"></rect>
+        </svg>
+        <!-- close icon -->
+        <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+        </svg>
       </button>
 
       <!-- Nav: PC=inline / SP=off-canvas -->
@@ -374,11 +386,13 @@
     const btn = document.querySelector('.nav-toggle');
     const nav = document.getElementById('site-nav');
     const backdrop = document.getElementById('nav-backdrop');
+    const body = document.body;
 
     function openMenu(){
       nav.classList.add('open');
       backdrop.classList.add('show');
       btn.classList.add('open');
+      body.classList.add('nav-open'); // 背景スクロール抑止
       btn.setAttribute('aria-expanded','true');
       btn.setAttribute('aria-label','メニューを閉じる');
     }
@@ -386,6 +400,7 @@
       nav.classList.remove('open');
       backdrop.classList.remove('show');
       btn.classList.remove('open');
+      body.classList.remove('nav-open');
       btn.setAttribute('aria-expanded','false');
       btn.setAttribute('aria-label','メニューを開く');
     }
@@ -396,7 +411,16 @@
     backdrop.addEventListener('click', closeMenu);
     window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
 
-    // Close menu when switching to desktop width
+    // ▼ 重要：リンクをタップしたら必ず遷移＆メニューを閉じる
+    nav.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      // ハッシュリンクはスクロール前に閉じる
+      closeMenu();
+      // デフォルトの遷移はそのまま行わせる（preventDefaultしない）
+    });
+
+    // PC幅に戻ったら強制的に閉じる（オーバーレイ残り対策）
     const mq = window.matchMedia('(min-width: 741px)');
     mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
 
