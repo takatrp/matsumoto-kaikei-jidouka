@@ -7,11 +7,15 @@
   <meta name="description" content="オリジナルツールで、スマホをあなたの参謀に。リアルタイム会計×自動化×管理会計×継続伴走で、黒字を増やす意思決定を支援します。" />
   <link rel="canonical" href="https://takatrp.github.io/matsumoto-kaikei-jidouka/"/>
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon192192.png" sizes="192x192" />
   <link rel="shortcut icon" type="image/png" href="favicon192192.png" />
   <link rel="apple-touch-icon" href="favicon192192.png" />
+
+  <!-- Preload LCP image -->
   <link rel="preload" as="image" href="hero-mk-desktop.jpg" imagesrcset="hero-mk-desktop.jpg 1x" />
 
+  <!-- OG / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="TKCシステム×オリジナルツールで、今日の意思決定を加速。">
   <meta property="og:description" content="オリジナルツールで、スマホをあなたの参謀に。">
@@ -33,7 +37,7 @@
 
     /* ===== Header & Navigation ===== */
     header{
-      position:sticky; top:0; z-index:2000;           /* ← 最前面に */
+      position:sticky; top:0; z-index:2000;
       background:#fff;border-bottom:1px solid #e2e8f0
     }
     header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
@@ -66,7 +70,7 @@
         position:fixed; top:0; right:0; bottom:0; width:min(84vw,320px);
         background:#fff; border-left:1px solid #e2e8f0; box-shadow:-12px 0 30px rgba(0,0,0,.12);
         padding:16px; display:none; flex-direction:column; gap:4px;
-        z-index:2100;                                  /* ← backdropより上 */
+        z-index:2100;
       }
       nav#site-nav a{padding:12px 10px; border-radius:10px}
       nav#site-nav a:hover{background:#f1f5f9}
@@ -74,11 +78,10 @@
 
       .backdrop{
         position:fixed; inset:0; background:#0006; display:none;
-        z-index:1500;                                  /* ← header/nav より下 */
-        pointer-events:none;                           /* ← 既定はクリック不可 */
+        z-index:1500; pointer-events:none;
       }
-      .backdrop.show{display:block; pointer-events:auto} /* 表示時のみクリックを受ける */
-      body.nav-open{overflow:hidden} /* 背景スクロール抑止 */
+      .backdrop.show{display:block; pointer-events:auto}
+      body.nav-open{overflow:hidden}
     }
 
     /* ===== Hero ===== */
@@ -97,7 +100,7 @@
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Sections & Others ===== */
+    /* ===== Sections ===== */
     section{padding:48px 0}
     h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 18px}
     .lead{color:var(--muted)}
@@ -107,30 +110,41 @@
     .card h3{font-size:18px;margin:0 0 8px}
     .card p{margin:0;color:var(--muted);line-height:1.7}
 
-    .process{counter-reset:step}
-    .step{display:flex;gap:12px;margin:14px 0;align-items:flex-start}
-    .step .num{min-width:36px;height:36px;border-radius:999px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
-
-    .result-box{display:grid;gap:12px}
-    .result{background:#fff;border:1px dashed #cbd5e1;border-radius:16px;padding:14px}
-
-    .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:10px}
-    .faq summary{cursor:pointer;font-weight:600}
-
-    .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
-    .cta-band .btn{background:#fff;color:var(--brand-700)}
-
-    footer{padding:24px 0 68px;color:#475569}
-    footer .credit{font-size:13px}
-
-    /* Mobile bottom CTA */
-    .mobile-cta{display:none}
-    @media(max-width:740px){
-      .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px}
-      .mobile-cta .btn{flex:1}
+    /* ===== Vertical Flow (伴走プロセス) ===== */
+    .flow{list-style:none;margin:0;padding:0}
+    .flow-vertical .flow-step{
+      position:relative;
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:16px;
+      padding:16px 16px 16px 58px;
+      box-shadow:var(--shadow);
+      margin:0 0 34px;
+    }
+    .flow-vertical .flow-step:last-child{margin-bottom:0}
+    .flow-vertical .flow-num{
+      position:absolute;left:14px;top:14px;
+      width:34px;height:34px;border-radius:999px;
+      background:var(--brand);color:#fff;font-weight:700;
+      display:flex;align-items:center;justify-content:center
+    }
+    .flow-vertical .flow-step:not(:last-child)::after{
+      content:"";position:absolute;left:31px;bottom:-28px;width:2px;height:28px;background:var(--brand);
+    }
+    .flow-vertical .flow-step:not(:last-child)::before{
+      content:"";position:absolute;left:22px;bottom:-36px;
+      border-left:9px solid transparent;border-right:9px solid transparent;border-top:12px solid var(--brand);
+    }
+    .flow-title{margin:0 0 6px;font-size:18px;font-weight:700}
+    .flow-desc{margin:0;color:var(--muted);line-height:1.7}
+    @media (max-width:480px){
+      .flow-vertical .flow-step{padding:14px 14px 14px 54px}
+      .flow-vertical .flow-num{left:12px;top:12px;width:30px;height:30px}
+      .flow-vertical .flow-step:not(:last-child)::after{left:28px}
+      .flow-vertical .flow-step:not(:last-child)::before{left:19px}
     }
 
-    /* Screens gallery */
+    /* ===== Screens Gallery ===== */
     .screens{overflow:hidden}
     .screens-track{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:12px;overflow-x:auto;padding:6px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
@@ -140,7 +154,16 @@
       .screens-track{grid-auto-flow:initial;grid-template-columns:repeat(5,1fr);overflow:visible}
     }
 
-    /* Lightbox */
+    /* CTA band, Footer, Lightbox */
+    .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+    .cta-band .btn{background:#fff;color:var(--brand-700)}
+    footer{padding:24px 0 68px;color:#475569}
+    footer .credit{font-size:13px}
+    .mobile-cta{display:none}
+    @media(max-width:740px){
+      .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px}
+      .mobile-cta .btn{flex:1}
+    }
     #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:1400;align-items:center;justify-content:center;padding:20px}
     #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
   </style>
@@ -154,8 +177,9 @@
         <img class="word" src="松本会計.png" alt="税理士法人松本会計 ワードマーク">
       </a>
 
-      <!-- Hamburger -->
+      <!-- Hamburger (main-site like) -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+        <!-- list icon -->
         <svg class="ico-list" viewBox="0 0 24 24" aria-hidden="true">
           <rect x="3" y="5" width="3" height="3" rx="1"></rect>
           <rect x="8" y="5.5" width="13" height="2" rx="1"></rect>
@@ -164,6 +188,7 @@
           <rect x="3" y="16" width="3" height="3" rx="1"></rect>
           <rect x="8" y="16.5" width="13" height="2" rx="1"></rect>
         </svg>
+        <!-- close icon -->
         <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
         </svg>
@@ -212,7 +237,12 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="hero-mk-desktop.jpg" alt="松本会計：数字を意思決定へつなぐ支援イメージ" loading="eager" fetchpriority="high" width="1920" height="1080" srcset="hero-mk-desktop.jpg 1920w, hero-mk-desktop.jpg 1280w" sizes="(max-width:640px) 100vw, 56vw">
+        <img src="hero-mk-desktop.jpg"
+             alt="松本会計：数字を意思決定へつなぐ支援イメージ"
+             loading="eager" fetchpriority="high"
+             width="1920" height="1080"
+             srcset="hero-mk-desktop.jpg 1920w, hero-mk-desktop.jpg 1280w"
+             sizes="(max-width:640px) 100vw, 56vw">
       </div>
     </div>
   </section>
@@ -221,9 +251,9 @@
   <section id="ai-funnel">
     <div class="container">
       <h2>オリジナルツールで、スマホをあなたの参謀に。</h2>
-      <p class="lead">まずはツールで自社の数字を触ってください。数分で“どこを動かせば利益が出るか”が見え、相談の解像度が上がります。<br>
-        <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
-      </p>
+    <p class="lead">まずはツールで自社の数字を触ってください。数分で“どこを動かせば利益が出るか”が見え、相談の解像度が上がります。<br>
+      <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
+    </p>
 
       <div class="cta-row" style="margin-bottom:12px;flex-wrap:wrap">
         <a class="btn btn-primary" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定インパクト試算</a>
@@ -232,12 +262,20 @@
       </div>
 
       <div class="grid grid-3">
-        <div class="card"><h3>① 体験する（無料）</h3><p>上の3ツールはそのまま動きます。</p></div>
-        <div class="card"><h3>② 気づきをメモ</h3><p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p></div>
+        <div class="card">
+          <h3>① 体験する（無料）</h3>
+          <p>上の3ツールはそのまま動きます。</p>
+        </div>
+        <div class="card">
+          <h3>② 気づきをメモ</h3>
+          <p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p>
+        </div>
         <div class="card">
           <h3>③ 相談する</h3>
           <p>可視化した論点をもとに、導入・運用を設計します。</p>
-          <p style="margin-top:8px"><a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a></p>
+          <p style="margin-top:8px">
+            <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a>
+          </p>
         </div>
       </div>
     </div>
@@ -298,17 +336,52 @@
     </div>
   </section>
 
-  <!-- ===== Process ===== -->
+  <!-- ===== Process (Vertical Flow) ===== -->
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
-      <div class="process">
-        <div class="step"><div class="num">1</div><div><strong>現状診断</strong><br><span class="lead">会計データ×ヒアリングでボトルネックを特定</span></div></div>
-        <div class="step"><div class="num">2</div><div><strong>KPI設計</strong><br><span class="lead">限界利益・固定費・資金を指標化（価格/数量/原価）</span></div></div>
-        <div class="step"><div class="num">3</div><div><strong>仕組み化</strong><br><span class="lead">自計化・証憑・データ受信の標準化</span></div></div>
-        <div class="step"><div class="num">4</div><div><strong>継続MAS×月次対話</strong><br><span class="lead">予実差異レビュー／四半期 業績検討会／決算事前検討会</span></div></div>
-        <div class="step"><div class="num">5</div><div><strong>打ち手の実行と検証</strong><br><span class="lead">価格・人件費・投資のアクションをツールで検証</span></div></div>
-      </div>
+
+      <ol class="flow flow-vertical">
+        <li class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <div class="flow-title">現状診断</div>
+            <p class="flow-desc">会計データ×ヒアリングでボトルネックを特定</p>
+          </div>
+        </li>
+
+        <li class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <div class="flow-title">KPI設計</div>
+            <p class="flow-desc">限界利益・固定費・資金を指標化（価格/数量/原価）</p>
+          </div>
+        </li>
+
+        <li class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <div class="flow-title">仕組み化</div>
+            <p class="flow-desc">自計化・証憑・データ受信の標準化</p>
+          </div>
+        </li>
+
+        <li class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <div class="flow-title">継続MAS×月次対話</div>
+            <p class="flow-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p>
+          </div>
+        </li>
+
+        <li class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <div class="flow-title">打ち手の実行と検証</div>
+            <p class="flow-desc">価格・人件費・投資のアクションをツールで検証</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -348,7 +421,11 @@
     </div>
   </section>
 
-  <footer><div class="container"><div class="credit">Copyright (c) 2025 <a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">税理士法人松本会計事務所</a>. All Rights Reserved.</div></div></footer>
+  <footer>
+    <div class="container">
+      <div class="credit">Copyright (c) 2025 <a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">税理士法人松本会計事務所</a>. All Rights Reserved.</div>
+    </div>
+  </footer>
 
   <!-- Lightbox -->
   <div id="lightbox" aria-hidden="true"><img src="" alt="拡大表示"></div>
@@ -365,7 +442,7 @@
       nav.classList.add('open');
       backdrop.classList.add('show');
       btn.classList.add('open');
-      body.classList.add('nav-open'); // 背景スクロール抑止
+      body.classList.add('nav-open');
       btn.setAttribute('aria-expanded','true');
       btn.setAttribute('aria-label','メニューを閉じる');
     }
@@ -384,19 +461,19 @@
     backdrop.addEventListener('click', closeMenu);
     window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
 
-    // リンクをタップしたら必ず遷移＆クローズ
+    // リンクタップで確実に遷移＆クローズ
     nav.addEventListener('click', (e) => {
       const a = e.target.closest('a');
       if (!a) return;
-      closeMenu(); // 先に閉じる（ハッシュリンクのスクロール前でもOK）
-      // 遷移自体はブラウザに任せる（preventDefaultしない）
+      closeMenu();
+      // 遷移はブラウザに任せる
     });
 
-    // PC幅へ戻ったら強制クローズ（オーバーレイ残留対策）
+    // PC幅に戻ったら強制クローズ
     const mq = window.matchMedia('(min-width: 741px)');
     mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
 
-    // Lightbox
+    // Lightbox for screens
     const lb = document.getElementById('lightbox');
     if (lb) {
       const lbImg = lb.querySelector('img');
