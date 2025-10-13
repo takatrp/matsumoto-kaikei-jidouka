@@ -7,15 +7,11 @@
   <meta name="description" content="オリジナルツールで、スマホをあなたの参謀に。リアルタイム会計×自動化×管理会計×継続伴走で、黒字を増やす意思決定を支援します。" />
   <link rel="canonical" href="https://takatrp.github.io/matsumoto-kaikei-jidouka/"/>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon192192.png" sizes="192x192" />
   <link rel="shortcut icon" type="image/png" href="favicon192192.png" />
   <link rel="apple-touch-icon" href="favicon192192.png" />
-
-  <!-- Preload LCP image -->
   <link rel="preload" as="image" href="hero-mk-desktop.jpg" imagesrcset="hero-mk-desktop.jpg 1x" />
 
-  <!-- OG / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="TKCシステム×オリジナルツールで、今日の意思決定を加速。">
   <meta property="og:description" content="オリジナルツールで、スマホをあなたの参謀に。">
@@ -36,7 +32,10 @@
     .container{max-width:1120px;margin:0 auto;padding:0 16px}
 
     /* ===== Header & Navigation ===== */
-    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e2e8f0}
+    header{
+      position:sticky; top:0; z-index:2000;           /* ← 最前面に */
+      background:#fff;border-bottom:1px solid #e2e8f0
+    }
     header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:10px}
     .logo .mark{height:60px;width:auto;display:block}
@@ -66,14 +65,19 @@
       nav#site-nav{
         position:fixed; top:0; right:0; bottom:0; width:min(84vw,320px);
         background:#fff; border-left:1px solid #e2e8f0; box-shadow:-12px 0 30px rgba(0,0,0,.12);
-        padding:16px; display:none; flex-direction:column; gap:4px; z-index:90;
+        padding:16px; display:none; flex-direction:column; gap:4px;
+        z-index:2100;                                  /* ← backdropより上 */
       }
       nav#site-nav a{padding:12px 10px; border-radius:10px}
       nav#site-nav a:hover{background:#f1f5f9}
       nav#site-nav.open{display:flex}
 
-      .backdrop{position:fixed; inset:0; background:#0006; display:none; z-index:80}
-      .backdrop.show{display:block}
+      .backdrop{
+        position:fixed; inset:0; background:#0006; display:none;
+        z-index:1500;                                  /* ← header/nav より下 */
+        pointer-events:none;                           /* ← 既定はクリック不可 */
+      }
+      .backdrop.show{display:block; pointer-events:auto} /* 表示時のみクリックを受ける */
       body.nav-open{overflow:hidden} /* 背景スクロール抑止 */
     }
 
@@ -91,9 +95,9 @@
     .btn-primary:hover{background:var(--brand-600)}
     .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-    .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain} /* keep aspect */
+    .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Sections ===== */
+    /* ===== Sections & Others ===== */
     section{padding:48px 0}
     h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 18px}
     .lead{color:var(--muted)}
@@ -122,16 +126,13 @@
     /* Mobile bottom CTA */
     .mobile-cta{display:none}
     @media(max-width:740px){
-      .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px}
+      .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px}
       .mobile-cta .btn{flex:1}
     }
 
-    /* ===== Screens Gallery (mobile mocks) ===== */
+    /* Screens gallery */
     .screens{overflow:hidden}
-    .screens-track{
-      display:grid;grid-auto-flow:column;grid-auto-columns:80%;
-      gap:12px;overflow-x:auto;padding:6px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch
-    }
+    .screens-track{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:12px;overflow-x:auto;padding:6px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
     .screen figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
@@ -140,7 +141,7 @@
     }
 
     /* Lightbox */
-    #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:80;align-items:center;justify-content:center;padding:20px}
+    #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:1400;align-items:center;justify-content:center;padding:20px}
     #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
   </style>
 </head>
@@ -153,9 +154,8 @@
         <img class="word" src="松本会計.png" alt="税理士法人松本会計 ワードマーク">
       </a>
 
-      <!-- Hamburger (main-site like) -->
+      <!-- Hamburger -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
-        <!-- list icon -->
         <svg class="ico-list" viewBox="0 0 24 24" aria-hidden="true">
           <rect x="3" y="5" width="3" height="3" rx="1"></rect>
           <rect x="8" y="5.5" width="13" height="2" rx="1"></rect>
@@ -164,7 +164,6 @@
           <rect x="3" y="16" width="3" height="3" rx="1"></rect>
           <rect x="8" y="16.5" width="13" height="2" rx="1"></rect>
         </svg>
-        <!-- close icon -->
         <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
         </svg>
@@ -213,12 +212,7 @@
         </div>
       </div>
       <div class="hero-media">
-        <img src="hero-mk-desktop.jpg"
-             alt="松本会計：数字を意思決定へつなぐ支援イメージ"
-             loading="eager" fetchpriority="high"
-             width="1920" height="1080"
-             srcset="hero-mk-desktop.jpg 1920w, hero-mk-desktop.jpg 1280w"
-             sizes="(max-width:640px) 100vw, 56vw">
+        <img src="hero-mk-desktop.jpg" alt="松本会計：数字を意思決定へつなぐ支援イメージ" loading="eager" fetchpriority="high" width="1920" height="1080" srcset="hero-mk-desktop.jpg 1920w, hero-mk-desktop.jpg 1280w" sizes="(max-width:640px) 100vw, 56vw">
       </div>
     </div>
   </section>
@@ -238,20 +232,12 @@
       </div>
 
       <div class="grid grid-3">
-        <div class="card">
-          <h3>① 体験する（無料）</h3>
-          <p>上の3ツールはそのまま動きます。</p>
-        </div>
-        <div class="card">
-          <h3>② 気づきをメモ</h3>
-          <p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p>
-        </div>
+        <div class="card"><h3>① 体験する（無料）</h3><p>上の3ツールはそのまま動きます。</p></div>
+        <div class="card"><h3>② 気づきをメモ</h3><p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p></div>
         <div class="card">
           <h3>③ 相談する</h3>
           <p>可視化した論点をもとに、導入・運用を設計します。</p>
-          <p style="margin-top:8px">
-            <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a>
-          </p>
+          <p style="margin-top:8px"><a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a></p>
         </div>
       </div>
     </div>
@@ -341,18 +327,9 @@
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
-      <details>
-        <summary>記帳代行から自計化へ移行するメリットは？</summary>
-        <div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で“どこを動かせばよいか”を即判断できます。</div>
-      </details>
-      <details>
-        <summary>継続MASとは何をするのですか？</summary>
-        <div class="content">中期・短期の計画策定、月次の予実検証、四半期の業績検討会、決算事前検討会まで“仕組み化”された伴走です。</div>
-      </details>
-      <details>
-        <summary>ツールは自社向けにカスタマイズできますか？</summary>
-        <div class="content">可能です。実務に合わせて所内で改修し、運用定着まで伴走します。</div>
-      </details>
+      <details><summary>記帳代行から自計化へ移行するメリットは？</summary><div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で“どこを動かせばよいか”を即判断できます。</div></details>
+      <details><summary>継続MASとは何をするのですか？</summary><div class="content">中期・短期の計画策定、月次の予実検証、四半期の業績検討会、決算事前検討会まで“仕組み化”された伴走です。</div></details>
+      <details><summary>ツールは自社向けにカスタマイズできますか？</summary><div class="content">可能です。実務に合わせて所内で改修し、運用定着まで伴走します。</div></details>
     </div>
   </section>
 
@@ -371,11 +348,7 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="credit">Copyright (c) 2025 <a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">税理士法人松本会計事務所</a>. All Rights Reserved.</div>
-    </div>
-  </footer>
+  <footer><div class="container"><div class="credit">Copyright (c) 2025 <a class="underline-link" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">税理士法人松本会計事務所</a>. All Rights Reserved.</div></div></footer>
 
   <!-- Lightbox -->
   <div id="lightbox" aria-hidden="true"><img src="" alt="拡大表示"></div>
@@ -411,20 +384,19 @@
     backdrop.addEventListener('click', closeMenu);
     window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
 
-    // ▼ 重要：リンクをタップしたら必ず遷移＆メニューを閉じる
+    // リンクをタップしたら必ず遷移＆クローズ
     nav.addEventListener('click', (e) => {
       const a = e.target.closest('a');
       if (!a) return;
-      // ハッシュリンクはスクロール前に閉じる
-      closeMenu();
-      // デフォルトの遷移はそのまま行わせる（preventDefaultしない）
+      closeMenu(); // 先に閉じる（ハッシュリンクのスクロール前でもOK）
+      // 遷移自体はブラウザに任せる（preventDefaultしない）
     });
 
-    // PC幅に戻ったら強制的に閉じる（オーバーレイ残り対策）
+    // PC幅へ戻ったら強制クローズ（オーバーレイ残留対策）
     const mq = window.matchMedia('(min-width: 741px)');
     mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
 
-    // Lightbox for screens
+    // Lightbox
     const lb = document.getElementById('lightbox');
     if (lb) {
       const lbImg = lb.querySelector('img');
