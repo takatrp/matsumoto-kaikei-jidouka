@@ -145,13 +145,37 @@
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
     .screen figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+
+    /* PCでカードを拡大＆キャプション1行 */
     @media (min-width: 900px){
-      .screens-track{grid-auto-flow:initial;grid-template-columns:repeat(4,1fr);gap:16px;overflow:visible}
-      .screen figcaption{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+      .screens-track{
+        grid-auto-flow: initial;
+        grid-template-columns: repeat(4, 1fr); /* 5→4列で拡大 */
+        gap: 16px;
+        overflow: visible;
+      }
+      .screen figcaption{
+        font-size:14px;
+        white-space:nowrap;
+        overflow:hidden; text-overflow:ellipsis;
+      }
     }
     @media (min-width: 1280px){
-      .screens-track{grid-template-columns:repeat(3,1fr)}
+      .screens-track{ grid-template-columns: repeat(3, 1fr); }
     }
+
+    /* ===== CTA band, Footer, Lightbox, Mobile CTA ===== */
+    .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+    .cta-band .btn{background:#fff;color:var(--brand-700)}
+    footer{padding:24px 0 68px;color:#475569}
+    footer .credit{font-size:13px}
+    .mobile-cta{display:none}
+    @media(max-width:740px){
+      .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px}
+      .mobile-cta .btn{flex:1}
+    }
+    #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:1400;align-items:center;justify-content:center;padding:20px}
+    #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
 
     /* ===== Achievements (実績) ===== */
     .achv-wrap{display:grid;gap:16px}
@@ -177,6 +201,10 @@
     .achv-note small{display:block;color:#94a3b8;margin-top:8px}
     .achv-list{margin:10px 0 0 18px;color:var(--muted)}
     .achv-list li{margin:4px 0}
+
+    /* ===== FAQ styles ===== */
+    .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:10px}
+    .faq summary{cursor:pointer;font-weight:600}
   </style>
 </head>
 <body>
@@ -291,7 +319,7 @@
   <section id="mobile-screens">
     <div class="container">
       <h2>スマホでさっと試算。現場で意思決定。</h2>
-    <p class="lead">ポータルから各ツールへ。入力→数分で結果が見えます。現場でも“数字で会話”できます。</p>
+      <p class="lead">ポータルから各ツールへ。入力→数分で結果が見えます。現場でも“数字で会話”できます。</p>
       <div class="screens">
         <div class="screens-track">
           <figure class="screen">
@@ -435,13 +463,136 @@
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
+  <!-- ===== FAQ (拡充版) ===== -->
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
-      <details><summary>記帳代行から自計化へ移行するメリットは？</summary><div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で“どこを動かせばよいか”を即判断できます。</div></details>
-      <details><summary>継続MASとは何をするのですか？</summary><div class="content">中期・短期の計画策定、月次の予実検証、四半期の業績検討会、決算事前検討会まで“仕組み化”された伴走です。</div></details>
-      <details><summary>ツールは自社向けにカスタマイズできますか？</summary><div class="content">可能です。実務に合わせて所内で改修し、運用定着まで伴走します。</div></details>
+
+      <details>
+        <summary>記帳代行から自計化へ移行するメリットは？</summary>
+        <div class="content">
+          意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。
+        </div>
+      </details>
+
+      <details>
+        <summary>導入までの期間や進め方のイメージは？</summary>
+        <div class="content">
+          目安は数週間〜数か月です（規模・現状によって変動）。<br>
+          <ol style="margin:6px 0 0 18px">
+            <li>現状診断（データ・業務ヒアリング）</li>
+            <li>KPI設計とゴール定義（限界利益／固定費／資金）</li>
+            <li>仕組み化（自計化・証憑・受信・権限）</li>
+            <li>運用開始＆月次対話（予実と差異要因の言語化）</li>
+          </ol>
+        </div>
+      </details>
+
+      <details>
+        <summary>どこまで“自動化”できますか？</summary>
+        <div class="content">
+          銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。
+        </div>
+      </details>
+
+      <details>
+        <summary>電子帳簿保存法・インボイス制度への対応は？</summary>
+        <div class="content">
+          証憑の保存要件・検索要件、適格請求書の運用ルール（発行/受領）を整理し、システム設定と業務フローに落とし込みます。監査に耐える証跡の残し方まで設計します。
+        </div>
+      </details>
+
+      <details>
+        <summary>変動損益（限界利益）での管理はどのように実装しますか？</summary>
+        <div class="content">
+          科目の「変動/固定」分類と配賦ルールを定義し、<strong>売上−変動費＝限界利益</strong>→固定費→営業利益の構造に再編します。ダッシュボードで限界利益率・損益分岐・感応度を即時表示します。
+        </div>
+      </details>
+
+      <details>
+        <summary>価格改定の検討はどのように支援しますか？</summary>
+        <div class="content">
+          現状KPI→感応度（単価/数量/原価）→シナリオ比較の順に、ツールで即時試算します。既存契約・競合・弾性を踏まえ、段階導入や対象絞り込みも検討します。
+        </div>
+      </details>
+
+      <details>
+        <summary>KPIの例は？</summary>
+        <div class="content">
+          限界利益率、平均単価、数量、労働分配率、在庫回転日数、受注粗利、案件別/部門別限界利益、固定費カバー率、キャッシュ創出額など。業種と目的に応じて数を絞り込みます。
+        </div>
+      </details>
+
+      <details>
+        <summary>継続MAS×月次対話では、具体的に何をしますか？</summary>
+        <div class="content">
+          月次の予実差異レビュー、原因の言語化、翌月の打ち手合意、四半期の業績検討会、決算事前検討会を行います。成果物は差異分析メモ、行動リスト、KPIダッシュボードです。
+        </div>
+      </details>
+
+      <details>
+        <summary>既存の会計ソフト（TKC以外）からの移行は可能ですか？</summary>
+        <div class="content">
+          可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も併せて最適化します。
+        </div>
+      </details>
+
+      <details>
+        <summary>コスト（料金）はどのように決まりますか？</summary>
+        <div class="content">
+          規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。初回相談後に提案書と見積をご提示します。公的支援（補助金等）の活用余地があれば併せてご案内します。
+        </div>
+      </details>
+
+      <details>
+        <summary>業種・規模の対象は？</summary>
+        <div class="content">
+          製造・卸売・小売・サービス・士業・医療介護など幅広く対応します。限界利益の考え方は多くの業種に適用可能です。規模は小規模〜中堅までが中心です。
+        </div>
+      </details>
+
+      <details>
+        <summary>教育・定着支援はありますか？</summary>
+        <div class="content">
+          担当者トレーニング、操作マニュアル、月次レビューの型化（チェックリスト/テンプレ）まで提供し、属人化を防ぎます。退職・異動時の引継ぎも想定して設計します。
+        </div>
+      </details>
+
+      <details>
+        <summary>データの取扱い・セキュリティは？</summary>
+        <div class="content">
+          個社情報は守秘を徹底します。権限設計・監査ログ・バックアップ方針を整備します。<br>
+          <small>※ 当LPの無料ツールはブラウザ内で計算し、当ページではデータを保存しません（お問い合わせ送信時を除く）。</small>
+        </div>
+      </details>
+
+      <details>
+        <summary>オンライン対応・対応エリアは？</summary>
+        <div class="content">
+          オンライン中心で全国対応しています。来所相談は境港/神戸の各拠点で可能です。
+        </div>
+      </details>
+
+      <details>
+        <summary>契約期間・解約は？</summary>
+        <div class="content">
+          期間・更新・解約条件は契約前に明示します。途中解約時の取り扱いは契約内容に基づきます。データの返却・引継ぎも事前に取り決めます。
+        </div>
+      </details>
+
+      <details>
+        <summary>補助金・助成金の活用は支援してもらえますか？</summary>
+        <div class="content">
+          該当しうる制度の情報提供や、要件整理・数字面の確認をサポートします（申請の可否は制度要件と審査に依存します）。
+        </div>
+      </details>
+
+      <details>
+        <summary>まずは何から始めればよいですか？</summary>
+        <div class="content">
+          無料の試算ツール（価格改定・自動化ROI・変動損益）で課題を“数字で”可視化し、気づきをメモしてください。<a class="underline-link" href="#contact">お問い合わせ</a>で現状とゴールを伺い、最短ルートをご提案します。
+        </div>
+      </details>
     </div>
   </section>
 
