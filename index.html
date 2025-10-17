@@ -167,11 +167,15 @@
     /* ===== CTA band, Footer, Lightbox, Mobile CTA ===== */
     .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
     .cta-band .btn{background:#fff;color:var(--brand-700)}
-    footer{padding:24px 0 68px;color:#475569}
+    footer{padding:24px 0 68px;color:#475569; text-align:center;}
     footer .credit{font-size:13px}
     .mobile-cta{display:none}
     @media(max-width:740px){
-      .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px}
+      .mobile-cta{
+        display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;
+        background:#ffffffd9;border-top:1px solid #e2e8f0;
+        backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px
+      }
       .mobile-cta .btn{flex:1}
     }
     #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:1400;align-items:center;justify-content:center;padding:20px}
@@ -251,9 +255,8 @@
   <!-- SP backdrop -->
   <div id="nav-backdrop" class="backdrop" aria-hidden="true"></div>
 
-  <!-- Mobile bottom CTA -->
+  <!-- Mobile bottom CTA (「無料ツール」ボタンを削除し、相談のみ表示) -->
   <div class="mobile-cta" role="region" aria-label="固定アクション">
-    <a class="btn btn-outline" href="https://takatrp.github.io/tool-portal/" target="_blank" rel="noopener">無料ツール</a>
     <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">相談する</a>
   </div>
 
@@ -285,12 +288,14 @@
   <section id="ai-funnel">
     <div class="container">
       <h2>オリジナルツールで、スマホをあなたの参謀に。</h2>
-      <p class="lead">まずはツールで自社の数字を触ってみてください。数分で“どこを動かせば利益が出るか”が見え、相談の解像度が上がります。<br>
+      <p class="lead">
+        まずはツールで自社の数字を触ってみてください。数分で“どこを動かせば利益が出るか”が見え、相談の解像度が上がります。<br>
         <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
       </p>
 
       <div class="cta-row" style="margin-bottom:12px;flex-wrap:wrap">
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定インパクト試算</a>
+        <!-- 価格改定ボタンを白背景・緑文字に（=outline） -->
+        <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定インパクト試算</a>
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">自動化効果（ROI）試算</a>
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/hendou_PL/">ボールで学ぶ変動損益計算書</a>
       </div>
@@ -319,7 +324,7 @@
   <section id="mobile-screens">
     <div class="container">
       <h2>スマホでさっと試算。現場で意思決定。</h2>
-      <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールをご利用いただけます。</p>
+      <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。</p>
       <div class="screens">
         <div class="screens-track">
           <figure class="screen">
@@ -446,7 +451,7 @@
           </div>
         </div>
 
-        <!-- 右：注記・補足（説得力の担保） -->
+        <!-- 右：注記・補足 -->
         <div class="achv-card">
           <div class="achv-note">
             当事務所の黒字申告割合は所内集計による<strong>約65%</strong>。<br>
@@ -463,7 +468,7 @@
     </div>
   </section>
 
-  <!-- ===== FAQ (拡充版) ===== -->
+  <!-- ===== FAQ (指定項目を削除済み) ===== -->
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
@@ -503,34 +508,6 @@
       </details>
 
       <details>
-        <summary>変動損益（限界利益）での管理はどのように実装しますか？</summary>
-        <div class="content">
-          科目の「変動/固定」分類と配賦ルールを定義し、<strong>売上−変動費＝限界利益</strong>→固定費→営業利益の構造に再編します。ダッシュボードで限界利益率・損益分岐・感応度を即時表示します。
-        </div>
-      </details>
-
-      <details>
-        <summary>価格改定の検討はどのように支援しますか？</summary>
-        <div class="content">
-          現状KPI→感応度（単価/数量/原価）→シナリオ比較の順に、ツールで即時試算します。既存契約・競合・弾性を踏まえ、段階導入や対象絞り込みも検討します。
-        </div>
-      </details>
-
-      <details>
-        <summary>KPIの例は？</summary>
-        <div class="content">
-          限界利益率、平均単価、数量、労働分配率、在庫回転日数、受注粗利、案件別/部門別限界利益、固定費カバー率、キャッシュ創出額など。業種と目的に応じて数を絞り込みます。
-        </div>
-      </details>
-
-      <details>
-        <summary>継続MAS×月次対話では、具体的に何をしますか？</summary>
-        <div class="content">
-          月次の予実差異レビュー、原因の言語化、翌月の打ち手合意、四半期の業績検討会、決算事前検討会を行います。成果物は差異分析メモ、行動リスト、KPIダッシュボードです。
-        </div>
-      </details>
-
-      <details>
         <summary>既存の会計ソフト（TKC以外）からの移行は可能ですか？</summary>
         <div class="content">
           可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も併せて最適化します。
@@ -563,13 +540,6 @@
         <div class="content">
           個社情報は守秘を徹底します。権限設計・監査ログ・バックアップ方針を整備します。<br>
           <small>※ 当LPの無料ツールはブラウザ内で計算し、当ページではデータを保存しません（お問い合わせ送信時を除く）。</small>
-        </div>
-      </details>
-
-      <details>
-        <summary>オンライン対応・対応エリアは？</summary>
-        <div class="content">
-          オンライン中心で全国対応しています。来所相談は境港/神戸の各拠点で可能です。
         </div>
       </details>
 
