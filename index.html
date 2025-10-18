@@ -71,17 +71,17 @@
     }
 
     /* ===== Density tuning ===== */
-    section{padding:36px 0}                   /* 48 → 36 */
-    h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 14px}  /* 18px → 14px bottom */
-    .grid{display:grid;gap:12px}              /* 16 → 12 */
-    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:var(--shadow)} /* 18 → 16 */
-    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px} /* 18 → 14 */
+    section{padding:36px 0}
+    h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 14px}
+    .grid{display:grid;gap:12px}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 
-    /* ===== Hero (上余白を圧縮) ===== */
-    .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)} /* 56 → 28 (top) */
+    /* ===== Hero (upper spacing shrunk) ===== */
+    .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:14px;align-items:center}
     @media(min-width:960px){.hero-wrap{grid-template-columns:1.1fr .9fr}}
-    .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px} /* 上マージン0に */
+    .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
     h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
     .sub{color:var(--muted);font-size:16px;line-height:1.7;max-width:760px}
@@ -92,7 +92,7 @@
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Flow (少し詰める) ===== */
+    /* ===== Flow (compact) ===== */
     .flow{list-style:none;margin:0;padding:0}
     .flow-vertical .flow-step{
       position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:16px;
@@ -112,7 +112,7 @@
     .flow-title{margin:0 0 4px;font-size:18px;font-weight:700}
     .flow-desc{margin:0;color:var(--muted);line-height:1.6}
 
-    /* ===== Screens Gallery（余白微調整） ===== */
+    /* ===== Screens Gallery ===== */
     .screens{overflow:hidden}
     .screens-track{
       display:grid;grid-auto-flow:column;grid-auto-columns:80%;
@@ -154,7 +154,6 @@
     .bar-fill{position:absolute;left:0;top:0;bottom:0;width:calc(var(--val,0) * 1%);background:linear-gradient(90deg,var(--brand) 0%, var(--brand-600) 100%);border-right:1px solid rgba(255,255,255,.6)}
     .bar-val{font-variant-numeric:tabular-nums;text-align:right;color:#334155;font-weight:700}
     .achv-note{color:var(--muted);line-height:1.6}
-    /* 注記やリストは削除済みのためスタイル不要 */
 
     /* ===== FAQ ===== */
     .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:8px}
@@ -284,16 +283,46 @@
     </div>
   </section>
 
-  <!-- ===== Process ===== -->
+  <!-- ===== Process (UPDATED) ===== -->
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
       <ol class="flow flow-vertical">
-        <li class="flow-step"><div class="flow-num">1</div><div class="flow-body"><div class="flow-title">現状診断</div><p class="flow-desc">会計データ×ヒアリングでボトルネックを特定</p></div></li>
-        <li class="flow-step"><div class="flow-num">2</div><div class="flow-body"><div class="flow-title">KPI設計</div><p class="flow-desc">限界利益・固定費・資金を指標化（価格/数量/原価）</p></div></li>
-        <li class="flow-step"><div class="flow-num">3</div><div class="flow-body"><div class="flow-title">仕組み化</div><p class="flow-desc">自計化・証憑・データ受信の標準化</p></div></li>
-        <li class="flow-step"><div class="flow-num">4</div><div class="flow-body"><div class="flow-title">継続MAS×月次対話</div><p class="flow-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p></div></li>
-        <li class="flow-step"><div class="flow-num">5</div><div class="flow-body"><div class="flow-title">打ち手の実行と検証</div><p class="flow-desc">価格・人件費・投資のアクションをツールで検証</p></div></li>
+        <li class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <div class="flow-title">現状診断</div>
+            <p class="flow-desc">会計データ×ヒアリングでボトルネックを特定</p>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <div class="flow-title">自動化設計・初期指導</div>
+            <p class="flow-desc">自計化・証憑・データ受信の標準化／初期運用の立上げ</p>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <div class="flow-title">月次巡回監査</div>
+            <p class="flow-desc">記帳・証憑・運用のチェックと改善提案を毎月実施</p>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <div class="flow-title">継続MAS×対話</div>
+            <p class="flow-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p>
+          </div>
+        </li>
+        <li class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <div class="flow-title">打ち手の実行と検証</div>
+            <p class="flow-desc">価格・人件費・投資のアクションをツールで検証</p>
+          </div>
+        </li>
       </ol>
     </div>
   </section>
@@ -304,14 +333,17 @@
       <h2>実績</h2>
       <div class="achv-wrap" role="group" aria-labelledby="achv-comparison">
         <div class="achv-card" id="achv-comparison" aria-label="黒字申告割合の比較">
-          <div class="kpi-head"><div class="kpi-title">黒字申告割合（顧問先）</div><div class="delta-badge">+29pt</div></div>
+          <div class="kpi-head">
+            <div class="kpi-title">黒字申告割合（顧問先）</div>
+            <!-- +29pt → 約1.8倍 -->
+            <div class="delta-badge">約1.8倍</div>
+          </div>
           <div class="bar-compare">
             <div class="bar-row" aria-label="当事務所の黒字申告割合 65%"><div class="bar-label">当事務所</div><div class="bar-track"><span class="bar-fill" style="--val:65"></span></div><div class="bar-val">65%</div></div>
             <div class="bar-row" aria-label="全国平均の黒字申告割合 36.0%"><div class="bar-label">全国平均</div><div class="bar-track"><span class="bar-fill" style="--val:36"></span></div><div class="bar-val">36.0%</div></div>
           </div>
         </div>
 
-        <!-- 右カード：注記・箇条書きは削除し、要点のみ残す -->
         <div class="achv-card">
           <div class="achv-note">
             当事務所の黒字申告割合は所内集計による<strong>約65%</strong>。比較対象として、<strong>全国平均 36.0%</strong>（令和5事務年度、国税庁公開統計）を掲載しています。
@@ -339,9 +371,9 @@
           目安は数週間〜数か月です（規模・現状によって変動）。<br>
           <ol style="margin:6px 0 0 18px">
             <li>現状診断（データ・業務ヒアリング）</li>
-            <li>KPI設計とゴール定義（限界利益／固定費／資金）</li>
-            <li>仕組み化（自計化・証憑・受信・権限）</li>
-            <li>運用開始＆月次対話（予実と差異要因の言語化）</li>
+            <li>自動化設計・初期指導（自計化／証憑／受信）</li>
+            <li>月次巡回監査</li>
+            <li>継続MAS×対話</li>
           </ol>
         </div>
       </details>
