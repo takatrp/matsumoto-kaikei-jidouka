@@ -36,178 +36,128 @@
     .container{max-width:1120px;margin:0 auto;padding:0 16px}
 
     /* ===== Header & Navigation ===== */
-    header{
-      position:sticky; top:0; z-index:2000;
-      background:#fff;border-bottom:1px solid #e2e8f0
-    }
+    header{position:sticky; top:0; z-index:2000; background:#fff;border-bottom:1px solid #e2e8f0}
     header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
     .logo{display:flex;align-items:center;gap:10px}
-    .logo .mark{height:60px;width:auto;display:block}
-    .logo .word{height:60px;width:auto;display:block}
+    .logo .mark,.logo .word{height:60px;width:auto;display:block}
 
-    /* PC: horizontal nav */
-    nav#site-nav{display:flex;align-items:center;gap:20px}
+    nav#site-nav{display:flex;align-items:center;gap:18px}
     nav#site-nav a{color:var(--muted);font-size:14px}
     nav#site-nav a:hover{color:var(--brand-700)}
 
-    /* Hamburger button (main-site like) */
-    .nav-toggle{
-      display:none;appearance:none;background:#fff;border:1.5px solid #cdd6e1;
-      border-radius:12px;box-shadow:var(--shadow);
-      width:56px;height:48px;align-items:center;justify-content:center;
-      padding:0;margin:0;cursor:pointer
-    }
+    /* Hamburger */
+    .nav-toggle{display:none;appearance:none;background:#fff;border:1.5px solid #cdd6e1;
+      border-radius:12px;box-shadow:var(--shadow);width:56px;height:48px;align-items:center;justify-content:center;padding:0;margin:0;cursor:pointer}
     .nav-toggle svg{width:26px;height:26px;display:block}
     .nav-toggle .ico-close{display:none}
-    .nav-toggle.open{border-color:#b8c6d4;background:#fff}
+    .nav-toggle.open{border-color:#b8c6d4}
     .nav-toggle.open .ico-list{display:none}
     .nav-toggle.open .ico-close{display:block}
 
-    /* SP: off-canvas menu */
     @media(max-width:740px){
       .nav-toggle{display:inline-flex}
       nav#site-nav{
         position:fixed; top:0; right:0; bottom:0; width:min(84vw,320px);
         background:#fff; border-left:1px solid #e2e8f0; box-shadow:-12px 0 30px rgba(0,0,0,.12);
-        padding:16px; display:none; flex-direction:column; gap:4px;
-        z-index:2100;
+        padding:14px; display:none; flex-direction:column; gap:2px; z-index:2100;
       }
-      nav#site-nav a{padding:12px 10px; border-radius:10px}
+      nav#site-nav a{padding:10px 8px;border-radius:10px}
       nav#site-nav a:hover{background:#f1f5f9}
       nav#site-nav.open{display:flex}
 
-      .backdrop{
-        position:fixed; inset:0; background:#0006; display:none;
-        z-index:1500; pointer-events:none;
-      }
+      .backdrop{position:fixed; inset:0; background:#0006; display:none; z-index:1500; pointer-events:none}
       .backdrop.show{display:block; pointer-events:auto}
       body.nav-open{overflow:hidden}
     }
 
-    /* ===== Hero ===== */
-    .hero{padding:56px 0 24px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
-    .hero-wrap{display:grid;gap:16px;align-items:center}
+    /* ===== Density tuning ===== */
+    section{padding:36px 0}                   /* 48 → 36 */
+    h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 14px}  /* 18px → 14px bottom */
+    .grid{display:grid;gap:12px}              /* 16 → 12 */
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:18px;padding:16px;box-shadow:var(--shadow)} /* 18 → 16 */
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px} /* 18 → 14 */
+
+    /* ===== Hero (上余白を圧縮) ===== */
+    .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)} /* 56 → 28 (top) */
+    .hero-wrap{display:grid;gap:14px;align-items:center}
     @media(min-width:960px){.hero-wrap{grid-template-columns:1.1fr .9fr}}
-    .badge{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px} /* 上マージン0に */
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
-    h1{font-size:clamp(22px,5vw,40px);line-height:1.25;margin:8px 0 12px}
+    h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
     .sub{color:var(--muted);font-size:16px;line-height:1.7;max-width:760px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:14px;font-weight:600;border:1px solid transparent;box-shadow:var(--shadow);min-height:44px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:14px;font-weight:600;border:1px solid transparent;box-shadow:var(--shadow);min-height:42px}
     .btn-primary{background:var(--brand);color:#fff}
     .btn-primary:hover{background:var(--brand-600)}
     .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Sections ===== */
-    section{padding:48px 0}
-    h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 18px}
-    .lead{color:var(--muted)}
-    .grid{display:grid;gap:16px}
-    @media(min-width:740px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}}
-    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-    .card h3{font-size:18px;margin:0 0 8px}
-    .card p{margin:0;color:var(--muted);line-height:1.7}
-
-    /* ===== Vertical Flow (伴走プロセス) ===== */
+    /* ===== Flow (少し詰める) ===== */
     .flow{list-style:none;margin:0;padding:0}
     .flow-vertical .flow-step{
       position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:16px;
-      padding:16px 16px 16px 58px;box-shadow:var(--shadow);margin:0 0 34px;
+      padding:14px 14px 14px 54px;box-shadow:var(--shadow);margin:0 0 24px;
     }
     .flow-vertical .flow-step:last-child{margin-bottom:0}
     .flow-vertical .flow-num{
-      position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:999px;
+      position:absolute;left:12px;top:12px;width:30px;height:30px;border-radius:999px;
       background:var(--brand);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center
     }
     .flow-vertical .flow-step:not(:last-child)::after{
-      content:"";position:absolute;left:31px;bottom:-28px;width:2px;height:28px;background:var(--brand);
+      content:"";position:absolute;left:28px;bottom:-22px;width:2px;height:22px;background:var(--brand);
     }
     .flow-vertical .flow-step:not(:last-child)::before{
-      content:"";position:absolute;left:22px;bottom:-36px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:12px solid var(--brand);
+      content:"";position:absolute;left:19px;bottom:-29px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:10px solid var(--brand);
     }
-    .flow-title{margin:0 0 6px;font-size:18px;font-weight:700}
-    .flow-desc{margin:0;color:var(--muted);line-height:1.7}
-    @media (max-width:480px){
-      .flow-vertical .flow-step{padding:14px 14px 14px 54px}
-      .flow-vertical .flow-num{left:12px;top:12px;width:30px;height:30px}
-      .flow-vertical .flow-step:not(:last-child)::after{left:28px}
-      .flow-vertical .flow-step:not(:last-child)::before{left:19px}
-    }
+    .flow-title{margin:0 0 4px;font-size:18px;font-weight:700}
+    .flow-desc{margin:0;color:var(--muted);line-height:1.6}
 
-    /* ===== Screens Gallery ===== */
+    /* ===== Screens Gallery（余白微調整） ===== */
     .screens{overflow:hidden}
     .screens-track{
       display:grid;grid-auto-flow:column;grid-auto-columns:80%;
-      gap:12px;overflow-x:auto;padding:6px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch
+      gap:10px;overflow-x:auto;padding:6px 2px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch
     }
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
     .screen figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
-
-    /* PCでカードを拡大＆キャプション1行 */
     @media (min-width: 900px){
-      .screens-track{
-        grid-auto-flow: initial;
-        grid-template-columns: repeat(4, 1fr); /* 5→4列で拡大 */
-        gap: 16px;
-        overflow: visible;
-      }
-      .screen figcaption{
-        font-size:14px;
-        white-space:nowrap;
-        overflow:hidden; text-overflow:ellipsis;
-      }
+      .screens-track{grid-auto-flow:initial;grid-template-columns:repeat(4,1fr);gap:14px;overflow:visible}
+      .screen figcaption{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     }
-    @media (min-width: 1280px){
-      .screens-track{ grid-template-columns: repeat(3, 1fr); }
-    }
+    @media (min-width: 1280px){.screens-track{grid-template-columns:repeat(3,1fr)}}
 
     /* ===== CTA band, Footer, Lightbox, Mobile CTA ===== */
-    .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+    .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
     .cta-band .btn{background:#fff;color:var(--brand-700)}
-    footer{padding:24px 0 68px;color:#475569; text-align:center;}
+    footer{padding:20px 0 64px;color:#475569;text-align:center}
     footer .credit{font-size:13px}
     .mobile-cta{display:none}
     @media(max-width:740px){
-      .mobile-cta{
-        display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;
-        background:#ffffffd9;border-top:1px solid #e2e8f0;
-        backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:10px 12px
-      }
+      .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:#ffffffd9;border-top:1px solid #e2e8f0;backdrop-filter:saturate(140%) blur(6px);gap:10px;padding:8px 12px}
       .mobile-cta .btn{flex:1}
     }
     #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:1400;align-items:center;justify-content:center;padding:20px}
     #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
 
     /* ===== Achievements (実績) ===== */
-    .achv-wrap{display:grid;gap:16px}
+    .achv-wrap{display:grid;gap:12px}
     @media(min-width:900px){.achv-wrap{grid-template-columns:1.1fr .9fr}}
-    .achv-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;box-shadow:var(--shadow);padding:18px}
-    .kpi-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .achv-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;box-shadow:var(--shadow);padding:16px}
+    .kpi-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
     .kpi-title{font-weight:700}
-    .delta-badge{
-      margin-left:auto;background:#e6eff3;color:var(--brand-700);
-      border:1px solid #cbd5e1;border-radius:999px;padding:4px 10px;font-weight:700;font-size:13px
-    }
-    .bar-compare{display:grid;gap:12px}
-    .bar-row{display:grid;grid-template-columns:130px 1fr 60px;gap:10px;align-items:center}
+    .delta-badge{margin-left:auto;background:#e6eff3;color:var(--brand-700);border:1px solid #cbd5e1;border-radius:999px;padding:3px 9px;font-weight:700;font-size:13px}
+    .bar-compare{display:grid;gap:10px}
+    .bar-row{display:grid;grid-template-columns:120px 1fr 56px;gap:8px;align-items:center}
     .bar-label{color:#334155;font-weight:600}
     .bar-track{height:16px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;position:relative;overflow:hidden}
-    .bar-fill{
-      position:absolute;left:0;top:0;bottom:0;width:calc(var(--val,0) * 1%);
-      background:linear-gradient(90deg,var(--brand) 0%, var(--brand-600) 100%);
-      border-right:1px solid rgba(255,255,255,.6)
-    }
+    .bar-fill{position:absolute;left:0;top:0;bottom:0;width:calc(var(--val,0) * 1%);background:linear-gradient(90deg,var(--brand) 0%, var(--brand-600) 100%);border-right:1px solid rgba(255,255,255,.6)}
     .bar-val{font-variant-numeric:tabular-nums;text-align:right;color:#334155;font-weight:700}
-    .achv-note{color:var(--muted);line-height:1.7}
-    .achv-note small{display:block;color:#94a3b8;margin-top:8px}
-    .achv-list{margin:10px 0 0 18px;color:var(--muted)}
-    .achv-list li{margin:4px 0}
+    .achv-note{color:var(--muted);line-height:1.6}
+    /* 注記やリストは削除済みのためスタイル不要 */
 
-    /* ===== FAQ styles ===== */
-    .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:10px}
+    /* ===== FAQ ===== */
+    .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:8px}
     .faq summary{cursor:pointer;font-weight:600}
   </style>
 </head>
@@ -220,42 +170,28 @@
         <img class="word" src="松本会計.png" alt="税理士法人松本会計 ワードマーク">
       </a>
 
-      <!-- Hamburger (main-site like) -->
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
-        <!-- list icon -->
         <svg class="ico-list" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="5" width="3" height="3" rx="1"></rect>
-          <rect x="8" y="5.5" width="13" height="2" rx="1"></rect>
-          <rect x="3" y="10.5" width="3" height="3" rx="1"></rect>
-          <rect x="8" y="11" width="13" height="2" rx="1"></rect>
-          <rect x="3" y="16" width="3" height="3" rx="1"></rect>
-          <rect x="8" y="16.5" width="13" height="2" rx="1"></rect>
+          <rect x="3" y="5" width="3" height="3" rx="1"></rect><rect x="8" y="5.5" width="13" height="2" rx="1"></rect>
+          <rect x="3" y="10.5" width="3" height="3" rx="1"></rect><rect x="8" y="11" width="13" height="2" rx="1"></rect>
+          <rect x="3" y="16" width="3" height="3" rx="1"></rect><rect x="8" y="16.5" width="13" height="2" rx="1"></rect>
         </svg>
-        <!-- close icon -->
         <svg class="ico-close" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 6l12 12M18 6L6 18" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </button>
 
-      <!-- Nav: PC=inline / SP=off-canvas -->
       <nav id="site-nav" aria-label="グローバルナビ">
-        <a href="#ai-funnel">無料ツール</a>
-        <a href="#mobile-screens">スマホUI</a>
-        <a href="#approach">アプローチ</a>
-        <a href="#automation">自動化</a>
-        <a href="#process">伴走</a>
-        <a href="#results">実績</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">公式サイト</a>
-        <a href="#contact">相談</a>
+        <a href="#ai-funnel">無料ツール</a><a href="#mobile-screens">スマホUI</a><a href="#approach">アプローチ</a>
+        <a href="#automation">自動化</a><a href="#process">伴走</a><a href="#results">実績</a>
+        <a href="#faq">FAQ</a><a href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">公式サイト</a><a href="#contact">相談</a>
       </nav>
     </div>
   </header>
 
-  <!-- SP backdrop -->
   <div id="nav-backdrop" class="backdrop" aria-hidden="true"></div>
 
-  <!-- Mobile bottom CTA (「無料ツール」ボタンを削除し、相談のみ表示) -->
+  <!-- Mobile bottom CTA（相談のみ） -->
   <div class="mobile-cta" role="region" aria-label="固定アクション">
     <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">相談する</a>
   </div>
@@ -265,21 +201,18 @@
     <div class="container hero-wrap">
       <div>
         <div class="badge">
-          <span class="chip">自計化支援</span>
-          <span class="chip">変動損益（限界利益）</span>
-          <span class="chip">継続MAS×月次対話</span>
-          <span class="chip">自動化×効率化</span>
-          <span class="chip">自社開発AI/アプリ</span>
-          <span class="chip">無料ツールあり</span>
+          <span class="chip">自計化支援</span><span class="chip">変動損益（限界利益）</span>
+          <span class="chip">継続MAS×月次対話</span><span class="chip">自動化×効率化</span>
+          <span class="chip">自社開発AI/アプリ</span><span class="chip">無料ツールあり</span>
         </div>
         <h1>TKCシステム×オリジナルツールで、今日の意思決定を加速。</h1>
-        <p class="sub">“お客様企業の繁栄は私たちの喜び”——<strong>リアルタイム会計×自動化×管理会計×継続伴走</strong>に、所内開発のAIツール群を組み合わせ、黒字経営を強力にご支援します。</p>
+        <p class="sub">“お客様企業の繁栄は私たちの喜び”——<strong>リアルタイム会計×自動化×管理会計×継続伴走</strong>に、<strong>AIで税理士が開発したツール群</strong>を組み合わせ、黒字経営を強力にご支援します。</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#ai-funnel">無料ツールを使ってみる</a>
         </div>
       </div>
       <div class="hero-media">
-        <img src="hero-mk-desktop.jpg" alt="松本会計：数字を意思決定へつなぐ支援イメージ" loading="eager" fetchpriority="high" width="1920" height="1080" srcset="hero-mk-desktop.jpg 1920w, hero-mk-desktop.jpg 1280w" sizes="(max-width:640px) 100vw, 56vw">
+        <img src="hero-mk-desktop.jpg" alt="松本会計：数字を意思決定へつなぐ支援イメージ" loading="eager" fetchpriority="high" width="1920" height="1080">
       </div>
     </div>
   </section>
@@ -293,28 +226,19 @@
         <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
       </p>
 
-      <div class="cta-row" style="margin-bottom:12px;flex-wrap:wrap">
-        <!-- 価格改定ボタンを白背景・緑文字に（=outline） -->
+      <div class="cta-row" style="margin-bottom:10px;flex-wrap:wrap">
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定インパクト試算</a>
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">自動化効果（ROI）試算</a>
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/hendou_PL/">ボールで学ぶ変動損益計算書</a>
       </div>
 
       <div class="grid grid-3">
-        <div class="card">
-          <h3>① 体験する（無料）</h3>
-          <p>上の3ツールはそのまま動きます。</p>
-        </div>
-        <div class="card">
-          <h3>② 気づきをメモ</h3>
-          <p>“値上げ◯%で限界利益が◯円増える”“残業△h削減で人件費率が◯pt改善”など、気づきをその場で記録。</p>
-        </div>
+        <div class="card"><h3>① 体験する（無料）</h3><p>上の3ツールはそのまま動きます。</p></div>
+        <div class="card"><h3>② 気づきをメモ</h3><p>“値上げ◯%で限界利益が◯円増える”など、気づきをその場で記録。</p></div>
         <div class="card">
           <h3>③ 相談する</h3>
           <p>可視化した論点をもとに、導入・運用を設計します。</p>
-          <p style="margin-top:8px">
-            <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a>
-          </p>
+          <p style="margin-top:8px"><a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォーム）</a></p>
         </div>
       </div>
     </div>
@@ -324,29 +248,14 @@
   <section id="mobile-screens">
     <div class="container">
       <h2>スマホでさっと試算。現場で意思決定。</h2>
-      <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。</p>
+      <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
       <div class="screens">
         <div class="screens-track">
-          <figure class="screen">
-            <img src="iPhoneモック0.png" alt="オリジナルツールポータルのスマホ画面" loading="lazy" decoding="async" draggable="false">
-            <figcaption>ツールポータル</figcaption>
-          </figure>
-          <figure class="screen">
-            <img src="iPhoneモック1.png" alt="費用→必要売上換算ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
-            <figcaption>費用→必要売上 換算</figcaption>
-          </figure>
-          <figure class="screen">
-            <img src="iPhoneモック2.png" alt="受取利息・受取配当 源泉税ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
-            <figcaption>受取利息・配当 源泉税</figcaption>
-          </figure>
-          <figure class="screen">
-            <img src="iPhoneモック3.png" alt="価格改定検討ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
-            <figcaption>価格改定インパクト</figcaption>
-          </figure>
-          <figure class="screen">
-            <img src="iPhoneモック4.png" alt="人件費見える化ツールのスマホ画面" loading="lazy" decoding="async" draggable="false">
-            <figcaption>人件費 見える化</figcaption>
-          </figure>
+          <figure class="screen"><img src="iPhoneモック0.png" alt="ツールポータル"><figcaption>ツールポータル</figcaption></figure>
+          <figure class="screen"><img src="iPhoneモック1.png" alt="費用→必要売上 換算"><figcaption>費用→必要売上 換算</figcaption></figure>
+          <figure class="screen"><img src="iPhoneモック2.png" alt="受取利息・配当 源泉税"><figcaption>受取利息・配当 源泉税</figcaption></figure>
+          <figure class="screen"><img src="iPhoneモック3.png" alt="価格改定インパクト"><figcaption>価格改定インパクト</figcaption></figure>
+          <figure class="screen"><img src="iPhoneモック4.png" alt="人件費 見える化"><figcaption>人件費 見える化</figcaption></figure>
         </div>
       </div>
     </div>
@@ -375,46 +284,16 @@
     </div>
   </section>
 
-  <!-- ===== Process (Vertical Flow) ===== -->
+  <!-- ===== Process ===== -->
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
       <ol class="flow flow-vertical">
-        <li class="flow-step">
-          <div class="flow-num">1</div>
-          <div class="flow-body">
-            <div class="flow-title">現状診断</div>
-            <p class="flow-desc">会計データ×ヒアリングでボトルネックを特定</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">2</div>
-          <div class="flow-body">
-            <div class="flow-title">KPI設計</div>
-            <p class="flow-desc">限界利益・固定費・資金を指標化（価格/数量/原価）</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">3</div>
-          <div class="flow-body">
-            <div class="flow-title">仕組み化</div>
-            <p class="flow-desc">自計化・証憑・データ受信の標準化</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">4</div>
-          <div class="flow-body">
-            <div class="flow-title">継続MAS×月次対話</div>
-            <p class="flow-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">5</div>
-          <div class="flow-body">
-            <div class="flow-title">打ち手の実行と検証</div>
-            <p class="flow-desc">価格・人件費・投資のアクションをツールで検証</p>
-          </div>
-        </li>
+        <li class="flow-step"><div class="flow-num">1</div><div class="flow-body"><div class="flow-title">現状診断</div><p class="flow-desc">会計データ×ヒアリングでボトルネックを特定</p></div></li>
+        <li class="flow-step"><div class="flow-num">2</div><div class="flow-body"><div class="flow-title">KPI設計</div><p class="flow-desc">限界利益・固定費・資金を指標化（価格/数量/原価）</p></div></li>
+        <li class="flow-step"><div class="flow-num">3</div><div class="flow-body"><div class="flow-title">仕組み化</div><p class="flow-desc">自計化・証憑・データ受信の標準化</p></div></li>
+        <li class="flow-step"><div class="flow-num">4</div><div class="flow-body"><div class="flow-title">継続MAS×月次対話</div><p class="flow-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p></div></li>
+        <li class="flow-step"><div class="flow-num">5</div><div class="flow-body"><div class="flow-title">打ち手の実行と検証</div><p class="flow-desc">価格・人件費・投資のアクションをツールで検証</p></div></li>
       </ol>
     </div>
   </section>
@@ -423,52 +302,26 @@
   <section id="results">
     <div class="container">
       <h2>実績</h2>
-
       <div class="achv-wrap" role="group" aria-labelledby="achv-comparison">
-        <!-- 左：横棒グラフ -->
         <div class="achv-card" id="achv-comparison" aria-label="黒字申告割合の比較">
-          <div class="kpi-head">
-            <div class="kpi-title">黒字申告割合（顧問先）</div>
-            <div class="delta-badge">+29pt</div>
-          </div>
-
+          <div class="kpi-head"><div class="kpi-title">黒字申告割合（顧問先）</div><div class="delta-badge">+29pt</div></div>
           <div class="bar-compare">
-            <div class="bar-row" aria-label="当事務所の黒字申告割合 65%">
-              <div class="bar-label">当事務所</div>
-              <div class="bar-track" aria-hidden="true">
-                <span class="bar-fill" style="--val:65"></span>
-              </div>
-              <div class="bar-val">65%</div>
-            </div>
-
-            <div class="bar-row" aria-label="全国平均の黒字申告割合 36.0%">
-              <div class="bar-label">全国平均</div>
-              <div class="bar-track" aria-hidden="true">
-                <span class="bar-fill" style="--val:36"></span>
-              </div>
-              <div class="bar-val">36.0%</div>
-            </div>
+            <div class="bar-row" aria-label="当事務所の黒字申告割合 65%"><div class="bar-label">当事務所</div><div class="bar-track"><span class="bar-fill" style="--val:65"></span></div><div class="bar-val">65%</div></div>
+            <div class="bar-row" aria-label="全国平均の黒字申告割合 36.0%"><div class="bar-label">全国平均</div><div class="bar-track"><span class="bar-fill" style="--val:36"></span></div><div class="bar-val">36.0%</div></div>
           </div>
         </div>
 
-        <!-- 右：注記・補足 -->
+        <!-- 右カード：注記・箇条書きは削除し、要点のみ残す -->
         <div class="achv-card">
           <div class="achv-note">
-            当事務所の黒字申告割合は所内集計による<strong>約65%</strong>。<br>
-            比較対象として、<strong>全国平均 36.0%</strong>（令和5事務年度、国税庁公開統計）を掲載しています。
-            <small>※ 所内集計の対象期間・母数は面談時に開示します。全国平均は国税庁の公表統計に基づき当事務所で整理した値です。</small>
+            当事務所の黒字申告割合は所内集計による<strong>約65%</strong>。比較対象として、<strong>全国平均 36.0%</strong>（令和5事務年度、国税庁公開統計）を掲載しています。
           </div>
-          <ul class="achv-list">
-            <li>「自計化×リアルタイム」＋「管理会計」＋「継続伴走」により、打ち手の実行・検証が定着。</li>
-            <li>ツールで価格・数量・原価の3要素を数分で検証し、意思決定の速度を向上。</li>
-            <li>会計の自動化で「遅い月次」や入力の手戻りを削減。</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ (指定項目を削除済み) ===== -->
+  <!-- ===== FAQ ===== -->
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
@@ -590,7 +443,6 @@
   <!-- Lightbox -->
   <div id="lightbox" aria-hidden="true"><img src="" alt="拡大表示"></div>
 
-  <!-- ===== Scripts ===== -->
   <script>
     // Hamburger open/close
     const btn = document.querySelector('.nav-toggle');
@@ -598,41 +450,20 @@
     const backdrop = document.getElementById('nav-backdrop');
     const body = document.body;
 
-    function openMenu(){
-      nav.classList.add('open');
-      backdrop.classList.add('show');
-      btn.classList.add('open');
-      body.classList.add('nav-open');
-      btn.setAttribute('aria-expanded','true');
-      btn.setAttribute('aria-label','メニューを閉じる');
-    }
-    function closeMenu(){
-      nav.classList.remove('open');
-      backdrop.classList.remove('show');
-      btn.classList.remove('open');
-      body.classList.remove('nav-open');
-      btn.setAttribute('aria-expanded','false');
-      btn.setAttribute('aria-label','メニューを開く');
-    }
+    function openMenu(){ nav.classList.add('open'); backdrop.classList.add('show'); btn.classList.add('open'); body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true'); btn.setAttribute('aria-label','メニューを閉じる'); }
+    function closeMenu(){ nav.classList.remove('open'); backdrop.classList.remove('show'); btn.classList.remove('open'); body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','メニューを開く'); }
 
-    btn.addEventListener('click', () => {
-      (nav.classList.contains('open') ? closeMenu : openMenu)();
-    });
+    btn.addEventListener('click', () => { (nav.classList.contains('open') ? closeMenu : openMenu)(); });
     backdrop.addEventListener('click', closeMenu);
     window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
 
-    // リンクタップで確実に遷移＆クローズ
-    nav.addEventListener('click', (e) => {
-      const a = e.target.closest('a');
-      if (!a) return;
-      closeMenu();
-    });
+    // Link tap -> close
+    nav.addEventListener('click', (e) => { const a = e.target.closest('a'); if (!a) return; closeMenu(); });
 
-    // PC幅に戻ったら強制クローズ
-    const mq = window.matchMedia('(min-width: 741px)');
-    mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
+    // Close when PC width
+    const mq = window.matchMedia('(min-width: 741px)'); mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
 
-    // Lightbox for screens
+    // Lightbox
     const lb = document.getElementById('lightbox');
     if (lb) {
       const lbImg = lb.querySelector('img');
