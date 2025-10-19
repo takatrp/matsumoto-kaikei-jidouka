@@ -114,14 +114,8 @@
       width:32px; pointer-events:none; z-index:1;
       transition: opacity .2s ease; opacity:1;
     }
-    .screens::before{
-      left:0;
-      background:linear-gradient(to right, var(--bg), rgba(248,250,252,0));
-    }
-    .screens::after{
-      right:0;
-      background:linear-gradient(to left, var(--bg), rgba(248,250,252,0));
-    }
+    .screens::before{ left:0; background:linear-gradient(to right, var(--bg), rgba(248,250,252,0)); }
+    .screens::after{ right:0; background:linear-gradient(to left, var(--bg), rgba(248,250,252,0)); }
     .screens.at-start::before{ opacity:0; }
     .screens.at-end::after{ opacity:0; }
 
@@ -184,33 +178,16 @@
     .proc-connector{flex:0 0 auto; align-self:center; display:flex; align-items:center; justify-content:center; padding:0 2px}
     .proc-connector svg{width:26px; height:26px; color:var(--brand-600)}
 
-    /* ===== 解決アプローチ：薄く・コンパクト ===== */
-    #approach{ padding:24px 0; }
+    /* ===== 解決アプローチ：フォント据え置き／余白だけ圧縮 ===== */
+    #approach{ padding:24px 0; }                          /* 上下だけ詰める */
+    #approach h2{ margin:0 0 10px; }                      /* 見出し直下をやや詰める */
     #approach .grid.grid-3{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-      gap:8px;
+      grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); /* 3カラム維持 */
+      gap:10px;                                                  /* カード間の隙間を軽く詰める */
     }
-    #approach .card{
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid #e4ecf2;
-      background:#fff;
-      box-shadow:none;
-    }
-    #approach .card h3{
-      margin:0 0 4px;
-      font-size:16px;
-      line-height:1.4;
-      font-weight:700;
-      color:#334155;
-    }
-    #approach .card p{
-      margin:0;
-      font-size:13px;
-      line-height:1.6;
-      color:#64748b;
-    }
+    #approach .card{ padding:12px 16px; }                 /* カード内の上下だけ少し詰める */
+    #approach .card h3{ margin:0 0 6px; }                 /* フォントサイズ変更はナシ（余白のみ） */
+    #approach .card p{ margin:0; }                        /* 同上 */
   </style>
 </head>
 <body>
@@ -307,7 +284,7 @@
     </div>
   </section>
 
-  <!-- ===== Approach ===== -->
+  <!-- ===== Approach（フォント据え置き、余白のみ圧縮） ===== -->
   <section id="approach">
     <div class="container">
       <h2>解決アプローチ｜3本柱</h2>
