@@ -78,7 +78,7 @@
     /* ===== Hero ===== */
     .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:14px;align-items:center}
-    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1.2fr}} /* 画像をやや大きめに */
+    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1.2fr}}
     .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
     h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
@@ -121,7 +121,7 @@
 
     /* ===== CTA band, Footer, Lightbox, Mobile CTA ===== */
     .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
-    .cta-band .btn{background:#fff;color:var(--brand-700)}
+    .cta-band .btn{background:#fff;color:#1f2937;border-color:#cbd5e1}
     footer{padding:20px 0 64px;color:#475569;text-align:center}
     footer .credit{font-size:13px}
     .mobile-cta{display:none}
@@ -131,7 +131,6 @@
     }
     #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:1400;align-items:center;justify-content:center;padding:20px}
     #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3);cursor:zoom-out}
-    /* Lightbox nav buttons */
     #lightbox .lb-nav{
       position:absolute; top:50%; transform:translateY(-50%);
       width:44px; height:44px; border-radius:999px;
@@ -176,18 +175,18 @@
     .proc-title{margin:0 0 4px; font-weight:700; font-size:18px}
     .proc-desc{margin:0; color:var(--muted); line-height:1.6}
     .proc-connector{flex:0 0 auto; align-self:center; display:flex; align-items:center; justify-content:center; padding:0 2px}
-    .proc-connector svg{width:26px; height:26px; color:var(--brand-600)}
+    .proc-connector svg{width:26px; height:26px; color:#7aa2b0}
 
     /* ===== 解決アプローチ：フォント据え置き／余白だけ圧縮 ===== */
-    #approach{ padding:24px 0; }                          /* 上下だけ詰める */
-    #approach h2{ margin:0 0 10px; }                      /* 見出し直下をやや詰める */
+    #approach{ padding:24px 0; }
+    #approach h2{ margin:0 0 10px; }
     #approach .grid.grid-3{
-      grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); /* 3カラム維持 */
-      gap:10px;                                                  /* カード間の隙間を軽く詰める */
+      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      gap:10px;
     }
-    #approach .card{ padding:12px 16px; }                 /* カード内の上下だけ少し詰める */
-    #approach .card h3{ margin:0 0 6px; }                 /* フォントサイズ変更はナシ（余白のみ） */
-    #approach .card p{ margin:0; }                        /* 同上 */
+    #approach .card{ padding:12px 16px; }
+    #approach .card h3{ margin:0 0 6px; }
+    #approach .card p{ margin:0; }
   </style>
 </head>
 <body>
@@ -267,7 +266,7 @@
   <section id="mobile-screens">
     <div class="container">
       <h2>スマホでさっと試算。現場で意思決定。</h2>
-      <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
+    <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
       <div class="screens">
         <div class="screens-track">
           <figure class="screen"><img src="iPhoneモック0.png" alt="ツールポータルの画面イメージ"></figure>
@@ -296,13 +295,17 @@
     </div>
   </section>
 
-  <!-- ===== Automation Promo ===== -->
+  <!-- ===== Automation Promo（文言更新＋ボタン追加） ===== -->
   <section id="automation">
     <div class="container">
       <div class="cta-band">
-        <div style="font-size:20px;font-weight:700">会計の“自動化”で、月次の遅れと手戻りを削減。</div>
-        <div class="lead" style="color:#e2e8f0">銀行・信販データ受信／証憑保存／スマホ経費／ワークフロー自動化を整備し、入力を“集計”から“意思決定”へ。</div>
-        <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
+        <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
+        <div class="lead" style="color:#e6f0f4">銀行信販データ受信／証憑保存機能／スマホで経費／レジ連携を整備し、仕訳を”入力”から”連携”へ。</div>
+        <div class="lead" style="color:#ffffff">90％超の自動化で年間数十万円の人件費削減を。</div>
+        <div class="cta-row" style="margin-top:10px">
+          <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
+          <a class="btn" href="自動効果実例集.pdf" target="_blank" rel="noopener">自動化実績はこちら</a>
+        </div>
       </div>
     </div>
   </section>
@@ -311,54 +314,40 @@
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
-
       <div class="process-wrap">
         <div class="process-scroller" role="list" aria-label="①から⑤までのプロセス">
-          <!-- ① -->
           <article class="proc-step" role="listitem">
             <div class="proc-num">1</div>
             <h3 class="proc-title">現状診断</h3>
             <p class="proc-desc">会計データ×ヒアリングでボトルネックを特定</p>
           </article>
-
           <div class="proc-connector" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M3 12h16m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-
-          <!-- ② -->
           <article class="proc-step" role="listitem">
             <div class="proc-num">2</div>
             <h3 class="proc-title">自動化設計・初期指導</h3>
             <p class="proc-desc">自計化・証憑・データ受信の標準化／初期運用の立上げ</p>
           </article>
-
           <div class="proc-connector" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M3 12h16m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-
-          <!-- ③ -->
           <article class="proc-step" role="listitem">
             <div class="proc-num">3</div>
             <h3 class="proc-title">月次巡回監査</h3>
             <p class="proc-desc">記帳・証憑・運用のチェックと改善提案を毎月実施</p>
           </article>
-
           <div class="proc-connector" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M3 12h16m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-
-          <!-- ④ -->
           <article class="proc-step" role="listitem">
             <div class="proc-num">4</div>
             <h3 class="proc-title">継続MAS×対話</h3>
             <p class="proc-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p>
           </article>
-
           <div class="proc-connector" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M3 12h16m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-
-          <!-- ⑤ -->
           <article class="proc-step" role="listitem">
             <div class="proc-num">5</div>
             <h3 class="proc-title">打ち手の実行と検証</h3>
@@ -384,7 +373,6 @@
             <div class="bar-row" aria-label="全国平均の黒字申告割合 36.0%"><div class="bar-label">全国平均</div><div class="bar-track"><span class="bar-fill" style="--val:36"></span></div><div class="bar-val">36.0%</div></div>
           </div>
         </div>
-
         <div class="achv-card">
           <div class="achv-note">
             当事務所の黒字申告割合は所内集計による<strong>約65%</strong>。比較対象として、<strong>全国平均 36.0%</strong>（令和5事務年度、国税庁公開統計）を掲載しています。
@@ -398,7 +386,6 @@
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
-
       <details><summary>記帳代行から自計化へ移行するメリットは？</summary><div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。</div></details>
       <details><summary>導入までの期間や進め方のイメージは？</summary><div class="content">目安は数週間〜数か月です（規模・現状によって変動）。<ol style="margin:6px 0 0 18px"><li>現状診断</li><li>自動化設計・初期指導</li><li>月次巡回監査</li><li>継続MAS×対話</li></ol></div></details>
       <details><summary>どこまで“自動化”できますか？</summary><div class="content">銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。</div></details>
