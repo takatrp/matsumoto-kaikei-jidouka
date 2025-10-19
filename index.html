@@ -63,7 +63,6 @@
       nav#site-nav a{padding:10px 8px;border-radius:10px}
       nav#site-nav a:hover{background:#f1f5f9}
       nav#site-nav.open{display:flex}
-
       .backdrop{position:fixed; inset:0; background:#0006; display:none; z-index:1500; pointer-events:none}
       .backdrop.show{display:block; pointer-events:auto}
       body.nav-open{overflow:hidden}
@@ -91,12 +90,12 @@
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Screens: PC でも横スクロール & スナップ ===== */
-    .screens{overflow:hidden}
+    /* ===== Screens: PCも横スクロール & スナップ ===== */
+    .screens{position:relative; overflow:hidden}
     .screens-track{
       display:grid;
       grid-auto-flow:column;
-      grid-auto-columns:clamp(260px, 30%, 360px); /* 画面幅に応じてカード幅を可変 */
+      grid-auto-columns:clamp(260px, 30%, 360px);
       gap:14px;
       overflow-x:auto;
       padding:6px 2px 8px;
@@ -107,7 +106,24 @@
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
 
-    /* ← 以前のPC用固定グリッド指定(@media min-width:900/1280)は削除 */
+    /* ===== 左右フェード（A方式） ===== */
+    .screens::before,
+    .screens::after{
+      content:"";
+      position:absolute; top:0; bottom:0;
+      width:32px; pointer-events:none; z-index:1;
+      transition: opacity .2s ease; opacity:1;
+    }
+    .screens::before{
+      left:0;
+      background:linear-gradient(to right, var(--bg), rgba(248,250,252,0));
+    }
+    .screens::after{
+      right:0;
+      background:linear-gradient(to left, var(--bg), rgba(248,250,252,0));
+    }
+    .screens.at-start::before{ opacity:0; }
+    .screens.at-end::after{ opacity:0; }
 
     /* ===== CTA band, Footer, Lightbox, Mobile CTA ===== */
     .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
@@ -344,17 +360,14 @@
     const btn = document.querySelector('.nav-toggle');
     const nav = document.getElementById('site-nav');
     const backdrop = document.getElementById('nav-backdrop');
-    const body = document.body;
 
-    function openMenu(){ nav.classList.add('open'); backdrop.classList.add('show'); btn.classList.add('open'); body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true'); btn.setAttribute('aria-label','メニューを閉じる'); }
-    function closeMenu(){ nav.classList.remove('open'); backdrop.classList.remove('show'); btn.classList.remove('open'); body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','メニューを開く'); }
+    function openMenu(){ nav.classList.add('open'); backdrop.classList.add('show'); btn.classList.add('open'); document.body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true'); btn.setAttribute('aria-label','メニューを閉じる'); }
+    function closeMenu(){ nav.classList.remove('open'); backdrop.classList.remove('show'); btn.classList.remove('open'); document.body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','メニューを開く'); }
 
     btn?.addEventListener('click', () => { (nav.classList.contains('open') ? closeMenu : openMenu)(); });
     backdrop?.addEventListener('click', closeMenu);
     window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeMenu(); closeLb(); } });
-
     nav?.addEventListener('click', (e) => { const a = e.target.closest('a'); if (!a) return; closeMenu(); });
-
     const mq = window.matchMedia('(min-width: 741px)'); mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
 
     // Lightbox toggle (tap image to open, tap again to close)
@@ -374,10 +387,28 @@
         }
       });
     });
-
     // Click anywhere on overlay OR the enlarged image -> close
     lb.addEventListener('click', closeLb);
     lbImg.addEventListener('click', (e)=>{ e.stopPropagation(); closeLb(); });
+
+    // ===== 横スクロール端でフェードの表示/非表示を切替（A方式） =====
+    (function(){
+      const screens = document.querySelector('#mobile-screens .screens');
+      const track   = document.querySelector('#mobile-screens .screens-track');
+      if(!screens || !track) return;
+
+      function updateFade(){
+        const max = Math.max(0, track.scrollWidth - track.clientWidth);
+        const x   = track.scrollLeft;
+        const EPS = 2; // 端判定の余白
+        screens.classList.toggle('at-start', x <= EPS);
+        screens.classList.toggle('at-end',   (max - x) <= EPS);
+      }
+      // 初期化 & 監視
+      updateFade();
+      track.addEventListener('scroll', updateFade, {passive:true});
+      window.addEventListener('resize', updateFade);
+    })();
   </script>
 </body>
 </html>
