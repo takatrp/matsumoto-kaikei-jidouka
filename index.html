@@ -78,7 +78,7 @@
     /* ===== Hero ===== */
     .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:14px;align-items:center}
-    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1.2fr}}
+    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1.2fr}} /* 画像やや大きめ */
     .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
     h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
@@ -178,7 +178,7 @@
     .proc-connector svg{width:26px; height:26px; color:#7aa2b0}
 
     /* ===== 解決アプローチ：フォント据え置き／余白だけ圧縮 ===== */
-    #approach{ padding:24px 0; }
+    #approach{ padding:24px 0; }          /* 上下だけ詰める */
     #approach h2{ margin:0 0 10px; }
     #approach .grid.grid-3{
       grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
@@ -187,6 +187,30 @@
     #approach .card{ padding:12px 16px; }
     #approach .card h3{ margin:0 0 6px; }
     #approach .card p{ margin:0; }
+
+    /* ==== PDF viewer modal ==== */
+    #pdfbox{
+      position:fixed; inset:0; display:none; background:#000a; z-index:1450;
+      align-items:center; justify-content:center; padding:16px;
+    }
+    #pdfbox .panel{
+      background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(0,0,0,.3);
+      width:min(1100px,96vw); height:min(90vh,1000px);
+      display:flex; flex-direction:column; overflow:hidden;
+    }
+    #pdfbox header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:8px 12px; border-bottom:1px solid #e2e8f0;
+    }
+    #pdfbox header .title{ font-weight:700; color:#334155 }
+    #pdfbox .close{
+      appearance:none; border:1px solid #cbd5e1; background:#fff; color:#334155;
+      border-radius:10px; padding:6px 10px; cursor:pointer;
+    }
+    #pdfbox iframe{ width:100%; height:100%; border:0; }
+    #pdfbox .fallback{
+      padding:10px; border-top:1px solid #e2e8f0; font-size:13px; color:#64748b;
+    }
   </style>
 </head>
 <body>
@@ -210,8 +234,8 @@
       </button>
 
       <nav id="site-nav" aria-label="グローバルナビ">
-        <a href="#ai-funnel">無料ツール</a><a href="#mobile-screens">スマホUI</a><a href="#approach">アプローチ</a>
-        <a href="#automation">自動化</a><a href="#process">伴走</a><a href="#results">実績</a>
+        <a href="#ai-funnel">無料ツール</a><a href="#mobile-screens">スマホUI</a><a href="#automation">自動化</a>
+        <a href="#approach">アプローチ</a><a href="#process">伴走</a><a href="#results">実績</a>
         <a href="#faq">FAQ</a><a href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener">公式サイト</a><a href="#contact">相談</a>
       </nav>
     </div>
@@ -283,7 +307,23 @@
     </div>
   </section>
 
-  <!-- ===== Approach（フォント据え置き、余白のみ圧縮） ===== -->
+  <!-- ===== Automation Promo（先に表示） ===== -->
+  <section id="automation">
+    <div class="container">
+      <h2>自動化で、ラクしてリアルタイム情報と経費削減を。</h2>
+      <div class="cta-band">
+        <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
+        <div class="lead" style="color:#e6f0f4">銀行信販データ受信／証憑保存機能／スマホで経費／レジ連携を整備し、仕訳を”入力”から”連携”へ。</div>
+        <div class="lead" style="color:#ffffff">90％超の自動化で年間数十万円の人件費削減を。</div>
+        <div class="cta-row" style="margin-top:10px">
+          <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
+          <a class="btn" href="自動効果実例集.pdf" target="_blank" rel="noopener" id="open-pdf">自動化実績はこちら</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Approach（後に表示・フォント据え置き、余白のみ圧縮） ===== -->
   <section id="approach">
     <div class="container">
       <h2>解決アプローチ｜3本柱</h2>
@@ -291,25 +331,6 @@
         <div class="card"><h3>1. 自計化×リアルタイム</h3><p>社内で帳簿を付ける“自計化”を標準に。データ連携で“遅い月次”からの脱却。</p></div>
         <div class="card"><h3>2. 管理会計×変動PL</h3><p>限界利益（率）を軸に、価格×数量×原価の3要素で意思決定を設計。</p></div>
         <div class="card"><h3>3. 継続伴走×ツール</h3><p>毎月の対話と専用ツールで、施策の実行と検証を高速に回します。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Automation Promo（見出し追加＋文言更新＋ボタン追加） ===== -->
-  <section id="automation">
-    <div class="container">
-      <!-- 追加タイトル -->
-      <h2>自動化で、ラクしてリアルタイム情報と経費削減を</h2>
-
-      <div class="cta-band">
-        <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
-        <div class="lead" style="color:#e6f0f4">銀行信販データ受信／証憑保存機能／スマホで経費／レジ連携を整備し、仕訳を”入力”から”連携”へ。</div>
-        <div class="lead" style="color:#ffffff">90％超の自動化で年間数十万円の人件費削減を。</div>
-        <div class="cta-row" style="margin-top:10px">
-          <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
-          <!-- ルート（LP直下）に置かれているPDFへ -->
-          <a class="btn" href="自動効果実例集.pdf" target="_blank" rel="noopener">自動化実績はこちら</a>
-        </div>
       </div>
     </div>
   </section>
@@ -424,7 +445,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox -->
+  <!-- Lightbox for screenshots -->
   <div id="lightbox" aria-hidden="true">
     <button class="lb-nav lb-prev" aria-label="前の画像">
       <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -433,6 +454,20 @@
     <button class="lb-nav lb-next" aria-label="次の画像">
       <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
+  </div>
+
+  <!-- PDF viewer modal -->
+  <div id="pdfbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="自動化 実例集">
+    <div class="panel">
+      <header>
+        <div class="title">自動化 実例集（PDF）</div>
+        <button class="close" id="pdf-close">閉じる</button>
+      </header>
+      <iframe src="自動効果実例集.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH"></iframe>
+      <div class="fallback">
+        表示されない場合は <a class="underline-link" href="自動効果実例集.pdf" target="_blank" rel="noopener">こちら</a> を開いてください。
+      </div>
+    </div>
   </div>
 
   <script>
@@ -446,19 +481,17 @@
 
     btn?.addEventListener('click', () => { (nav.classList.contains('open') ? closeMenu : openMenu)(); });
     backdrop?.addEventListener('click', closeMenu);
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeMenu(); closeLb(); } });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeMenu(); closeLb(); closePdf(); } });
     nav?.addEventListener('click', (e) => { const a = e.target.closest('a'); if (!a) return; closeMenu(); });
-    const mq = window.matchMedia('(min-width: 741px)'); mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
+    const mq = window.matchMedia('(min-width: 741px)'); mq.addEventListener('change', (e) => { if (e.matches) closeMenu(); });
 
-    // ===== Lightbox with prev/next =====
+    // ===== Lightbox with prev/next for screenshots =====
     const lb = document.getElementById('lightbox');
     const lbImg = lb.querySelector('img');
     const prevBtn = lb.querySelector('.lb-prev');
     const nextBtn = lb.querySelector('.lb-next');
-
     const thumbs = Array.from(document.querySelectorAll('.screen img'));
     thumbs.forEach((img, i) => img.dataset.idx = i);
-
     let current = -1;
 
     function openLbAt(i){
@@ -482,7 +515,6 @@
       lbImg.src = thumbs[current].getAttribute('src');
     }
 
-    // Open from thumbnails
     thumbs.forEach(img=>{
       img.addEventListener('click',()=>{
         const idx = parseInt(img.dataset.idx,10);
@@ -490,16 +522,10 @@
         openLbAt(idx);
       });
     });
-
-    // Overlay click / image click -> close
     lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLb(); });
     lbImg.addEventListener('click', (e)=>{ e.stopPropagation(); closeLb(); });
-
-    // Prev/Next buttons
     prevBtn.addEventListener('click', (e)=>{ e.stopPropagation(); showNext(-1); });
     nextBtn.addEventListener('click', (e)=>{ e.stopPropagation(); showNext(1); });
-
-    // Keyboard navigation
     window.addEventListener('keydown', (e)=>{
       if(lb.style.display !== 'flex') return;
       if(e.key === 'ArrowRight'){ showNext(1); }
@@ -524,6 +550,27 @@
       track.addEventListener('scroll', updateFade, {passive:true});
       window.addEventListener('resize', updateFade);
     })();
+
+    // ==== PDF modal open/close ====
+    const pdfbox   = document.getElementById('pdfbox');
+    const pdfOpen  = document.getElementById('open-pdf');
+    const pdfClose = document.getElementById('pdf-close');
+
+    function openPdf(e){ if(e) e.preventDefault();
+      pdfbox.style.display = 'flex';
+      pdfbox.setAttribute('aria-hidden','false');
+      document.body.classList.add('lb-open');
+    }
+    function closePdf(){
+      pdfbox.style.display = 'none';
+      pdfbox.setAttribute('aria-hidden','true');
+      document.body.classList.remove('lb-open');
+    }
+
+    pdfOpen?.addEventListener('click', openPdf);
+    pdfClose?.addEventListener('click', closePdf);
+    pdfbox?.addEventListener('click', (e)=>{ if(e.target === pdfbox) closePdf(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePdf(); });
   </script>
 </body>
 </html>
