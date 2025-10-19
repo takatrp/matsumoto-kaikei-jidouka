@@ -183,6 +183,34 @@
     .proc-desc{margin:0; color:var(--muted); line-height:1.6}
     .proc-connector{flex:0 0 auto; align-self:center; display:flex; align-items:center; justify-content:center; padding:0 2px}
     .proc-connector svg{width:26px; height:26px; color:var(--brand-600)}
+
+    /* ===== 解決アプローチ：薄く・コンパクト ===== */
+    #approach{ padding:24px 0; }
+    #approach .grid.grid-3{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:8px;
+    }
+    #approach .card{
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid #e4ecf2;
+      background:#fff;
+      box-shadow:none;
+    }
+    #approach .card h3{
+      margin:0 0 4px;
+      font-size:16px;
+      line-height:1.4;
+      font-weight:700;
+      color:#334155;
+    }
+    #approach .card p{
+      margin:0;
+      font-size:13px;
+      line-height:1.6;
+      color:#64748b;
+    }
   </style>
 </head>
 <body>
@@ -302,7 +330,7 @@
     </div>
   </section>
 
-  <!-- ===== Process（横フローに戻す） ===== -->
+  <!-- ===== Process（横フロー ①→②→③→④→⑤） ===== -->
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
@@ -411,7 +439,7 @@
   <section id="contact">
     <div class="container">
       <h2>ご相談・お問い合わせ</h2>
-    <div class="card">
+      <div class="card">
         <p class="lead" style="margin-bottom:8px">オンライン／来所どちらも対応可能です。<strong>公式サイトの専用フォーム</strong>からお送りください（reCAPTCHA対応）。</p>
         <p><a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">お問い合わせ（公式フォームへ）</a></p>
         <ul style="margin:10px 0 0 18px;color:#64748b">
@@ -490,7 +518,6 @@
     thumbs.forEach(img=>{
       img.addEventListener('click',()=>{
         const idx = parseInt(img.dataset.idx,10);
-        // 既に同じ画像が開いていれば閉じる（再タップで閉じる）
         if(lb.style.display === 'flex' && current === idx){ closeLb(); return; }
         openLbAt(idx);
       });
@@ -511,6 +538,24 @@
       else if(e.key === 'ArrowLeft'){ showNext(-1); }
       else if(e.key === 'Escape'){ closeLb(); }
     });
+
+    // ===== 横スクロール端でフェードの表示/非表示（A方式） =====
+    (function(){
+      const screens = document.querySelector('#mobile-screens .screens');
+      const track   = document.querySelector('#mobile-screens .screens-track');
+      if(!screens || !track) return;
+
+      function updateFade(){
+        const max = Math.max(0, track.scrollWidth - track.clientWidth);
+        const x   = track.scrollLeft;
+        const EPS = 2;
+        screens.classList.toggle('at-start', x <= EPS);
+        screens.classList.toggle('at-end',   (max - x) <= EPS);
+      }
+      updateFade();
+      track.addEventListener('scroll', updateFade, {passive:true});
+      window.addEventListener('resize', updateFade);
+    })();
   </script>
 </body>
 </html>
