@@ -45,7 +45,7 @@
     nav#site-nav a{color:var(--muted);font-size:14px}
     nav#site-nav a:hover{color:var(--brand-700)}
 
-    /* Hamburger (main-site風) */
+    /* Hamburger */
     .nav-toggle{display:none;appearance:none;background:#fff;border:1.5px solid #cdd6e1;
       border-radius:12px;box-shadow:var(--shadow);width:56px;height:48px;align-items:center;justify-content:center;padding:0;margin:0;cursor:pointer}
     .nav-toggle svg{width:26px;height:26px;display:block}
@@ -92,26 +92,6 @@
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Flow ===== */
-    .flow{list-style:none;margin:0;padding:0}
-    .flow-vertical .flow-step{
-      position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:16px;
-      padding:14px 14px 14px 54px;box-shadow:var(--shadow);margin:0 0 24px;
-    }
-    .flow-vertical .flow-step:last-child{margin-bottom:0}
-    .flow-vertical .flow-num{
-      position:absolute;left:12px;top:12px;width:30px;height:30px;border-radius:999px;
-      background:var(--brand);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center
-    }
-    .flow-vertical .flow-step:not(:last-child)::after{
-      content:"";position:absolute;left:28px;bottom:-22px;width:2px;height:22px;background:var(--brand);
-    }
-    .flow-vertical .flow-step:not(:last-child)::before{
-      content:"";position:absolute;left:19px;bottom:-29px;border-left:9px solid transparent;border-right:9px solid transparent;border-top:10px solid var(--brand);
-    }
-    .flow-title{margin:0 0 4px;font-size:18px;font-weight:700}
-    .flow-desc{margin:0;color:var(--muted);line-height:1.6}
-
     /* ===== Screens ===== */
     .screens{overflow:hidden}
     .screens-track{
@@ -120,10 +100,9 @@
     }
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
-    .screen figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:6px}
+
     @media (min-width: 900px){
       .screens-track{grid-auto-flow:initial;grid-template-columns:repeat(4,1fr);gap:14px;overflow:visible}
-      .screen figcaption{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     }
     @media (min-width: 1280px){.screens-track{grid-template-columns:repeat(3,1fr)}}
 
@@ -138,7 +117,7 @@
       .mobile-cta .btn{flex:1}
     }
     #lightbox{position:fixed;inset:0;display:none;background:#000a;z-index:1400;align-items:center;justify-content:center;padding:20px}
-    #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+    #lightbox img{max-width:min(920px,96vw);max-height:90vh;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3);cursor:zoom-out}
 
     /* ===== Achievements (実績) ===== */
     .achv-wrap{display:grid;gap:12px}
@@ -215,7 +194,7 @@
     </div>
   </section>
 
-  <!-- ===== AI Funnel（3カードは削除済み） ===== -->
+  <!-- ===== AI Funnel ===== -->
   <section id="ai-funnel">
     <div class="container">
       <h2>オリジナルツールで、スマホをあなたの参謀に。</h2>
@@ -239,17 +218,15 @@
       <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
       <div class="screens">
         <div class="screens-track">
-          <figure class="screen"><img src="iPhoneモック0.png" alt="iPhoneモック0"><figcaption>iPhoneモック0</figcaption></figure>
-          <figure class="screen"><img src="iPhoneモック1.png" alt="iPhoneモック1"><figcaption>iPhoneモック1</figcaption></figure>
-          <figure class="screen"><img src="iPhoneモック2.png" alt="iPhoneモック2"><figcaption>iPhoneモック2</figcaption></figure>
-          <figure class="screen"><img src="iPhoneモック3.png" alt="iPhoneモック3"><figcaption>iPhoneモック3</figcaption></figure>
-          <figure class="screen"><img src="iPhoneモック4.png" alt="iPhoneモック4"><figcaption>iPhoneモック4</figcaption></figure>
-          <!-- ▼ 追加分（4枚） -->
-          <figure class="screen"><img src="iPhoneモック5.png" alt="iPhoneモック5"><figcaption>iPhoneモック5</figcaption></figure>
-          <figure class="screen"><img src="iPhoneモック6.png" alt="iPhoneモック6"><figcaption>iPhoneモック6</figcaption></figure>
-          <figure class="screen"><img src="iPhoneモック7.png" alt="iPhoneモック7"><figcaption>iPhoneモック7</figcaption></figure>
-          <figure class="screen"><img src="iPhoneモック8.png" alt="iPhoneモック8"><figcaption>iPhoneモック8</figcaption></figure>
-          <!-- ▲ 追加分ここまで -->
+          <figure class="screen"><img src="iPhoneモック0.png" alt="ツールポータルの画面イメージ"></figure>
+          <figure class="screen"><img src="iPhoneモック1.png" alt="費用から必要売上を換算する画面"></figure>
+          <figure class="screen"><img src="iPhoneモック2.png" alt="受取利息・配当の源泉税計算画面"></figure>
+          <figure class="screen"><img src="iPhoneモック3.png" alt="価格改定インパクト試算の画面"></figure>
+          <figure class="screen"><img src="iPhoneモック4.png" alt="人件費の見える化画面"></figure>
+          <figure class="screen"><img src="iPhoneモック5.png" alt="スマホツール画面 5"></figure>
+          <figure class="screen"><img src="iPhoneモック6.png" alt="スマホツール画面 6"></figure>
+          <figure class="screen"><img src="iPhoneモック7.png" alt="スマホツール画面 7"></figure>
+          <figure class="screen"><img src="iPhoneモック8.png" alt="スマホツール画面 8"></figure>
         </div>
       </div>
     </div>
@@ -283,41 +260,11 @@
     <div class="container">
       <h2>伴走プロセス</h2>
       <ol class="flow flow-vertical">
-        <li class="flow-step">
-          <div class="flow-num">1</div>
-          <div class="flow-body">
-            <div class="flow-title">現状診断</div>
-            <p class="flow-desc">会計データ×ヒアリングでボトルネックを特定</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">2</div>
-          <div class="flow-body">
-            <div class="flow-title">自動化設計・初期指導</div>
-            <p class="flow-desc">自計化・証憑・データ受信の標準化／初期運用の立上げ</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">3</div>
-          <div class="flow-body">
-            <div class="flow-title">月次巡回監査</div>
-            <p class="flow-desc">記帳・証憑・運用のチェックと改善提案を毎月実施</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">4</div>
-          <div class="flow-body">
-            <div class="flow-title">継続MAS×対話</div>
-            <p class="flow-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <div class="flow-num">5</div>
-          <div class="flow-body">
-            <div class="flow-title">打ち手の実行と検証</div>
-            <p class="flow-desc">価格・人件費・投資のアクションをツールで検証</p>
-          </div>
-        </li>
+        <li class="flow-step"><div class="flow-num">1</div><div class="flow-body"><div class="flow-title">現状診断</div><p class="flow-desc">会計データ×ヒアリングでボトルネックを特定</p></div></li>
+        <li class="flow-step"><div class="flow-num">2</div><div class="flow-body"><div class="flow-title">自動化設計・初期指導</div><p class="flow-desc">自計化・証憑・データ受信の標準化／初期運用の立上げ</p></div></li>
+        <li class="flow-step"><div class="flow-num">3</div><div class="flow-body"><div class="flow-title">月次巡回監査</div><p class="flow-desc">記帳・証憑・運用のチェックと改善提案を毎月実施</p></div></li>
+        <li class="flow-step"><div class="flow-num">4</div><div class="flow-body"><div class="flow-title">継続MAS×対話</div><p class="flow-desc">予実差異レビュー／四半期 業績検討会／決算事前検討会</p></div></li>
+        <li class="flow-step"><div class="flow-num">5</div><div class="flow-body"><div class="flow-title">打ち手の実行と検証</div><p class="flow-desc">価格・人件費・投資のアクションをツールで検証</p></div></li>
       </ol>
     </div>
   </section>
@@ -352,83 +299,16 @@
     <div class="container">
       <h2>よくある質問</h2>
 
-    <details>
-      <summary>記帳代行から自計化へ移行するメリットは？</summary>
-      <div class="content">
-        意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。
-      </div>
-    </details>
-
-    <details>
-      <summary>導入までの期間や進め方のイメージは？</summary>
-      <div class="content">
-        目安は数週間〜数か月です（規模・現状によって変動）。<br>
-        <ol style="margin:6px 0 0 18px">
-          <li>現状診断</li>
-          <li>自動化設計・初期指導</li>
-          <li>月次巡回監査</li>
-          <li>継続MAS×対話</li>
-        </ol>
-      </div>
-    </details>
-
-    <details>
-      <summary>どこまで“自動化”できますか？</summary>
-      <div class="content">
-        銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。
-      </div>
-    </details>
-
-    <details>
-      <summary>電子帳簿保存法・インボイス制度への対応は？</summary>
-      <div class="content">
-        要件整理・運用ルールを整え、システム設定と業務フローに落とし込みます。監査に耐える証跡の残し方まで設計します。
-      </div>
-    </details>
-
-    <details>
-      <summary>既存の会計ソフト（TKC以外）からの移行は可能ですか？</summary>
-      <div class="content">
-        可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も最適化します。
-      </div>
-    </details>
-
-    <details>
-      <summary>コスト（料金）はどのように決まりますか？</summary>
-      <div class="content">
-        規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。初回相談後に提案書と見積をご提示します。公的支援（補助金等）の活用余地があれば併せてご案内します。
-      </div>
-    </details>
-
-    <details>
-      <summary>業種・規模の対象は？</summary>
-      <div class="content">
-        製造・卸売・小売・サービス・士業・医療介護など幅広く対応します。小規模〜中堅が中心です。
-      </div>
-    </details>
-
-    <details>
-      <summary>教育・定着支援はありますか？</summary>
-      <div class="content">
-        担当者トレーニング、操作マニュアル、月次レビューの型化（チェックリスト/テンプレ）まで提供し、属人化を防ぎます。
-      </div>
-    </details>
-
-    <details>
-      <summary>データの取扱い・セキュリティは？</summary>
-      <div class="content">
-        守秘を徹底。権限設計・監査ログ・バックアップ方針を整備。<br>
-        <small>※ 当LPの無料ツールはブラウザ内で計算し、当ページではデータを保存しません（お問い合わせ送信時を除く）。</small>
-      </div>
-    </details>
-
-    <details>
-      <summary>まずは何から始めればよいですか？</summary>
-      <div class="content">
-        無料の試算ツールで課題を“数字で”可視化し、<a class="underline-link" href="#contact">お問い合わせ</a>で現状とゴールを伺い、最短ルートをご提案します。
-      </div>
-    </details>
-
+      <details><summary>記帳代行から自計化へ移行するメリットは？</summary><div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。</div></details>
+      <details><summary>導入までの期間や進め方のイメージは？</summary><div class="content">目安は数週間〜数か月です（規模・現状によって変動）。<ol style="margin:6px 0 0 18px"><li>現状診断</li><li>自動化設計・初期指導</li><li>月次巡回監査</li><li>継続MAS×対話</li></ol></div></details>
+      <details><summary>どこまで“自動化”できますか？</summary><div class="content">銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。</div></details>
+      <details><summary>電子帳簿保存法・インボイス制度への対応は？</summary><div class="content">要件整理・運用ルールを整え、システム設定と業務フローに落とし込みます。監査に耐える証跡の残し方まで設計します。</div></details>
+      <details><summary>既存の会計ソフト（TKC以外）からの移行は可能ですか？</summary><div class="content">可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も最適化します。</div></details>
+      <details><summary>コスト（料金）はどのように決まりますか？</summary><div class="content">規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。初回相談後に提案書と見積をご提示します。公的支援（補助金等）の活用余地があれば併せてご案内します。</div></details>
+      <details><summary>業種・規模の対象は？</summary><div class="content">製造・卸売・小売・サービス・士業・医療介護など幅広く対応します。小規模〜中堅が中心です。</div></details>
+      <details><summary>教育・定着支援はありますか？</summary><div class="content">担当者トレーニング、操作マニュアル、月次レビューの型化（チェックリスト/テンプレ）まで提供し、属人化を防ぎます。</div></details>
+      <details><summary>データの取扱い・セキュリティは？</summary><div class="content">守秘を徹底。権限設計・監査ログ・バックアップ方針を整備。<br><small>※ 当LPの無料ツールはブラウザ内で計算し、当ページではデータを保存しません（お問い合わせ送信時を除く）。</small></div></details>
+      <details><summary>まずは何から始めればよいですか？</summary><div class="content">無料の試算ツールで課題を“数字で”可視化し、<a class="underline-link" href="#contact">お問い合わせ</a>で現状とゴールを伺い、最短ルートをご提案します。</div></details>
     </div>
   </section>
 
@@ -454,7 +334,7 @@
   </footer>
 
   <!-- Lightbox -->
-  <div id="lightbox" aria-hidden="true"><img src="" alt="拡大表示"></div>
+  <div id="lightbox" aria-hidden="true"><img src="" alt="拡大表示（タップで閉じる）"></div>
 
   <script>
     // Hamburger open/close
@@ -466,25 +346,35 @@
     function openMenu(){ nav.classList.add('open'); backdrop.classList.add('show'); btn.classList.add('open'); body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true'); btn.setAttribute('aria-label','メニューを閉じる'); }
     function closeMenu(){ nav.classList.remove('open'); backdrop.classList.remove('show'); btn.classList.remove('open'); body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','メニューを開く'); }
 
-    btn.addEventListener('click', () => { (nav.classList.contains('open') ? closeMenu : openMenu)(); });
-    backdrop.addEventListener('click', closeMenu);
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+    btn?.addEventListener('click', () => { (nav.classList.contains('open') ? closeMenu : openMenu)(); });
+    backdrop?.addEventListener('click', closeMenu);
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeMenu(); closeLb(); } });
 
-    // Link tap -> close
-    nav.addEventListener('click', (e) => { const a = e.target.closest('a'); if (!a) return; closeMenu(); });
+    nav?.addEventListener('click', (e) => { const a = e.target.closest('a'); if (!a) return; closeMenu(); });
 
-    // Close when PC width
     const mq = window.matchMedia('(min-width: 741px)'); mq.addEventListener('change', e => { if (e.matches) closeMenu(); });
 
-    // Lightbox for screenshots
+    // Lightbox toggle (tap image to open, tap again to close)
     const lb = document.getElementById('lightbox');
-    if (lb) {
-      const lbImg = lb.querySelector('img');
-      document.querySelectorAll('.screen img').forEach(img=>{
-        img.addEventListener('click',()=>{ lbImg.src=img.src; lb.style.display='flex'; lb.setAttribute('aria-hidden','false'); });
+    const lbImg = lb.querySelector('img');
+
+    function openLb(src){ lbImg.src = src; lb.style.display = 'flex'; lb.setAttribute('aria-hidden','false'); document.body.classList.add('lb-open'); }
+    function closeLb(){ lb.style.display = 'none'; lb.setAttribute('aria-hidden','true'); lbImg.src = ''; document.body.classList.remove('lb-open'); }
+
+    // Click on gallery images: toggle (if same image already open -> close)
+    document.querySelectorAll('.screen img').forEach(img=>{
+      img.addEventListener('click',()=>{
+        if(lb.style.display === 'flex' && lbImg.src && lbImg.src.endsWith(img.getAttribute('src'))){
+          closeLb();
+        }else{
+          openLb(img.getAttribute('src'));
+        }
       });
-      lb.addEventListener('click',e=>{ if(e.target===lb){ lb.style.display='none'; lb.setAttribute('aria-hidden','true'); lbImg.src=''; }});
-    }
+    });
+
+    // Click anywhere on overlay OR the enlarged image -> close
+    lb.addEventListener('click', closeLb);
+    lbImg.addEventListener('click', (e)=>{ e.stopPropagation(); closeLb(); });
   </script>
 </body>
 </html>
