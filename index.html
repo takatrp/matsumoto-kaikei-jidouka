@@ -23,6 +23,15 @@
   <meta property="og:url" content="https://takatrp.github.io/matsumoto-kaikei-jidouka/">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XX3J7H4NF1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XX3J7H4NF1');
+  </script>
+
   <style>
     :root{
       --brand:#578899; --brand-600:#497485; --brand-700:#3e6473;
@@ -290,7 +299,7 @@
   <section id="mobile-screens">
     <div class="container">
       <h2>スマホでさっと試算。現場で意思決定。</h2>
-      <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
+    <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
       <div class="screens">
         <div class="screens-track">
           <figure class="screen"><img src="iPhoneモック0.png" alt="ツールポータルの画面イメージ"></figure>
@@ -477,9 +486,16 @@
     const nav = document.getElementById('site-nav');
     const backdrop = document.getElementById('nav-backdrop');
 
-    function openMenu(){ nav.classList.add('open'); backdrop.classList.add('show'); btn.classList.add('open'); document.body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true'); btn.setAttribute('aria-label','メニューを閉じる'); }
-    function closeMenu(){ nav.classList.remove('open'); backdrop.classList.remove('show'); btn.classList.remove('open'); document.body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','メニューを開く'); }
-
+    function openMenu(){
+      nav.classList.add('open'); backdrop.classList.add('show'); btn.classList.add('open');
+      document.body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true');
+      btn.setAttribute('aria-label','メニューを閉じる');
+    }
+    function closeMenu(){
+      nav.classList.remove('open'); backdrop.classList.remove('show'); btn.classList.remove('open');
+      document.body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false');
+      btn.setAttribute('aria-label','メニューを開く');
+    }
     btn?.addEventListener('click', () => { (nav.classList.contains('open') ? closeMenu : openMenu)(); });
     backdrop?.addEventListener('click', closeMenu);
     window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeMenu(); closeLb(); closePdf(); } });
