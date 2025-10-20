@@ -87,7 +87,7 @@
     /* ===== Hero ===== */
     .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:14px;align-items:center}
-    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1.2fr}} /* 画像やや大きめ表示 */
+    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1.2fr}}
     .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
     h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
@@ -168,7 +168,7 @@
     .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:8px}
     .faq summary{cursor:pointer;font-weight:600}
 
-    /* ===== Process (横フロー ①→②→③→④→⑤) ===== */
+    /* ===== Process ===== */
     .process-wrap{overflow:hidden}
     .process-scroller{
       display:flex; align-items:stretch; gap:10px;
@@ -186,7 +186,7 @@
     .proc-connector{flex:0 0 auto; align-self:center; display:flex; align-items:center; justify-content:center; padding:0 2px}
     .proc-connector svg{width:26px; height:26px; color:#7aa2b0}
 
-    /* ===== 解決アプローチ（余白圧縮のみ） ===== */
+    /* ===== Approach（余白圧縮のみ） ===== */
     #approach{ padding:24px 0; }
     #approach h2{ margin:0 0 10px; }
     #approach .grid.grid-3{ grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:10px; }
@@ -220,6 +220,12 @@
     @media (max-width: 820px){
       #pdfbox .panel{ height:94vh; width:96vw; }
     }
+
+    /* ===== Demo GIF under trial tools ===== */
+    .demo-gif{max-width:980px;margin:6px auto 0}
+    .demo-gif figure{margin:0;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+    .demo-gif img{display:block;width:100%;height:auto}
+    .demo-gif .cap{font-size:12px;color:#64748b;text-align:center;margin-top:6px}
   </style>
 </head>
 <body>
@@ -293,6 +299,15 @@
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">自動化効果試算ツール</a>
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定検討ツール</a>
       </div>
+
+      <!-- ▼▼ ここにGIFを追加 ▼▼ -->
+      <div class="demo-gif" aria-label="ツール動作デモ">
+        <figure>
+          <img src="変動PL.gif" alt="“ボールで学ぶ変動損益計算書”の動作イメージ" loading="lazy" decoding="async" width="1100" height="686">
+        </figure>
+        <div class="cap">“ボールで学ぶ変動損益計算書” の操作イメージ（GIF）</div>
+      </div>
+      <!-- ▲▲ GIFここまで ▲▲ -->
     </div>
   </section>
 
@@ -318,7 +333,7 @@
     </div>
   </section>
 
-  <!-- ===== Automation Promo（先に表示） ===== -->
+  <!-- ===== Automation Promo ===== -->
   <section id="automation">
     <div class="container">
       <h2>自動化で、ラクしてリアルタイム情報と経費削減を。</h2>
@@ -341,7 +356,7 @@
     </div>
   </section>
 
-  <!-- ===== Approach（後に表示・余白圧縮） ===== -->
+  <!-- ===== Approach ===== -->
   <section id="approach">
     <div class="container">
       <h2>解決アプローチ｜3本柱</h2>
@@ -353,7 +368,7 @@
     </div>
   </section>
 
-  <!-- ===== Process（横フロー ①→②→③→④→⑤） ===== -->
+  <!-- ===== Process ===== -->
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
