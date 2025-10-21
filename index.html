@@ -77,7 +77,7 @@
       body.nav-open{overflow:hidden}
     }
 
-    /* ===== Density ===== */
+    /* ===== Density / Common ===== */
     section{padding:36px 0}
     h2{font-size:clamp(18px,3.6vw,28px);margin:0 0 14px}
     .grid{display:grid;gap:12px}
@@ -87,8 +87,8 @@
     /* ===== Hero ===== */
     .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:14px;align-items:center}
-    @media(min-width:960px){.hero-wrap{grid-template-columns:0.85fr 1.55fr}}
-    @media(min-width:1280px){.hero-wrap{grid-template-columns:0.8fr 1.7fr}}
+    /* PCでは 1:1 の二分割に（下の上書きで常に1:1を適用） */
+    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1fr}}
     .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
     h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
@@ -98,24 +98,30 @@
     .btn-primary:hover{background:var(--brand-600)}
     .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
 
-    /* ★ 見切れ防止：額縁に合わせて縮小（トリミングしない） ★ */
+    /* 画像は“枠に収める”（トリミングしない） */
     .hero-media{
       position:relative;
       background:#fff;
       padding:12px;
       border-radius:24px;
       box-shadow:0 8px 24px rgba(0,0,0,.08);
-      overflow:hidden;          /* 影の整形用。比率固定は行わない */
+      overflow:hidden;
+      width:100%;
     }
     .hero-media img{
       display:block;
       width:100%;
-      height:auto;              /* 比率維持で縮小 */
-      object-fit:contain;       /* トリミングしない */
-      border-radius:14px;       /* 内側の角丸 */
+      height:auto;            /* 比率維持・見切れ防止 */
+      object-fit:contain;
+      border-radius:14px;
+    }
+    /* PC時は画像枠を控えめに（横1:1の右カラムでも小さめに見える） */
+    @media(min-width:960px){
+      .hero-media{max-width:560px;margin-left:auto}
+      .hero-media img{max-height:520px}
     }
 
-    /* ===== Screens: PCも横スクロール & スナップ ===== */
+    /* ===== スマホモック：PCでも横スクロール＆スナップ ===== */
     .screens{position:relative; overflow:hidden}
     .screens-track{
       display:grid;
@@ -131,7 +137,7 @@
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
 
-    /* 左右フェード */
+    /* 左右フェード（A方式） */
     .screens::before,
     .screens::after{
       content:"";
@@ -307,8 +313,8 @@
   <section id="mobile-screens">
     <div class="container">
       <h2>スマホでさっと試算。現場で意思決定。</h2>
-    <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
-    <div style="font-size:12px;color:#64748b;margin:-6px 0 8px">※契約済みのお客様でまだお持ちで無い方は弊所スタッフまでお申し出ください。</div>
+      <p class="lead">ポータルから各ツールへ。顧問契約いただいたお客様は、全てのツールを無料でご利用いただけます。すべてスマホ対応。</p>
+      <div style="font-size:12px;color:#64748b;margin:-6px 0 8px">※契約済みのお客様でまだお持ちで無い方は弊所スタッフまでお申し出ください。</div>
       <div class="screens">
         <div class="screens-track">
           <figure class="screen"><img src="iPhoneモック0.png" alt="ツールポータルの画面イメージ"></figure>
@@ -329,6 +335,8 @@
   <section id="automation">
     <div class="container">
       <h2>自動化で、ラクしてリアルタイム情報と経費削減を。</h2>
+    </div>
+    <div class="container">
       <div class="cta-band">
         <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
         <div class="lead" style="color:#e6f0f4">
@@ -436,16 +444,16 @@
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
-      <details><summary>記帳代行から自計化へ移行するメリットは？</summary><div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。</div></details>
-      <details><summary>導入までの期間や進め方のイメージは？</summary><div class="content">目安は数週間〜数か月です（規模・現状によって変動）。<ol style="margin:6px 0 0 18px"><li>現状診断</li><li>自動化設計・初期指導</li><li>月次巡回監査</li><li>継続MAS×対話</li></ol></div></details>
-      <details><summary>どこまで“自動化”できますか？</summary><div class="content">銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。</div></details>
-      <details><summary>電子帳簿保存法・インボイス制度への対応は？</summary><div class="content">要件整理・運用ルールを整え、システム設定と業務フローに落とし込みます。監査に耐える証跡の残し方まで設計します。</div></details>
-      <details><summary>既存の会計ソフト（TKC以外）からの移行は可能ですか？</summary><div class="content">可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も最適化します。</div></details>
-      <details><summary>コスト（料金）はどのように決まりますか？</summary><div class="content">規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。初回相談後に提案書と見積をご提示します。公的支援（補助金等）の活用余地があれば併せてご案内します。</div></details>
-      <details><summary>業種・規模の対象は？</summary><div class="content">製造・卸売・小売・サービス・士業・医療介護など幅広く対応します。小規模〜中堅が中心です。</div></details>
-      <details><summary>教育・定着支援はありますか？</summary><div class="content">担当者トレーニング、操作マニュアル、月次レビューの型化（チェックリスト/テンプレ）まで提供し、属人化を防ぎます。</div></details>
-      <details><summary>データの取扱い・セキュリティは？</summary><div class="content">守秘を徹底。権限設計・監査ログ・バックアップ方針を整備。<br><small>※ 当LPの無料ツールはブラウザ内で計算し、当ページではデータを保存しません（お問い合わせ送信時を除く）。</small></div></details>
-      <details><summary>まずは何から始めればよいですか？</summary><div class="content">無料の試算ツールで課題を“数字で”可視化し、<a class="underline-link" href="#contact">お問い合わせ</a>で現状とゴールを伺い、最短ルートをご提案します。</div></details>
+    <details><summary>記帳代行から自計化へ移行するメリットは？</summary><div class="content">意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。</div></details>
+    <details><summary>導入までの期間や進め方のイメージは？</summary><div class="content">目安は数週間〜数か月です（規模・現状によって変動）。<ol style="margin:6px 0 0 18px"><li>現状診断</li><li>自動化設計・初期指導</li><li>月次巡回監査</li><li>継続MAS×対話</li></ol></div></details>
+    <details><summary>どこまで“自動化”できますか？</summary><div class="content">銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。</div></details>
+    <details><summary>電子帳簿保存法・インボイス制度への対応は？</summary><div class="content">要件整理・運用ルールを整え、システム設定と業務フローに落とし込みます。監査に耐える証跡の残し方まで設計します。</div></details>
+    <details><summary>既存の会計ソフト（TKC以外）からの移行は可能ですか？</summary><div class="content">可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も最適化します。</div></details>
+    <details><summary>コスト（料金）はどのように決まりますか？</summary><div class="content">規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。初回相談後に提案書と見積をご提示します。公的支援（補助金等）の活用余地があれば併せてご案内します。</div></details>
+    <details><summary>業種・規模の対象は？</summary><div class="content">製造・卸売・小売・サービス・士業・医療介護など幅広く対応します。小規模〜中堅が中心です。</div></details>
+    <details><summary>教育・定着支援はありますか？</summary><div class="content">担当者トレーニング、操作マニュアル、月次レビューの型化（チェックリスト/テンプレ）まで提供し、属人化を防ぎます。</div></details>
+    <details><summary>データの取扱い・セキュリティは？</summary><div class="content">守秘を徹底。権限設計・監査ログ・バックアップ方針を整備。<br><small>※ 当LPの無料ツールはブラウザ内で計算し、当ページではデータを保存しません（お問い合わせ送信時を除く）。</small></div></details>
+    <details><summary>まずは何から始めればよいですか？</summary><div class="content">無料の試算ツールで課題を“数字で”可視化し、<a class="underline-link" href="#contact">お問い合わせ</a>で現状とゴールを伺い、最短ルートをご提案します。</div></details>
     </div>
   </section>
 
