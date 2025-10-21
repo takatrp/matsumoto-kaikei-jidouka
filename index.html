@@ -87,19 +87,36 @@
     /* ===== Hero ===== */
     .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:14px;align-items:center}
-    @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1.2fr}}
+    @media(min-width:960px){.hero-wrap{grid-template-columns:0.85fr 1.55fr}}
+    @media(min-width:1280px){.hero-wrap{grid-template-columns:0.8fr 1.7fr}}
     .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
     h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
     .sub{color:var(--muted);font-size:16px;line-height:1.7;max-width:760px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:14px;font-weight:600;border:1px solid透明;box-shadow:var(--shadow);min-height:42px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:14px;font-weight:600;border:1px solid transparent;box-shadow:var(--shadow);min-height:42px}
     .btn-primary{background:var(--brand);color:#fff}
     .btn-primary:hover{background:var(--brand-600)}
     .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
-    .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-    .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Screens ===== */
+    /* ★ 画像が角丸の白い枠にピッタリ収まるよう調整 ★ */
+    .hero-media{
+      position:relative;
+      background:#fff;               /* 白い額縁 */
+      padding:12px;                  /* 枠の太さ */
+      border-radius:24px;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+      aspect-ratio:16/10;            /* 枠の比率（必要なら調整） */
+      overflow:hidden;               /* はみ出しカット */
+    }
+    .hero-media img{
+      display:block;
+      width:100%;
+      height:100%;                   /* 枠の高さにフィット */
+      object-fit:cover;              /* 枠いっぱいに表示してトリミング */
+      border-radius:14px;            /* 内側の角丸（paddingに合わせて調整） */
+    }
+
+    /* ===== Screens: PCも横スクロール & スナップ ===== */
     .screens{position:relative; overflow:hidden}
     .screens-track{
       display:grid;
@@ -161,7 +178,7 @@
     .bar-row{display:grid;grid-template-columns:120px 1fr 56px;gap:8px;align-items:center}
     .bar-label{color:#334155;font-weight:600}
     .bar-track{height:16px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;position:relative;overflow:hidden}
-    .bar-fill{position:absolute;left:0;top:0;bottom:0;width:calc(var(--val,0) * 1%);background:linear-gradient(90deg,var(--brand) 0%, var(--brand-600) 100%)}
+    .bar-fill{position:absolute;left:0;top:0;bottom:0;width:calc(var(--val,0) * 1%);background:linear-gradient(90deg,var(--brand) 0%, var(--brand-600) 100%);border-right:1px solid rgba(255,255,255,.6)}
     .bar-val{font-variant-numeric:tabular-nums;text-align:right;color:#334155;font-weight:700}
 
     /* FAQ */
@@ -313,22 +330,22 @@
   <section id="automation">
     <div class="container">
       <h2>自動化で、ラクしてリアルタイム情報と経費削減を。</h2>
-    <div class="cta-band">
-      <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
-      <div class="lead" style="color:#e6f0f4">
-        <a href="https://www.matsumoto-kaikei.or.jp/tkc-tds" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">証憑保存機能（スマホで経費）</a>／
-        <a href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">銀行信販データ受信機能</a>／
-        <a href="https://www.matsumoto-kaikei.or.jp/tkc-system012" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">給与計算機能</a>／
-        <a href="https://www.tkc.jp/file.jsp?id=166750" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">販売管理機能</a>／
-        <a href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">レジ連携</a>
-        を整備し、仕訳を”入力”から”連携”へ。
+      <div class="cta-band">
+        <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
+        <div class="lead" style="color:#e6f0f4">
+          <a href="https://www.matsumoto-kaikei.or.jp/tkc-tds" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">証憑保存機能（スマホで経費）</a>／
+          <a href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">銀行信販データ受信機能</a>／
+          <a href="https://www.matsumoto-kaikei.or.jp/tkc-system012" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">給与計算機能</a>／
+          <a href="https://www.tkc.jp/file.jsp?id=166750" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">販売管理機能</a>／
+          <a href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">レジ連携</a>
+          を整備し、仕訳を”入力”から”連携”へ。
+        </div>
+        <div class="lead" style="color:#ffffff">90％超の自動化で年間数十万円の人件費削減を。</div>
+        <div class="cta-row" style="margin-top:10px">
+          <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
+          <a class="btn" href="自動化実例集.pdf" target="_blank" rel="noopener" id="open-pdf">自動化実績はこちら</a>
+        </div>
       </div>
-      <div class="lead" style="color:#ffffff">90％超の自動化で年間数十万円の人件費削減を。</div>
-      <div class="cta-row" style="margin-top:10px">
-        <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
-        <a class="btn" href="自動化実例集.pdf" target="_blank" rel="noopener" id="open-pdf">自動化実績はこちら</a>
-      </div>
-    </div>
     </div>
   </section>
 
@@ -492,7 +509,7 @@
     nav?.addEventListener('click', (e)=>{ const a=e.target.closest('a'); if(!a) return; closeMenu(); });
     const mq=window.matchMedia('(min-width: 741px)'); mq.addEventListener('change',(e)=>{ if(e.matches) closeMenu(); });
 
-    // Lightbox
+    // Lightbox (prev/next)
     const lb=document.getElementById('lightbox');
     const lbImg=lb.querySelector('img');
     const prevBtn=lb.querySelector('.lb-prev');
@@ -510,7 +527,7 @@
     nextBtn.addEventListener('click',(e)=>{ e.stopPropagation(); showNext(1); });
     window.addEventListener('keydown',(e)=>{ if(lb.style.display!=='flex') return; if(e.key==='ArrowRight'){showNext(1);} else if(e.key==='ArrowLeft'){showNext(-1);} else if(e.key==='Escape'){closeLb();} });
 
-    // Fade edges
+    // Fade edges for screens
     (function(){
       const screens=document.querySelector('#mobile-screens .screens');
       const track=document.querySelector('#mobile-screens .screens-track');
