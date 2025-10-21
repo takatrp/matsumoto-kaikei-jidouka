@@ -92,14 +92,14 @@
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
     h1{font-size:clamp(22px,5vw,38px);line-height:1.25;margin:6px 0 8px}
     .sub{color:var(--muted);font-size:16px;line-height:1.7;max-width:760px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:14px;font-weight:600;border:1px solid transparent;box-shadow:var(--shadow);min-height:42px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:14px;font-weight:600;border:1px solid透明;box-shadow:var(--shadow);min-height:42px}
     .btn-primary{background:var(--brand);color:#fff}
     .btn-primary:hover{background:var(--brand-600)}
     .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
     .hero-media{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .hero-media img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
 
-    /* ===== Screens: PCも横スクロール & スナップ ===== */
+    /* ===== Screens ===== */
     .screens{position:relative; overflow:hidden}
     .screens-track{
       display:grid;
@@ -115,7 +115,7 @@
     .screen{scroll-snap-align:start;background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:10px;box-shadow:var(--shadow)}
     .screen img{display:block;width:100%;height:auto;border-radius:18px;cursor:pointer}
 
-    /* ===== 左右フェード（A方式） ===== */
+    /* 左右フェード */
     .screens::before,
     .screens::after{
       content:"";
@@ -128,7 +128,7 @@
     .screens.at-start::before{ opacity:0; }
     .screens.at-end::after{ opacity:0; }
 
-    /* ===== CTA band, Footer, Lightbox, Mobile CTA ===== */
+    /* CTA band, Footer, Lightbox, Mobile CTA */
     .cta-band{background:var(--brand);color:#fff;border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
     .cta-band .btn{background:#fff;color:#1f2937;border-color:#cbd5e1}
     footer{padding:20px 0 64px;color:#475569;text-align:center}
@@ -150,7 +150,7 @@
     #lightbox .lb-next{ right:14px; }
     #lightbox .lb-nav svg{ width:24px; height:24px; color:#334155 }
 
-    /* ===== Achievements (実績) ===== */
+    /* Achievements */
     .achv-wrap{display:grid;gap:12px}
     @media(min-width:900px){.achv-wrap{grid-template-columns:1.1fr .9fr}}
     .achv-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;box-shadow:var(--shadow);padding:16px}
@@ -161,14 +161,14 @@
     .bar-row{display:grid;grid-template-columns:120px 1fr 56px;gap:8px;align-items:center}
     .bar-label{color:#334155;font-weight:600}
     .bar-track{height:16px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;position:relative;overflow:hidden}
-    .bar-fill{position:absolute;left:0;top:0;bottom:0;width:calc(var(--val,0) * 1%);background:linear-gradient(90deg,var(--brand) 0%, var(--brand-600) 100%);border-right:1px solid rgba(255,255,255,.6)}
+    .bar-fill{position:absolute;left:0;top:0;bottom:0;width:calc(var(--val,0) * 1%);background:linear-gradient(90deg,var(--brand) 0%, var(--brand-600) 100%)}
     .bar-val{font-variant-numeric:tabular-nums;text-align:right;color:#334155;font-weight:700}
 
-    /* ===== FAQ ===== */
+    /* FAQ */
     .faq details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px;margin-bottom:8px}
     .faq summary{cursor:pointer;font-weight:600}
 
-    /* ===== Process ===== */
+    /* Process */
     .process-wrap{overflow:hidden}
     .process-scroller{
       display:flex; align-items:stretch; gap:10px;
@@ -176,17 +176,13 @@
       scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
     }
     .proc-step{scroll-snap-align:start; background:#fff; border:1px solid #e2e8f0; border-radius:16px; padding:12px 12px 12px 52px; position:relative; box-shadow:var(--shadow); min-width:260px}
-    .proc-num{
-      position:absolute; left:12px; top:12px; width:30px; height:30px; border-radius:999px;
-      background:var(--brand); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center;
-      font-family: ui-rounded, system-ui, -apple-system, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    }
+    .proc-num{position:absolute; left:12px; top:12px; width:30px; height:30px; border-radius:999px; background:var(--brand); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center;}
     .proc-title{margin:0 0 4px; font-weight:700; font-size:18px}
     .proc-desc{margin:0; color:#64748b; line-height:1.6}
     .proc-connector{flex:0 0 auto; align-self:center; display:flex; align-items:center; justify-content:center; padding:0 2px}
     .proc-connector svg{width:26px; height:26px; color:#7aa2b0}
 
-    /* ===== Approach（余白圧縮のみ） ===== */
+    /* Approach（余白圧縮のみ） */
     #approach{ padding:24px 0; }
     #approach h2{ margin:0 0 10px; }
     #approach .grid.grid-3{ grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:10px; }
@@ -194,50 +190,24 @@
     #approach .card h3{ margin:0 0 6px; }
     #approach .card p{ margin:0; }
 
-    /* ==== PDF viewer modal ==== */
-    #pdfbox{
-      position:fixed; inset:0; display:none; background:#000a; z-index:1450;
-      align-items:center; justify-content:center; padding:16px;
-    }
-    #pdfbox .panel{
-      background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(0,0,0,.3);
-      width:min(1100px,96vw); height:min(90vh,1000px);
-      display:flex; flex-direction:column; overflow:hidden;
-    }
-    #pdfbox header{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:8px 12px; border-bottom:1px solid #e2e8f0;
-    }
+    /* PDF viewer */
+    #pdfbox{position:fixed; inset:0; display:none; background:#000a; z-index:1450; align-items:center; justify-content:center; padding:16px;}
+    #pdfbox .panel{background:#fff; border-radius:16px; box-shadow:0 20px 50px rgba(0,0,0,.3); width:min(1100px,96vw); height:min(90vh,1000px); display:flex; flex-direction:column; overflow:hidden;}
+    #pdfbox header{display:flex; align-items:center; justify-content:space-between; padding:8px 12px; border-bottom:1px solid #e2e8f0;}
     #pdfbox header .title{ font-weight:700; color:#334155 }
-    #pdfbox .close{
-      appearance:none; border:1px solid #cbd5e1; background:#fff; color:#334155;
-      border-radius:10px; padding:6px 10px; cursor:pointer;
-    }
+    #pdfbox .close{appearance:none; border:1px solid #cbd5e1; background:#fff; color:#334155; border-radius:10px; padding:6px 10px; cursor:pointer;}
     #pdfbox iframe{ width:100%; height:100%; border:0; }
-    #pdfbox .fallback{
-      padding:10px; border-top:1px solid #e2e8f0; font-size:13px; color:#64748b;
-    }
+    #pdfbox .fallback{ padding:10px; border-top:1px solid #e2e8f0; font-size:13px; color:#64748b; }
 
-    /* ===== Demo GIF under trial tools ===== */
+    /* Demo GIF */
     .demo-gif{max-width:980px;margin:6px auto 0}
     .demo-gif figure{margin:0;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
     .demo-gif img{display:block;width:100%;height:auto}
     .demo-gif .cap{font-size:12px;color:#64748b;text-align:center;margin-top:6px}
-
-    /* === PC表示時：ヒーロー画像を少し大きく（追加）=== */
-    @media (min-width: 960px){
-      /* テキスト：画像 = 0.85 : 1.55 に拡大 */
-      .hero-wrap{ grid-template-columns: 0.85fr 1.55fr; }
-    }
-    @media (min-width: 1280px){
-      /* 更にワイド画面では、画像側をもう少し広く */
-      .hero-wrap{ grid-template-columns: 0.8fr 1.7fr; }
-      .hero-media img{ max-height: 640px; }
-    }
   </style>
 </head>
 <body>
-  <!-- ===== Header ===== -->
+  <!-- Header -->
   <header>
     <div class="container inner">
       <a class="logo" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener" aria-label="税理士法人松本会計 公式サイトへ">
@@ -266,12 +236,12 @@
 
   <div id="nav-backdrop" class="backdrop" aria-hidden="true"></div>
 
-  <!-- Mobile bottom CTA（相談のみ） -->
+  <!-- Bottom CTA -->
   <div class="mobile-cta" role="region" aria-label="固定アクション">
     <a class="btn btn-primary" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry" target="_blank" rel="noopener">相談する</a>
   </div>
 
-  <!-- ===== Hero ===== -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-wrap">
       <div>
@@ -292,7 +262,7 @@
     </div>
   </section>
 
-  <!-- ===== AI Funnel ===== -->
+  <!-- AI Funnel -->
   <section id="ai-funnel">
     <div class="container">
       <h2>オリジナルツールで、スマホをあなたの参謀に。</h2>
@@ -301,25 +271,23 @@
         <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
       </p>
 
-      <!-- 並び順：1)ボール 2)自動化効果 3)価格改定 -->
       <div class="cta-row" style="margin-bottom:10px;flex-wrap:wrap">
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/hendou_PL/">ボールで学ぶ変動損益計算書</a>
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/jidouka-kouka/">自動化効果試算ツール</a>
         <a class="btn btn-outline" target="_blank" rel="noopener" href="https://takatrp.github.io/price-up-down/">価格改定検討ツール</a>
       </div>
 
-      <!-- ▼▼ GIFデモ ▼▼ -->
+      <!-- GIF -->
       <div class="demo-gif" aria-label="ツール動作デモ">
         <figure>
           <img src="変動PL.gif" alt="“ボールで学ぶ変動損益計算書”の動作イメージ" loading="lazy" decoding="async" width="1100" height="686">
         </figure>
         <div class="cap">“ボールで学ぶ変動損益計算書” の操作イメージ（GIF）。どの要素に手を加えれば「限界利益＞固定費」（黒字）となるか直感的に学べます。</div>
       </div>
-      <!-- ▲▲ ここまで ▲▲ -->
     </div>
   </section>
 
-  <!-- ===== Mobile screens gallery ===== -->
+  <!-- Mobile Screens -->
   <section id="mobile-screens">
     <div class="container">
       <h2>スマホでさっと試算。現場で意思決定。</h2>
@@ -341,30 +309,30 @@
     </div>
   </section>
 
-  <!-- ===== Automation Promo ===== -->
+  <!-- Automation -->
   <section id="automation">
     <div class="container">
       <h2>自動化で、ラクしてリアルタイム情報と経費削減を。</h2>
-      <div class="cta-band">
-        <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
-        <div class="lead" style="color:#e6f0f4">
-          <a href="https://www.matsumoto-kaikei.or.jp/tkc-tds" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">証憑保存機能（スマホで経費）</a>／
-          <a href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">銀行信販データ受信機能</a>／
-          <a href="https://www.matsumoto-kaikei.or.jp/tkc-system012" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">給与計算機能</a>／
-          <a href="https://www.tkc.jp/file.jsp?id=166750" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">販売管理機能</a>／
-          <a href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">レジ連携</a>
-          を整備し、仕訳を”入力”から”連携”へ。
-        </div>
-        <div class="lead" style="color:#ffffff">90％超の自動化で年間数十万円の人件費削減を。</div>
-        <div class="cta-row" style="margin-top:10px">
-          <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
-          <a class="btn" href="自動化実例集.pdf" target="_blank" rel="noopener" id="open-pdf">自動化実績はこちら</a>
-        </div>
+    <div class="cta-band">
+      <div style="font-size:20px;font-weight:700">会計の”自動化”で、少ない負担でリアルタイム性を確保。</div>
+      <div class="lead" style="color:#e6f0f4">
+        <a href="https://www.matsumoto-kaikei.or.jp/tkc-tds" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">証憑保存機能（スマホで経費）</a>／
+        <a href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">銀行信販データ受信機能</a>／
+        <a href="https://www.matsumoto-kaikei.or.jp/tkc-system012" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">給与計算機能</a>／
+        <a href="https://www.tkc.jp/file.jsp?id=166750" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">販売管理機能</a>／
+        <a href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8" target="_blank" rel="noopener" class="underline-link" style="color:#e6f0f4">レジ連携</a>
+        を整備し、仕訳を”入力”から”連携”へ。
       </div>
+      <div class="lead" style="color:#ffffff">90％超の自動化で年間数十万円の人件費削減を。</div>
+      <div class="cta-row" style="margin-top:10px">
+        <a class="btn" href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener">自動化効果を試算する</a>
+        <a class="btn" href="自動化実例集.pdf" target="_blank" rel="noopener" id="open-pdf">自動化実績はこちら</a>
+      </div>
+    </div>
     </div>
   </section>
 
-  <!-- ===== Approach ===== -->
+  <!-- Approach -->
   <section id="approach">
     <div class="container">
       <h2>解決アプローチ｜3本柱</h2>
@@ -376,7 +344,7 @@
     </div>
   </section>
 
-  <!-- ===== Process ===== -->
+  <!-- Process -->
   <section id="process">
     <div class="container">
       <h2>伴走プロセス</h2>
@@ -424,7 +392,7 @@
     </div>
   </section>
 
-  <!-- ===== Achievements (実績) ===== -->
+  <!-- Results -->
   <section id="results">
     <div class="container">
       <h2>実績</h2>
@@ -448,7 +416,7 @@
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
+  <!-- FAQ -->
   <section id="faq" class="faq">
     <div class="container">
       <h2>よくある質問</h2>
@@ -465,7 +433,7 @@
     </div>
   </section>
 
-  <!-- ===== Contact ===== -->
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <h2>ご相談・お問い合わせ</h2>
@@ -486,7 +454,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox for screenshots -->
+  <!-- Lightbox -->
   <div id="lightbox" aria-hidden="true">
     <button class="lb-nav lb-prev" aria-label="前の画像">
       <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -497,14 +465,13 @@
     </button>
   </div>
 
-  <!-- PDF viewer modal -->
+  <!-- PDF viewer -->
   <div id="pdfbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="自動化 実例集">
     <div class="panel">
       <header>
         <div class="title">自動化 実例集（PDF）</div>
         <button class="close" id="pdf-close">閉じる</button>
       </header>
-      <!-- 遅延ロード（srcは空で開始） -->
       <iframe id="pdf-frame" title="自動化 実例集（PDF）" src="" allow="autoplay" loading="lazy"></iframe>
       <div class="fallback">
         表示されない場合は <a class="underline-link" href="自動化実例集.pdf" target="_blank" rel="noopener">こちら</a> を開いてください。
@@ -513,132 +480,67 @@
   </div>
 
   <script>
-    // Hamburger open/close
+    // Hamburger
     const btn = document.querySelector('.nav-toggle');
     const nav = document.getElementById('site-nav');
     const backdrop = document.getElementById('nav-backdrop');
-
-    function openMenu(){
-      nav.classList.add('open'); backdrop.classList.add('show'); btn.classList.add('open');
-      document.body.classList.add('nav-open'); btn.setAttribute('aria-expanded','true');
-      btn.setAttribute('aria-label','メニューを閉じる');
-    }
-    function closeMenu(){
-      nav.classList.remove('open'); backdrop.classList.remove('show'); btn.classList.remove('open');
-      document.body.classList.remove('nav-open'); btn.setAttribute('aria-expanded','false');
-      btn.setAttribute('aria-label','メニューを開く');
-    }
-    btn?.addEventListener('click', () => { (nav.classList.contains('open') ? closeMenu : openMenu)(); });
+    function openMenu(){nav.classList.add('open');backdrop.classList.add('show');btn.classList.add('open');document.body.classList.add('nav-open');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','メニューを閉じる');}
+    function closeMenu(){nav.classList.remove('open');backdrop.classList.remove('show');btn.classList.remove('open');document.body.classList.remove('nav-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','メニューを開く');}
+    btn?.addEventListener('click', () => {(nav.classList.contains('open')?closeMenu:openMenu)();});
     backdrop?.addEventListener('click', closeMenu);
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeMenu(); closeLb(); closePdf(); } });
-    nav?.addEventListener('click', (e) => { const a = e.target.closest('a'); if (!a) return; closeMenu(); });
-    const mq = window.matchMedia('(min-width: 741px)'); mq.addEventListener('change', (e) => { if (e.matches) closeMenu(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeMenu(); closeLb(); closePdf(); } });
+    nav?.addEventListener('click', (e)=>{ const a=e.target.closest('a'); if(!a) return; closeMenu(); });
+    const mq=window.matchMedia('(min-width: 741px)'); mq.addEventListener('change',(e)=>{ if(e.matches) closeMenu(); });
 
-    // ===== Lightbox with prev/next for screenshots =====
-    const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const prevBtn = lb.querySelector('.lb-prev');
-    const nextBtn = lb.querySelector('.lb-next');
-    const thumbs = Array.from(document.querySelectorAll('.screen img'));
-    thumbs.forEach((img, i) => img.dataset.idx = i);
-    let current = -1;
+    // Lightbox
+    const lb=document.getElementById('lightbox');
+    const lbImg=lb.querySelector('img');
+    const prevBtn=lb.querySelector('.lb-prev');
+    const nextBtn=lb.querySelector('.lb-next');
+    const thumbs=Array.from(document.querySelectorAll('.screen img'));
+    thumbs.forEach((img,i)=>img.dataset.idx=i);
+    let current=-1;
+    function openLbAt(i){ if(i<0||i>=thumbs.length) return; current=i; lbImg.src=thumbs[i].getAttribute('src'); lb.style.display='flex'; lb.setAttribute('aria-hidden','false'); document.body.classList.add('lb-open'); }
+    function closeLb(){ lb.style.display='none'; lb.setAttribute('aria-hidden','true'); lbImg.src=''; document.body.classList.remove('lb-open'); current=-1; }
+    function showNext(d){ if(current===-1) return; current=(current+d+thumbs.length)%thumbs.length; lbImg.src=thumbs[current].getAttribute('src'); }
+    thumbs.forEach(img=>{ img.addEventListener('click',()=>{ const idx=parseInt(img.dataset.idx,10); if(lb.style.display==='flex'&&current===idx){ closeLb(); return; } openLbAt(idx); }); });
+    lb.addEventListener('click',(e)=>{ if(e.target===lb) closeLb(); });
+    lbImg.addEventListener('click',(e)=>{ e.stopPropagation(); closeLb(); });
+    prevBtn.addEventListener('click',(e)=>{ e.stopPropagation(); showNext(-1); });
+    nextBtn.addEventListener('click',(e)=>{ e.stopPropagation(); showNext(1); });
+    window.addEventListener('keydown',(e)=>{ if(lb.style.display!=='flex') return; if(e.key==='ArrowRight'){showNext(1);} else if(e.key==='ArrowLeft'){showNext(-1);} else if(e.key==='Escape'){closeLb();} });
 
-    function openLbAt(i){
-      if(i < 0 || i >= thumbs.length) return;
-      current = i;
-      lbImg.src = thumbs[i].getAttribute('src');
-      lb.style.display = 'flex';
-      lb.setAttribute('aria-hidden','false');
-      document.body.classList.add('lb-open');
-    }
-    function closeLb(){
-      lb.style.display = 'none';
-      lb.setAttribute('aria-hidden','true');
-      lbImg.src = '';
-      document.body.classList.remove('lb-open');
-      current = -1;
-    }
-    function showNext(delta){
-      if(current === -1) return;
-      current = (current + delta + thumbs.length) % thumbs.length;
-      lbImg.src = thumbs[current].getAttribute('src');
-    }
-
-    thumbs.forEach(img=>{
-      img.addEventListener('click',()=>{
-        const idx = parseInt(img.dataset.idx,10);
-        if(lb.style.display === 'flex' && current === idx){ closeLb(); return; }
-        openLbAt(idx);
-      });
-    });
-    lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLb(); });
-    lbImg.addEventListener('click', (e)=>{ e.stopPropagation(); closeLb(); });
-    prevBtn.addEventListener('click', (e)=>{ e.stopPropagation(); showNext(-1); });
-    nextBtn.addEventListener('click', (e)=>{ e.stopPropagation(); showNext(1); });
-    window.addEventListener('keydown', (e)=>{
-      if(lb.style.display !== 'flex') return;
-      if(e.key === 'ArrowRight'){ showNext(1); }
-      else if(e.key === 'ArrowLeft'){ showNext(-1); }
-      else if(e.key === 'Escape'){ closeLb(); }
-    });
-
-    // ===== 横スクロール端でフェードの表示/非表示（A方式） =====
+    // Fade edges
     (function(){
-      const screens = document.querySelector('#mobile-screens .screens');
-      const track   = document.querySelector('#mobile-screens .screens-track');
-      if(!screens || !track) return;
-
+      const screens=document.querySelector('#mobile-screens .screens');
+      const track=document.querySelector('#mobile-screens .screens-track');
+      if(!screens||!track) return;
       function updateFade(){
-        const max = Math.max(0, track.scrollWidth - track.clientWidth);
-        const x   = track.scrollLeft;
-        const EPS = 2;
-        screens.classList.toggle('at-start', x <= EPS);
-        screens.classList.toggle('at-end',   (max - x) <= EPS);
+        const max=Math.max(0,track.scrollWidth-track.clientWidth);
+        const x=track.scrollLeft, EPS=2;
+        screens.classList.toggle('at-start', x<=EPS);
+        screens.classList.toggle('at-end', (max-x)<=EPS);
       }
       updateFade();
       track.addEventListener('scroll', updateFade, {passive:true});
       window.addEventListener('resize', updateFade);
     })();
 
-    // ==== PDF modal open/close（スマホ安定化：遅延ロード＋Google Docs Viewer） ====
-    const pdfbox   = document.getElementById('pdfbox');
-    const pdfOpen  = document.getElementById('open-pdf');
-    const pdfClose = document.getElementById('pdf-close');
-    const pdfFrame = document.getElementById('pdf-frame');
-
-    const absPdfURL = new URL('自動化実例集.pdf', location.href).href;
-    const isIOS = /iP(hone|ad|od)/i.test(navigator.userAgent)
-      || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    const isSmall = window.matchMedia('(max-width: 820px)').matches;
-
-    function buildPdfSrc(){
-      if (isIOS || isSmall) {
-        return 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(absPdfURL);
-      }
-      return absPdfURL + '#toolbar=1&navpanes=0&scrollbar=1&view=FitH';
-    }
-
-    function openPdf(e){
-      if(e) e.preventDefault();
-      const src = buildPdfSrc();
-      if (pdfFrame.getAttribute('src') !== src) {
-        pdfFrame.setAttribute('src', src); // ←開く瞬間に設定（Safari対策）
-      }
-      pdfbox.style.display = 'flex';
-      pdfbox.setAttribute('aria-hidden','false');
-      document.body.classList.add('lb-open');
-    }
-    function closePdf(){
-      pdfbox.style.display = 'none';
-      pdfbox.setAttribute('aria-hidden','true');
-      document.body.classList.remove('lb-open');
-      pdfFrame.setAttribute('src',''); // 次回に備えてクリア（iOS安定）
-    }
-
+    // PDF modal
+    const pdfbox=document.getElementById('pdfbox');
+    const pdfOpen=document.getElementById('open-pdf');
+    const pdfClose=document.getElementById('pdf-close');
+    const pdfFrame=document.getElementById('pdf-frame');
+    const absPdfURL=new URL('自動化実例集.pdf', location.href).href;
+    const isIOS=/iP(hone|ad|od)/i.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+    const isSmall=window.matchMedia('(max-width: 820px)').matches;
+    function buildPdfSrc(){ return (isIOS||isSmall) ? 'https://docs.google.com/gview?embedded=1&url='+encodeURIComponent(absPdfURL) : absPdfURL+'#toolbar=1&navpanes=0&scrollbar=1&view=FitH'; }
+    function openPdf(e){ if(e) e.preventDefault(); const src=buildPdfSrc(); if(pdfFrame.getAttribute('src')!==src){ pdfFrame.setAttribute('src',src); } pdfbox.style.display='flex'; pdfbox.setAttribute('aria-hidden','false'); document.body.classList.add('lb-open'); }
+    function closePdf(){ pdfbox.style.display='none'; pdfbox.setAttribute('aria-hidden','true'); document.body.classList.remove('lb-open'); pdfFrame.setAttribute('src',''); }
     pdfOpen?.addEventListener('click', openPdf);
     pdfClose?.addEventListener('click', closePdf);
-    pdfbox?.addEventListener('click', (e)=>{ if(e.target === pdfbox) closePdf(); });
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closePdf(); });
+    pdfbox?.addEventListener('click', (e)=>{ if(e.target===pdfbox) closePdf(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closePdf(); });
   </script>
 </body>
 </html>
