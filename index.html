@@ -87,7 +87,6 @@
     /* ===== Hero ===== */
     .hero{padding:28px 0 16px;background:linear-gradient(180deg,#ffffff,#f1f5f9 70%)}
     .hero-wrap{display:grid;gap:14px;align-items:center}
-    /* PCでは 1:1 の二分割に（下の上書きで常に1:1を適用） */
     @media(min-width:960px){.hero-wrap{grid-template-columns:1fr 1fr}}
     .badge{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
     .chip{background:var(--accent);border:1px solid #cbd5e1;color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px}
@@ -98,7 +97,7 @@
     .btn-primary:hover{background:var(--brand-600)}
     .btn-outline{background:#fff;border-color:#cbd5e1;color:var(--brand-700)}
 
-    /* 画像は“枠に収める”（トリミングしない） */
+    /* 画像は“枠に収める” */
     .hero-media{
       position:relative;
       background:#fff;
@@ -111,17 +110,16 @@
     .hero-media img{
       display:block;
       width:100%;
-      height:auto;            /* 比率維持・見切れ防止 */
+      height:auto;
       object-fit:contain;
       border-radius:14px;
     }
-    /* PC時は画像枠を控えめに（横1:1の右カラムでも小さめに見える） */
     @media(min-width:960px){
       .hero-media{max-width:560px;margin-left:auto}
       .hero-media img{max-height:520px}
     }
 
-    /* ===== スマホモック：PCでも横スクロール＆スナップ ===== */
+    /* ===== スマホモック：PCでも横スクロール ===== */
     .screens{position:relative; overflow:hidden}
     .screens-track{
       display:grid;
@@ -289,7 +287,8 @@
     <div class="container">
       <h2>オリジナルツールで、スマホをあなたの参謀に。</h2>
       <p class="lead">
-        まずはツールを触ってみてください。“行動を変え、黒字経営につなげる”ためのツール群です。<br>
+        まずは、以下の3つのツールを どなたでも無料でお試しいただけます。<br>
+        当事務所の顧問先の方には、これに加えて “黒字経営4WD” をフルに活かす <strong>会員専用ツール群</strong> をご提供しています。<br>
         <small style="color:#475569">※ 入力値はブラウザ内で計算され、当ページでは保存しません（お問い合わせフォーム送信を除く）。</small>
       </p>
 
