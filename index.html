@@ -1009,7 +1009,7 @@
                 background: #fff;
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px;
+                padding: 20px 0; /* 修正: 左右パディングを0に */
                 transform: translateX(100%);
                 transition: transform 0.3s ease;
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
@@ -1027,7 +1027,7 @@
                 font-size: 18px; /* 文字サイズを大きく */
                 color: var(--text-main); /* 文字色を濃く */
                 font-weight: 600; /* 太文字に */
-                padding: 12px 0; /* タップしやすいように上下に余白 */
+                padding: 12px 24px; /* 修正: 左右に余白を確保して見やすく */
                 width: 100%;
                 display: block;
                 background-color: #fff; /* 背景色を白に設定 */
@@ -1037,13 +1037,13 @@
             #site-nav a:not(.btn):hover {
                 color: var(--brand);
                 background-color: var(--bg-body);
-                padding-left: 10px; /* ホバー時のアクション */
+                padding-left: 28px; /* ホバー時のアクションを少し控えめに */
                 transition: all 0.2s ease;
             }
 
             #site-nav .btn {
-                margin-top: 24px;
-                width: 100%;
+                margin: 24px 20px; /* ボタンには周囲に余白を持たせる */
+                width: calc(100% - 40px);
                 justify-content: center;
                 padding: 14px 0;
             }
