@@ -600,6 +600,11 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
+            transition: transform 0.3s; /* ロゴホバー用のアニメーション */
+        }
+
+        .center-logo:hover {
+            transform: translate(-50%, -50%) scale(1.1); /* ホバー時に少し拡大 */
         }
 
         .center-logo img {
@@ -628,6 +633,20 @@
             white-space: nowrap; /* 折り返し禁止 */
             /* 重要: 親の回転を打ち消して文字を常に正立させる */
             animation: counter-spin 20s linear infinite;
+            text-decoration: none; /* リンクの下線を消す */
+            transition: background-color 0.3s, color 0.3s; /* ホバー時のトランジション */
+        }
+
+        .orbit-item:hover {
+            background-color: var(--brand);
+            color: #fff;
+            z-index: 20;
+        }
+
+        /* ホバー時に回転を止める（クリックしやすくするため） */
+        .circle-wrapper:hover .auto-circle,
+        .circle-wrapper:hover .orbit-item {
+            animation-play-state: paused;
         }
 
         /* 5つのアイテムを円周上に配置（上から時計回り） */
@@ -1395,15 +1414,15 @@
                         <!-- Abstract visual using CSS or SVG -->
                         <div class="circle-wrapper">
                             <div class="auto-circle">
-                                <div class="orbit-item item-1">証憑（スキャナ・スマホ）</div>
-                                <div class="orbit-item item-2">銀行・クレジットカード</div>
-                                <div class="orbit-item item-3">販売管理</div>
-                                <div class="orbit-item item-4">レジ連携</div>
-                                <div class="orbit-item item-5">給与計算</div>
+                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-tds" target="_blank" rel="noopener" class="orbit-item item-1">証憑（スキャナ・スマホ）</a>
+                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech" target="_blank" rel="noopener" class="orbit-item item-2">銀行・クレジットカード</a>
+                                <a href="https://www.tkc.jp/file.jsp?id=166750" target="_blank" rel="noopener" class="orbit-item item-3">販売管理</a>
+                                <a href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8" target="_blank" rel="noopener" class="orbit-item item-4">レジ連携</a>
+                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-system012" target="_blank" rel="noopener" class="orbit-item item-5">給与計算</a>
                             </div>
-                            <div class="center-logo">
+                            <a href="https://www.matsumoto-kaikei.or.jp/tkc-fxcloud" target="_blank" rel="noopener" class="center-logo">
                                 <img src="FXCロゴ.png" onerror="this.src='https://placehold.co/100x40?text=FXC'" alt="FXCロゴ">
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
