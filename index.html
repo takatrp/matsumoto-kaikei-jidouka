@@ -390,10 +390,7 @@
             border-color: var(--brand-light);
         }
 
-        .tool-icon {
-            font-size: 32px;
-            margin-bottom: 16px;
-        }
+        /* Removed .tool-icon styles as they are no longer used */
 
         .tool-card h3 {
             font-size: 18px;
@@ -585,7 +582,8 @@
         .auto-circle {
             width: 100%;
             height: 100%;
-            border: 1px dashed rgba(255, 255, 255, 0.2);
+            /* 修正: 円の線を太くし、不透明度を上げてコントラストを改善 */
+            border: 2px dashed rgba(255, 255, 255, 0.6);
             border-radius: 50%;
             position: relative;
             animation: spin 20s linear infinite;
@@ -613,51 +611,41 @@
             box-shadow: 0 0 20px rgba(87, 136, 153, 0.5);
         }
 
+        /* 修正: 文字を入れるためのスタイルに変更 */
         .orbit-item {
             position: absolute;
-            width: 40px;
-            height: 40px;
+            /* width/heightは固定せず文字数に合わせる */
+            padding: 6px 12px;
             background: #fff;
-            border-radius: 50%;
+            border-radius: 99px; /* 角丸のピル型 */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--brand-dark);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            white-space: nowrap; /* 折り返し禁止 */
+            /* 重要: 親の回転を打ち消して文字を常に正立させる */
+            animation: counter-spin 20s linear infinite;
         }
 
-        .item-1 {
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .item-2 {
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .item-3 {
-            left: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .item-4 {
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+        /* 5つのアイテムを円周上に配置（上から時計回り） */
+        .item-1 { top: 0%; left: 50%; }
+        .item-2 { top: 34.5%; left: 97.5%; }
+        .item-3 { top: 90.5%; left: 79.4%; }
+        .item-4 { top: 90.5%; left: 20.6%; }
+        .item-5 { top: 34.5%; left: 2.5%; }
 
         @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
-            to {
-                transform: rotate(360deg);
-            }
+        @keyframes counter-spin {
+            /* 中心基準で逆回転させることで文字の向きを保つ */
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(-360deg); }
         }
 
         /* Approach */
@@ -1048,6 +1036,12 @@
                 padding: 14px 0;
             }
             /* ----------------------------------------------------- */
+            
+            /* 文字数が多くなったので、スマホでは円全体を少し縮小して画面からはみ出るのを防ぐ */
+            .circle-wrapper {
+                transform: scale(0.85); 
+                transform-origin: center;
+            }
 
             .mobile-cta {
                 display: block;
@@ -1297,19 +1291,19 @@
 
                 <div class="tool-cards grid grid-3 fade-in-up delay-100">
                     <a href="https://takatrp.github.io/hendou_PL/" target="_blank" rel="noopener" class="tool-card">
-                        <div class="tool-icon">📊</div>
+                        <!-- Removed tool-icon -->
                         <h3>ボールで学ぶ<br>変動損益計算書</h3>
                         <p>どの要素に手を加えれば「限界利益＞固定費」となるか直感的に学べます。</p>
                         <span class="link-text">試してみる &rarr;</span>
                     </a>
                     <a href="https://takatrp.github.io/jidouka-kouka/" target="_blank" rel="noopener" class="tool-card">
-                        <div class="tool-icon">⚡</div>
+                        <!-- Removed tool-icon -->
                         <h3>自動化効果<br>試算ツール</h3>
                         <p>経理業務の自動化によって、どれだけの時間とコストを削減できるか試算します。</p>
                         <span class="link-text">試してみる &rarr;</span>
                     </a>
                     <a href="https://takatrp.github.io/price-up-down/" target="_blank" rel="noopener" class="tool-card">
-                        <div class="tool-icon">🏷️</div>
+                        <!-- Removed tool-icon -->
                         <h3>価格改定<br>検討ツール</h3>
                         <p>値上げ・値下げが利益にどう影響するか、シミュレーションできます。</p>
                         <span class="link-text">試してみる &rarr;</span>
@@ -1401,10 +1395,11 @@
                         <!-- Abstract visual using CSS or SVG -->
                         <div class="circle-wrapper">
                             <div class="auto-circle">
-                                <div class="orbit-item item-1">🏦</div>
-                                <div class="orbit-item item-2">💳</div>
-                                <div class="orbit-item item-3">🧾</div>
-                                <div class="orbit-item item-4">📱</div>
+                                <div class="orbit-item item-1">証憑（スキャナ・スマホ）</div>
+                                <div class="orbit-item item-2">銀行・クレジットカード</div>
+                                <div class="orbit-item item-3">販売管理</div>
+                                <div class="orbit-item item-4">レジ連携</div>
+                                <div class="orbit-item item-5">給与計算</div>
                             </div>
                             <div class="center-logo">
                                 <img src="FXCロゴ.png" onerror="this.src='https://placehold.co/100x40?text=FXC'" alt="FXCロゴ">
