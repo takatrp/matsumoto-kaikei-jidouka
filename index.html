@@ -257,7 +257,6 @@
         /* Hero */
         .hero {
             position: relative;
-            /* 修正: 下部の余白を80pxから30pxに縮小 */
             padding: 60px 0 30px;
             overflow: hidden;
             background: linear-gradient(180deg, #fff 0%, #f1f5f9 100%);
@@ -304,7 +303,7 @@
             font-weight: 600;
             color: var(--text-sub);
             display: block;
-            margin-bottom: 4px; /* 修正: 8pxから4pxに変更して間隔を詰める */
+            margin-bottom: 4px;
             font-family: var(--font-sans);
         }
 
@@ -344,10 +343,33 @@
             width: 100%;
         }
 
+        /* --- 動画実装用の追加CSS --- */
+        .media-frame.video-frame {
+            padding: 0;
+            /* 動画の場合はフレームの余白をなくす */
+            background: #000;
+            /* ロード中の背景 */
+            aspect-ratio: 16 / 9;
+            /* アスペクト比固定 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            /* Veoロゴを消すために少しだけ拡大 */
+            transform: scale(1.06);
+            transform-origin: center;
+        }
+        /* --------------------------- */
+
         /* Portal Features */
-        /* 修正: IDセレクタで優先度を上げ、余白を調整 */
         #portal-features {
-            /* 上下の余白を20pxに縮小 */
             padding: 20px 0;
         }
 
@@ -366,7 +388,7 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-        
+
         .p-feature-card:hover {
             box-shadow: var(--shadow-lg);
             transform: translateY(-5px);
@@ -491,7 +513,6 @@
         }
 
         /* AI Funnel Spacing Adjustment */
-        /* 修正: 無料ツールセクションの上部余白を縮小 */
         #ai-funnel {
             padding-top: 40px;
         }
@@ -641,7 +662,6 @@
         .auto-circle {
             width: 100%;
             height: 100%;
-            /* 修正: 円の線を太くし、不透明度を上げてコントラストを改善 */
             border: 2px dashed rgba(255, 255, 255, 0.6);
             border-radius: 50%;
             position: relative;
@@ -653,35 +673,33 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100px; /* ロゴサイズに合わせて調整 */
+            width: 100px;
             height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10;
-            transition: transform 0.3s; /* ロゴホバー用のアニメーション */
+            transition: transform 0.3s;
         }
 
         .center-logo:hover {
-            transform: translate(-50%, -50%) scale(1.1); /* ホバー時に少し拡大 */
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .center-logo img {
             width: 100%;
             height: auto;
-            border-radius: 8px; /* 角丸追加（任意） */
-            background: rgba(255, 255, 255, 0.9); /* ロゴが見やすいように背景白追加（任意） */
-            padding: 8px; /* 余白 */
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px;
             box-shadow: 0 0 20px rgba(87, 136, 153, 0.5);
         }
 
-        /* 修正: 文字を入れるためのスタイルに変更 */
         .orbit-item {
             position: absolute;
-            /* width/heightは固定せず文字数に合わせる */
             padding: 6px 12px;
             background: #fff;
-            border-radius: 99px; /* 角丸のピル型 */
+            border-radius: 99px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -689,11 +707,10 @@
             font-weight: 700;
             color: var(--brand-dark);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-            white-space: nowrap; /* 折り返し禁止 */
-            /* 重要: 親の回転を打ち消して文字を常に正立させる */
+            white-space: nowrap;
             animation: counter-spin 20s linear infinite;
-            text-decoration: none; /* リンクの下線を消す */
-            transition: background-color 0.3s, color 0.3s; /* ホバー時のトランジション */
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .orbit-item:hover {
@@ -702,13 +719,11 @@
             z-index: 20;
         }
 
-        /* ホバー時に回転を止める（クリックしやすくするため） */
         .circle-wrapper:hover .auto-circle,
         .circle-wrapper:hover .orbit-item {
             animation-play-state: paused;
         }
 
-        /* 5つのアイテムを円周上に配置（上から時計回り） */
         .item-1 { top: 0%; left: 50%; }
         .item-2 { top: 34.5%; left: 97.5%; }
         .item-3 { top: 90.5%; left: 79.4%; }
@@ -721,7 +736,6 @@
         }
 
         @keyframes counter-spin {
-            /* 中心基準で逆回転させることで文字の向きを保つ */
             from { transform: translate(-50%, -50%) rotate(0deg); }
             to { transform: translate(-50%, -50%) rotate(-360deg); }
         }
@@ -857,7 +871,6 @@
             border-radius: 99px;
             animation: grow 1.5s ease-out forwards;
             width: 0;
-            /* Animated later */
         }
 
         .bar.primary {
@@ -942,7 +955,7 @@
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .benefit-list ul {
                 padding: 0;
                 text-align: left;
@@ -1131,6 +1144,26 @@
                 grid-template-columns: 1fr;
             }
 
+            /* スマホでの動画の見え方調整 */
+            .media-frame {
+                transform: none !important;
+                margin-top: 20px;
+            }
+
+            /* --- 動画モバイル用調整 --- */
+            .media-frame.video-frame {
+                /* スマホでは3D演出を消し、綺麗に表示する */
+                aspect-ratio: 16 / 9;
+                /* 必要に応じて正方形に近づけるなら 4/3 に変更 */
+            }
+
+            .hero-video {
+                /* 必要なら object-position を調整 */
+                object-position: center;
+            }
+
+            /* --------------------------- */
+
             .automation-grid {
                 grid-template-columns: 1fr;
             }
@@ -1149,49 +1182,45 @@
                 background: #fff;
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 20px 0; /* 修正: 左右パディングを0に */
+                padding: 20px 0;
                 transform: translateX(100%);
                 transition: transform 0.3s ease;
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
                 z-index: 1001;
-                /* Reset gap for manual spacing via padding */
                 gap: 0;
             }
 
             #site-nav.open {
                 transform: translateX(0);
             }
-            
-            /* --- 修正箇所: モバイルメニューの文字が見やすくなるように調整 --- */
+
             #site-nav a:not(.btn) {
-                font-size: 18px; /* 文字サイズを大きく */
-                color: var(--text-main); /* 文字色を濃く */
-                font-weight: 600; /* 太文字に */
-                padding: 12px 24px; /* 修正: 左右に余白を確保して見やすく */
+                font-size: 18px;
+                color: var(--text-main);
+                font-weight: 600;
+                padding: 12px 24px;
                 width: 100%;
                 display: block;
-                background-color: #fff; /* 背景色を白に設定 */
-                border-bottom: 1px solid var(--accent); /* 薄い区切り線を追加 */
+                background-color: #fff;
+                border-bottom: 1px solid var(--accent);
             }
 
             #site-nav a:not(.btn):hover {
                 color: var(--brand);
                 background-color: var(--bg-body);
-                padding-left: 28px; /* ホバー時のアクションを少し控えめに */
+                padding-left: 28px;
                 transition: all 0.2s ease;
             }
 
             #site-nav .btn {
-                margin: 24px 20px; /* ボタンには周囲に余白を持たせる */
+                margin: 24px 20px;
                 width: calc(100% - 40px);
                 justify-content: center;
                 padding: 14px 0;
             }
-            /* ----------------------------------------------------- */
-            
-            /* 文字数が多くなったので、スマホでは円全体を少し縮小して画面からはみ出るのを防ぐ */
+
             .circle-wrapper {
-                transform: scale(0.85); 
+                transform: scale(0.85);
                 transform-origin: center;
             }
 
@@ -1339,8 +1368,7 @@
         }
     </style>
 
-    <!-- Preload LCP image -->
-    <!-- Fallback if image is missing -->
+    <!-- Preload LCP image (fallback if video fails or before load) -->
     <link rel="preload" as="image" href="hero3.jpg" onerror="this.href='https://placehold.co/1920x1080?text=Hero+Image'" />
 
     <!-- OG / Twitter -->
@@ -1358,7 +1386,8 @@
         <div class="container inner">
             <a class="logo" href="https://www.matsumoto-kaikei.or.jp/" target="_blank" rel="noopener"
                 aria-label="税理士法人松本会計 公式サイトへ">
-                <img class="mark" src="ロゴ.jpg" onerror="this.src='https://placehold.co/50x50?text=Logo'" alt="税理士法人松本会計 ロゴ">
+                <img class="mark" src="ロゴ.jpg" onerror="this.src='https://placehold.co/50x50?text=Logo'"
+                    alt="税理士法人松本会計 ロゴ">
                 <img class="word" src="松本会計.png" onerror="this.style.display='none'" alt="税理士法人松本会計 ワードマーク">
             </a>
 
@@ -1420,11 +1449,21 @@
                         <a class="btn btn-outline btn-lg" href="#contact">お問い合わせ</a>
                     </div>
                 </div>
+
+                <!-- 動画実装用に変更したブロック -->
                 <div class="hero-media fade-in-up delay-100">
-                    <div class="media-frame">
-                        <img src="hero3.jpg" onerror="this.src='https://placehold.co/800x600?text=Hero+Image'" alt="松本会計：数字を意思決定へつなぐ支援イメージ" width="1920" height="1080">
+                    <div class="media-frame video-frame">
+                        <video class="hero-video" autoplay muted loop playsinline poster="hero3.jpg">
+                            <!-- 動画ファイルはindex.htmlと同じ階層に置いてください -->
+                            <source src="LPヒーロー画像用動画作成.mp4" type="video/mp4">
+                            <!-- 動画非対応ブラウザ用 -->
+                            <img src="hero3.jpg" onerror="this.src='https://placehold.co/800x600?text=Hero+Image'"
+                                alt="松本会計：数字を意思決定へつなぐ支援イメージ" width="1920" height="1080">
+                        </video>
                     </div>
                 </div>
+                <!-- ここまで -->
+
             </div>
             <div class="hero-bg-deco"></div>
         </section>
@@ -1471,13 +1510,15 @@
                         <p>どの要素に手を加えれば「限界利益＞固定費」となるか直感的に学べます。</p>
                         <span class="link-text">試してみる &rarr;</span>
                     </a>
-                    <a href="https://takatrp.github.io/jidouka-kouka-LP/" target="_blank" rel="noopener" class="tool-card">
+                    <a href="https://takatrp.github.io/jidouka-kouka-LP/" target="_blank" rel="noopener"
+                        class="tool-card">
                         <!-- Removed tool-icon -->
                         <h3>自動化効果<br>試算ツール</h3>
                         <p>経理業務の自動化によって、どれだけの時間とコストを削減できるか試算します。</p>
                         <span class="link-text">試してみる &rarr;</span>
                     </a>
-                    <a href="https://takatrp.github.io/price-up-down-LP/" target="_blank" rel="noopener" class="tool-card">
+                    <a href="https://takatrp.github.io/price-up-down-LP/" target="_blank" rel="noopener"
+                        class="tool-card">
                         <!-- Removed tool-icon -->
                         <h3>価格改定<br>検討ツール</h3>
                         <p>値上げ・値下げが利益にどう影響するか、シミュレーションできます。</p>
@@ -1488,7 +1529,8 @@
                 <!-- GIF Demo -->
                 <div class="demo-gif-wrap fade-in-up delay-200">
                     <figure class="demo-frame">
-                        <img src="変動PL.gif" onerror="this.src='https://placehold.co/600x400?text=Demo+GIF'" alt="“ボールで学ぶ変動損益計算書”の動作イメージ" loading="lazy">
+                        <img src="変動PL.gif" onerror="this.src='https://placehold.co/600x400?text=Demo+GIF'"
+                            alt="“ボールで学ぶ変動損益計算書”の動作イメージ" loading="lazy">
                     </figure>
                     <figcaption>“ボールで学ぶ変動損益計算書” の操作イメージ</figcaption>
                 </div>
@@ -1523,19 +1565,37 @@
                     <div class="screens-scroll-wrapper">
                         <div class="screens-track">
                             <!-- Images will be loaded here -->
-                            <figure class="screen"><img src="iPhoneモック0.png" onerror="this.src='https://placehold.co/260x500?text=Screen+1'" alt="ツールポータルの画面イメージ" loading="lazy">
+                            <figure class="screen"><img src="iPhoneモック0.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+1'" alt="ツールポータルの画面イメージ"
+                                    loading="lazy">
                             </figure>
-                            <figure class="screen"><img src="iPhoneモック1.png" onerror="this.src='https://placehold.co/260x500?text=Screen+2'" alt="費用から必要売上を換算する画面" loading="lazy">
+                            <figure class="screen"><img src="iPhoneモック1.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+2'" alt="費用から必要売上を換算する画面"
+                                    loading="lazy">
                             </figure>
-                            <figure class="screen"><img src="iPhoneモック2.png" onerror="this.src='https://placehold.co/260x500?text=Screen+3'" alt="受取利息・配当の源泉税計算画面" loading="lazy">
+                            <figure class="screen"><img src="iPhoneモック2.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+3'" alt="受取利息・配当の源泉税計算画面"
+                                    loading="lazy">
                             </figure>
-                            <figure class="screen"><img src="iPhoneモック3.png" onerror="this.src='https://placehold.co/260x500?text=Screen+4'" alt="価格改定インパクト試算の画面" loading="lazy">
+                            <figure class="screen"><img src="iPhoneモック3.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+4'" alt="価格改定インパクト試算の画面"
+                                    loading="lazy">
                             </figure>
-                            <figure class="screen"><img src="iPhoneモック4.png" onerror="this.src='https://placehold.co/260x500?text=Screen+5'" alt="人件費の見える化画面" loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック5.png" onerror="this.src='https://placehold.co/260x500?text=Screen+6'" alt="スマホツール画面 5" loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック6.png" onerror="this.src='https://placehold.co/260x500?text=Screen+7'" alt="スマホツール画面 6" loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック7.png" onerror="this.src='https://placehold.co/260x500?text=Screen+8'" alt="スマホツール画面 7" loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック8.png" onerror="this.src='https://placehold.co/260x500?text=Screen+9'" alt="スマホツール画面 8" loading="lazy"></figure>
+                            <figure class="screen"><img src="iPhoneモック4.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+5'" alt="人件費の見える化画面"
+                                    loading="lazy"></figure>
+                            <figure class="screen"><img src="iPhoneモック5.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+6'" alt="スマホツール画面 5"
+                                    loading="lazy"></figure>
+                            <figure class="screen"><img src="iPhoneモック6.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+7'" alt="スマホツール画面 6"
+                                    loading="lazy"></figure>
+                            <figure class="screen"><img src="iPhoneモック7.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+8'" alt="スマホツール画面 7"
+                                    loading="lazy"></figure>
+                            <figure class="screen"><img src="iPhoneモック8.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+9'" alt="スマホツール画面 8"
+                                    loading="lazy"></figure>
                         </div>
                     </div>
                     <div class="scroll-hint">Scroll &rarr;</div>
@@ -1552,7 +1612,8 @@
                         </ul>
                     </div>
                     <div class="benefit-arrow">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -1582,8 +1643,8 @@
                             <div class="stat-desc">年間数十万円の人件費削減も可能です</div>
                         </div>
                         <div class="cta-row">
-                            <a class="btn btn-accent" href="https://takatrp.github.io/jidouka-kouka-LP/" target="_blank"
-                                rel="noopener">自動化効果を試算する</a>
+                            <a class="btn btn-accent" href="https://takatrp.github.io/jidouka-kouka-LP/"
+                                target="_blank" rel="noopener">自動化効果を試算する</a>
                             <button class="btn btn-outline-white" id="open-pdf">自動化実績を見る (PDF)</button>
                         </div>
                     </div>
@@ -1591,14 +1652,21 @@
                         <!-- Abstract visual using CSS or SVG -->
                         <div class="circle-wrapper">
                             <div class="auto-circle">
-                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-tds" target="_blank" rel="noopener" class="orbit-item item-1">証憑（スキャナ・スマホ）</a>
-                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech" target="_blank" rel="noopener" class="orbit-item item-2">銀行・クレジットカード</a>
-                                <a href="https://www.tkc.jp/file.jsp?id=166750" target="_blank" rel="noopener" class="orbit-item item-3">販売管理</a>
-                                <a href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8" target="_blank" rel="noopener" class="orbit-item item-4">レジ連携</a>
-                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-system012" target="_blank" rel="noopener" class="orbit-item item-5">給与計算</a>
+                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-tds" target="_blank" rel="noopener"
+                                    class="orbit-item item-1">証憑（スキャナ・スマホ）</a>
+                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech" target="_blank" rel="noopener"
+                                    class="orbit-item item-2">銀行・クレジットカード</a>
+                                <a href="https://www.tkc.jp/file.jsp?id=166750" target="_blank" rel="noopener"
+                                    class="orbit-item item-3">販売管理</a>
+                                <a href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8"
+                                    target="_blank" rel="noopener" class="orbit-item item-4">レジ連携</a>
+                                <a href="https://www.matsumoto-kaikei.or.jp/tkc-system012" target="_blank"
+                                    rel="noopener" class="orbit-item item-5">給与計算</a>
                             </div>
-                            <a href="https://www.matsumoto-kaikei.or.jp/tkc-fxcloud" target="_blank" rel="noopener" class="center-logo">
-                                <img src="FXCロゴ.png" onerror="this.src='https://placehold.co/100x40?text=FXC'" alt="FXCロゴ">
+                            <a href="https://www.matsumoto-kaikei.or.jp/tkc-fxcloud" target="_blank" rel="noopener"
+                                class="center-logo">
+                                <img src="FXCロゴ.png" onerror="this.src='https://placehold.co/100x40?text=FXC'"
+                                    alt="FXCロゴ">
                             </a>
                         </div>
                     </div>
