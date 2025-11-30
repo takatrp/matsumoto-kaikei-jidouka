@@ -299,7 +299,7 @@
         }
 
         .hero-title-sub {
-            font-size: 0.6em;
+            font-size: 0.7em;
             font-weight: 600;
             color: var(--text-sub);
             display: block;
@@ -341,6 +341,54 @@
         .media-frame img {
             border-radius: 12px;
             width: 100%;
+        }
+
+        /* Portal Features */
+        .portal-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .p-feature-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .p-feature-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .pf-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .p-feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--brand-dark);
+        }
+
+        .p-feature-card p {
+            font-size: 14px;
+            color: var(--text-sub);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .portal-features-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
         }
 
         /* Sections */
@@ -389,8 +437,6 @@
             box-shadow: var(--shadow-lg);
             border-color: var(--brand-light);
         }
-
-        /* Removed .tool-icon styles as they are no longer used */
 
         .tool-card h3 {
             font-size: 18px;
@@ -818,6 +864,80 @@
         @keyframes grow {
             to {
                 width: var(--target-width);
+            }
+        }
+
+        /* Benefit Flow */
+        .benefit-flow {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .benefit-list {
+            flex: 1;
+        }
+
+        .benefit-list ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .benefit-list li {
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .benefit-list li::before {
+            content: "・";
+            color: var(--brand);
+            font-weight: bold;
+            position: absolute;
+            left: -1em;
+        }
+
+        .benefit-arrow {
+            color: var(--brand);
+            flex-shrink: 0;
+        }
+
+        .benefit-arrow svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .benefit-result {
+            flex: 1;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--brand-dark);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .benefit-flow {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .benefit-list ul {
+                padding: 0;
+                text-align: left;
+                display: inline-block;
+            }
+
+            .benefit-arrow svg {
+                transform: rotate(90deg);
             }
         }
 
@@ -1274,8 +1394,8 @@
                         <span class="chip">自動化×効率化</span>
                     </div>
                     <h1 class="hero-title">
-                        <span class="hero-title-sub">TKCシステム × オリジナルツールで</span>
-                        今日の意思決定を<span class="text-gradient">加速</span>する。
+                        <span class="hero-title-sub">松本会計ツールポータルで</span>
+                        黒字経営を<span class="text-gradient">加速</span>する！
                     </h1>
                     <p class="hero-desc">
                         “お客様企業の繁栄は私たちの喜び”——<br>
@@ -1296,14 +1416,37 @@
             <div class="hero-bg-deco"></div>
         </section>
 
+        <!-- Portal Features (Added) -->
+        <section id="portal-features" class="section-padding">
+            <div class="container">
+                <div class="portal-features-grid fade-in-up">
+                    <div class="p-feature-card">
+                        <span class="pf-icon">◎</span>
+                        <h3>松本会計 専用設計</h3>
+                        <p>代表税理士監修のもと開発。<br>松本会計のお客様に最適化された<br>ツールです。</p>
+                    </div>
+                    <div class="p-feature-card">
+                        <span class="pf-icon">🛡️</span>
+                        <h3>万全のセキュリティ</h3>
+                        <p>計算は端末上で行われ、<br>入力情報が送信されることは<br>一切ありません。</p>
+                    </div>
+                    <div class="p-feature-card">
+                        <span class="pf-icon">📱</span>
+                        <h3>いつでも・どこでも</h3>
+                        <p>PC、スマホ、タブレットに対応。<br>ホーム画面からすぐに<br>アクセス可能です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- AI Funnel -->
         <section id="ai-funnel" class="section-padding">
             <div class="container">
                 <div class="section-header text-center fade-in-up">
                     <span class="section-subtitle">Free Tools</span>
-                    <h2>オリジナルツールで、<br class="sp-only">スマホをあなたの参謀に。</h2>
+                    <h2>まずは無料ツールで体験</h2>
                     <p class="lead">
-                        まずは、以下の3つのツールをどなたでも無料でお試しいただけます。<br>
+                        以下の3つのツールをどなたでも無料でお試しいただけます。<br>
                         <small class="note">※ 入力値はブラウザ内で計算され、当ページでは保存しません。</small>
                     </p>
                 </div>
@@ -1339,13 +1482,13 @@
             </div>
         </section>
 
-        <!-- Mobile Screens -->
+        <!-- Mobile Screens (Member Only + 4WD Concept) -->
         <section id="mobile-screens" class="section-padding bg-light">
             <div class="container">
                 <div class="section-header fade-in-up">
                     <span class="section-subtitle">Member Only</span>
-                    <h2>スマホでさっと試算。<br>現場で意思決定。</h2>
-                    <p class="lead">顧問先の方には、さらに踏み込んだ会員専用ツールをご提供しています。</p>
+                    <h2>黒字経営を強力に駆動する<br>「黒字経営4WD」<small style="font-size: 0.6em; margin-left: 10px;">＋その他便利ツール</small></h2>
+                    <p class="lead">顧問先の方には、さらに踏み込んだ会員専用ツールをご提供しています。<br>FXシリーズで表示される「限界利益率」を用い、経営判断に直結するシミュレーションが可能です。</p>
                 </div>
 
                 <div class="feature-list fade-in-up delay-100">
@@ -1383,6 +1526,27 @@
                         </div>
                     </div>
                     <div class="scroll-hint">Scroll &rarr;</div>
+                </div>
+
+                <!-- Benefit Flow -->
+                <div class="benefit-flow fade-in-up delay-200">
+                    <div class="benefit-list">
+                        <ul>
+                            <li>支出額を必要売上金額に換算できる</li>
+                            <li>価格改定の影響を可視化できる</li>
+                            <li>その作業にかかる人件費が見える</li>
+                            <li>資金効率が計算できる</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                    <div class="benefit-result">
+                        根拠に基づく迅速な<br>意思決定が可能に！
+                    </div>
                 </div>
             </div>
         </section>
