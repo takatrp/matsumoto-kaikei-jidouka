@@ -257,7 +257,8 @@
         /* Hero */
         .hero {
             position: relative;
-            padding: 60px 0 80px;
+            /* 修正: 下部の余白を80pxから30pxに縮小 */
+            padding: 60px 0 30px;
             overflow: hidden;
             background: linear-gradient(180deg, #fff 0%, #f1f5f9 100%);
         }
@@ -344,6 +345,12 @@
         }
 
         /* Portal Features */
+        /* 修正: IDセレクタで優先度を上げ、余白を調整 */
+        #portal-features {
+            /* 上下の余白を20pxに縮小 */
+            padding: 20px 0;
+        }
+
         .portal-features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -481,6 +488,12 @@
             margin-top: 8px;
             font-size: 12px;
             color: var(--text-sub);
+        }
+
+        /* AI Funnel Spacing Adjustment */
+        /* 修正: 無料ツールセクションの上部余白を縮小 */
+        #ai-funnel {
+            padding-top: 40px;
         }
 
         /* Mobile Screens */
