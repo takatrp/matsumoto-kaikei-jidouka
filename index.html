@@ -271,8 +271,21 @@
             z-index: 1;
         }
 
+        /* --- 修正: PCでの比率調整 --- */
+        @media (min-width: 992px) {
+            .hero-wrap {
+                /* テキストエリア:動画エリア = 5:7 (動画を大きく) */
+                grid-template-columns: 5fr 7fr;
+                gap: 60px; /* 動画が大きいので少し離す */
+            }
+            .hero-content {
+                max-width: 100%; /* 幅制限を解除してグリッドに合わせる */
+            }
+        }
+        /* -------------------------- */
+
         .hero-content {
-            max-width: 560px;
+            /* max-width: 560px; PCで解除するため削除または上記メディアクエリで上書き */
         }
 
         .badge-group {
