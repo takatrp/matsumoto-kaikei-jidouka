@@ -1,0 +1,2483 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>
+      TKCシステム×オリジナルツールで、今日の意思決定を加速。｜税理士法人松本会計
+    </title>
+    <meta
+      name="description"
+      content="オリジナルツールで、スマホをあなたの参謀に。リアルタイム会計×自動化×管理会計×継続伴走で、黒字を増やす意思決定を支援します。"
+    />
+    <link
+      rel="canonical"
+      href="https://takatrp.github.io/matsumoto-kaikei-jidouka/"
+    />
+
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XX3J7H4NF1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XX3J7H4NF1");
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon192192.png" sizes="192x192" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="favicon192192.png"
+    />
+    <link rel="apple-touch-icon" href="favicon192192.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <style>
+      :root {
+        --brand: #578899;
+        --brand-light: #7aa2b0;
+        --brand-dark: #3e6473;
+        --accent: #e6eff3;
+        --text-main: #1e293b;
+        --text-sub: #64748b;
+        --bg-body: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.05),
+          0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        --shadow-lg:
+          0 10px 15px -3px rgba(0, 0, 0, 0.05),
+          0 4px 6px -2px rgba(0, 0, 0, 0.025);
+        --radius-sm: 8px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --font-sans: "Noto Sans JP", sans-serif;
+        --font-serif: "Shippori Mincho", serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-sans);
+        color: var(--text-main);
+        background: var(--bg-body);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .max-w-md {
+        max-width: 800px;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.3;
+      }
+
+      h1 {
+        font-family: var(--font-serif);
+        font-weight: 800;
+      }
+
+      h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(24px, 4vw, 32px);
+        margin-bottom: 16px;
+        color: var(--text-main);
+      }
+
+      p {
+        margin: 0 0 16px;
+      }
+
+      .lead {
+        font-size: 1.1rem;
+        color: var(--text-sub);
+      }
+
+      .text-gradient {
+        background: linear-gradient(
+          135deg,
+          var(--brand) 0%,
+          var(--brand-dark) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      @media (max-width: 768px) {
+        .section-padding {
+          padding: 60px 0;
+        }
+      }
+
+      /* Header */
+      #site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        height: 70px;
+        display: flex;
+        align-items: center;
+      }
+
+      #site-header .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo img {
+        height: 48px;
+        width: auto;
+      }
+
+      #site-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      #site-nav a:not(.btn) {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-sub);
+      }
+
+      #site-nav a:not(.btn):hover {
+        color: var(--brand);
+      }
+
+      .external-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .ico-ext {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        border-radius: 99px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+        font-size: 15px;
+      }
+
+      .btn-sm {
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+
+      .btn-lg {
+        padding: 14px 32px;
+        font-size: 16px;
+      }
+
+      .btn-primary {
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(87, 136, 153, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: var(--brand-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(87, 136, 153, 0.4);
+      }
+
+      .btn-outline {
+        background: #fff;
+        border-color: var(--border);
+        color: var(--brand-dark);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--brand);
+        background: var(--accent);
+      }
+
+      .btn-accent {
+        background: #fff;
+        color: var(--brand);
+      }
+
+      .btn-accent:hover {
+        background: #f1f5f9;
+      }
+
+      .btn-outline-white {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+      }
+
+      .btn-outline-white:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        padding: 60px 0 30px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #fff 0%, #f1f5f9 100%);
+      }
+
+      .hero-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content {
+        /* max-width: 560px; PCで解除するため削除または上記メディアクエリで上書き */
+      }
+
+      .badge-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .chip {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--brand-dark);
+        background: var(--accent);
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid rgba(87, 136, 153, 0.2);
+      }
+
+      .hero-title {
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-title-sub {
+        font-size: 0.7em;
+        font-weight: 600;
+        color: var(--text-sub);
+        display: block;
+        margin-bottom: 4px;
+        font-family: var(--font-sans);
+      }
+
+      .hero-desc {
+        font-size: 16px;
+        color: var(--text-sub);
+        margin-bottom: 32px;
+        line-height: 1.8;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero-media {
+        position: relative;
+      }
+
+      .media-frame {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        background: #fff;
+        padding: 12px;
+        transform: perspective(1000px) rotateY(-2deg);
+        transition: transform 0.5s ease;
+      }
+
+      .media-frame:hover {
+        transform: perspective(1000px) rotateY(0deg);
+      }
+
+      .media-frame img {
+        border-radius: 12px;
+        width: 100%;
+      }
+
+      /* --- 動画実装用の追加CSS --- */
+      .media-frame.video-frame {
+        padding: 0;
+        background: #000;
+        aspect-ratio: 4 / 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        transform: scale(1.06);
+        transform-origin: center;
+      }
+      /* --------------------------- */
+
+      /* Portal Features */
+      #portal-features {
+        padding: 20px 0;
+      }
+
+      .portal-features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+
+      .p-feature-card {
+        background: #fff;
+        padding: 24px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .p-feature-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-5px);
+      }
+
+      .pf-icon {
+        font-size: 40px;
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .p-feature-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+        color: var(--brand-dark);
+      }
+
+      .p-feature-card p {
+        font-size: 14px;
+        color: var(--text-sub);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        .portal-features-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+      }
+
+      /* Sections */
+      .section-header {
+        margin-bottom: 48px;
+      }
+
+      .section-subtitle {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--brand);
+        margin-bottom: 8px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      /* Grid */
+      .grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      /* Tool Cards */
+      .tool-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--brand-light);
+      }
+
+      .tool-card h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .tool-card p {
+        font-size: 14px;
+        color: var(--text-sub);
+        flex-grow: 1;
+        margin-bottom: 20px;
+      }
+
+      .link-text {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--brand);
+      }
+
+      /* Demo GIF */
+      .demo-gif-wrap {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .demo-frame {
+        background: #fff;
+        padding: 8px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+        display: inline-block;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      .demo-frame img {
+        border-radius: 12px;
+      }
+
+      figcaption {
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--text-sub);
+      }
+
+      /* AI Funnel Spacing Adjustment */
+      #ai-funnel {
+        padding-top: 40px;
+      }
+
+      /* Mobile Screens */
+      .bg-light {
+        background: #f1f5f9;
+      }
+
+      .feature-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        padding: 8px 16px;
+        border-radius: 99px;
+        box-shadow: var(--shadow-sm);
+        font-size: 14px;
+      }
+
+      .check-icon {
+        color: var(--brand);
+        font-weight: 900;
+      }
+
+      .screens-container {
+        position: relative;
+        padding: 0 20px;
+      }
+
+      .screens-scroll-wrapper {
+        overflow-x: auto;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+
+      .screens-track {
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      .screen {
+        flex: 0 0 260px;
+        scroll-snap-align: center;
+        margin: 0;
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      .screen:hover {
+        transform: scale(1.02);
+      }
+
+      .screen img {
+        border-radius: 20px;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--border);
+      }
+
+      .scroll-hint {
+        text-align: center;
+        font-size: 12px;
+        color: var(--text-sub);
+        opacity: 0.7;
+      }
+
+      /* Automation */
+      .section-dark {
+        background: #1e293b;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .automation-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .text-white {
+        color: #fff;
+      }
+
+      .text-white-opacity {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .text-accent {
+        color: #7dd3fc;
+      }
+
+      .stat-box {
+        margin: 24px 0;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-label {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+
+      .stat-value {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1;
+        margin: 8px 0;
+        color: #7dd3fc;
+      }
+
+      .stat-value small {
+        font-size: 24px;
+      }
+
+      .stat-plus {
+        font-size: 20px;
+        margin-left: 4px;
+      }
+
+      .stat-desc {
+        font-size: 13px;
+        opacity: 0.7;
+      }
+
+      /* Automation Circle & Logo */
+      .circle-wrapper {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+      }
+
+      .auto-circle {
+        width: 100%;
+        height: 100%;
+        border: 2px dashed rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        position: relative;
+        animation: spin 20s linear infinite;
+      }
+
+      .center-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: transform 0.3s;
+      }
+
+      .center-logo:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      .center-logo img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px;
+        box-shadow: 0 0 20px rgba(87, 136, 153, 0.5);
+      }
+
+      .orbit-item {
+        position: absolute;
+        padding: 6px 12px;
+        background: #fff;
+        border-radius: 99px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--brand-dark);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        white-space: nowrap;
+        animation: counter-spin 20s linear infinite;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .orbit-item:hover {
+        background-color: var(--brand);
+        color: #fff;
+        z-index: 20;
+      }
+
+      .circle-wrapper:hover .auto-circle,
+      .circle-wrapper:hover .orbit-item {
+        animation-play-state: paused;
+      }
+
+      .item-1 {
+        top: 0%;
+        left: 50%;
+      }
+
+      .item-2 {
+        top: 34.5%;
+        left: 97.5%;
+      }
+
+      .item-3 {
+        top: 90.5%;
+        left: 79.4%;
+      }
+
+      .item-4 {
+        top: 90.5%;
+        left: 20.6%;
+      }
+
+      .item-5 {
+        top: 34.5%;
+        left: 2.5%;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes counter-spin {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(-360deg);
+        }
+      }
+
+      /* Approach */
+      .approach-card {
+        background: #fff;
+        padding: 32px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-num {
+        font-size: 48px;
+        font-weight: 900;
+        color: var(--accent);
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        opacity: 0.5;
+        font-family: var(--font-serif);
+      }
+
+      .approach-card h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+        position: relative;
+      }
+
+      /* Process */
+      .process-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .process-item {
+        display: flex;
+        gap: 20px;
+        background: #fff;
+        padding: 20px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        align-items: center;
+      }
+
+      .proc-marker {
+        width: 40px;
+        height: 40px;
+        background: var(--brand);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .proc-content h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+
+      .proc-content p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--text-sub);
+      }
+
+      /* Results */
+      .main-result {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border);
+      }
+
+      .result-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .result-head h3 {
+        font-size: 20px;
+      }
+
+      .badge-highlight {
+        background: #ecfdf5;
+        color: #059669;
+        padding: 4px 12px;
+        border-radius: 99px;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .bar-group {
+        margin-bottom: 16px;
+      }
+
+      .bar-label {
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+
+      .bar-area {
+        height: 32px;
+        background: #f1f5f9;
+        border-radius: 99px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* ★修正：幅はCSS変数 --target-width で制御（65%と36%の差が確実に出る） */
+      .bar {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 12px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 99px;
+        width: 0;
+        --target-width: 0%;
+        animation: grow 1.5s ease-out forwards;
+      }
+
+      .bar.primary {
+        background: var(--brand);
+      }
+
+      .bar.secondary {
+        background: #94a3b8;
+      }
+
+      .bar-val {
+        white-space: nowrap;
+      }
+
+      @keyframes grow {
+        to {
+          width: var(--target-width);
+        }
+      }
+
+      .result-note {
+        font-size: 12px;
+        color: var(--text-sub);
+        margin-top: 20px;
+      }
+
+      /* Benefit Flow */
+      .benefit-flow {
+        background: #fff;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border);
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-top: 48px;
+      }
+
+      .benefit-list {
+        flex: 1;
+      }
+
+      .benefit-list ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style: none;
+      }
+
+      .benefit-list li {
+        position: relative;
+        margin-bottom: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--text-main);
+      }
+
+      .benefit-list li::before {
+        content: "・";
+        color: var(--brand);
+        font-weight: bold;
+        position: absolute;
+        left: -1em;
+      }
+
+      .benefit-arrow {
+        color: var(--brand);
+        flex-shrink: 0;
+      }
+
+      .benefit-arrow svg {
+        width: 48px;
+        height: 48px;
+      }
+
+      .benefit-result {
+        flex: 1;
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--brand-dark);
+        line-height: 1.4;
+      }
+
+      @media (max-width: 768px) {
+        .benefit-flow {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .benefit-list ul {
+          padding: 0;
+          text-align: left;
+          display: inline-block;
+        }
+
+        .benefit-arrow svg {
+          transform: rotate(90deg);
+        }
+      }
+
+      /* FAQ */
+      .accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .acc-item {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+      }
+
+      .acc-head {
+        padding: 16px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+      }
+
+      .acc-head::-webkit-details-marker {
+        display: none;
+      }
+
+      .acc-head .icon {
+        width: 10px;
+        height: 10px;
+        border-right: 2px solid var(--text-sub);
+        border-bottom: 2px solid var(--text-sub);
+        transform: rotate(45deg);
+        transition: transform 0.2s;
+      }
+
+      .acc-item[open] .acc-head .icon {
+        transform: rotate(-135deg);
+      }
+
+      .acc-body {
+        padding: 0 20px 20px;
+        font-size: 14px;
+        color: var(--text-sub);
+        line-height: 1.6;
+      }
+
+      /* Contact */
+      .contact-card {
+        background: #fff;
+        padding: 40px;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        text-align: center;
+        border: 1px solid var(--border);
+      }
+
+      .contact-card h2 {
+        margin-bottom: 16px;
+      }
+
+      .btn-wide {
+        min-width: 240px;
+        margin: 24px 0;
+      }
+
+      .contact-info {
+        font-size: 14px;
+        color: var(--text-sub);
+      }
+
+      /* Footer */
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        font-size: 13px;
+        color: var(--text-sub);
+        border-top: 1px solid var(--border);
+      }
+
+      /* Backdrop */
+      .backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .backdrop.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Mobile Nav */
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .hamburger-box {
+        width: 24px;
+        height: 24px;
+        display: block;
+        position: relative;
+      }
+
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        width: 24px;
+        height: 2px;
+        background-color: var(--text-main);
+        border-radius: 2px;
+        position: absolute;
+        transition: transform 0.15s ease;
+      }
+
+      .hamburger-inner {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .hamburger-inner::before {
+        content: "";
+        top: -8px;
+      }
+
+      .hamburger-inner::after {
+        content: "";
+        bottom: -8px;
+      }
+
+      .nav-toggle.active .hamburger-inner {
+        background-color: transparent;
+      }
+
+      .nav-toggle.active .hamburger-inner::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      .nav-toggle.active .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+
+      .mobile-cta {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(5px);
+        border-top: 1px solid var(--border);
+        z-index: 900;
+      }
+
+      .btn-block {
+        display: flex;
+        width: 100%;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        /* スマホでの動画の見え方調整 */
+        .media-frame {
+          transform: none !important;
+          margin-top: 20px;
+        }
+
+        /* --- 動画モバイル用調整 --- */
+        .media-frame.video-frame {
+          aspect-ratio: 16 / 9;
+        }
+
+        .hero-video {
+          object-position: center;
+        }
+
+        .automation-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-toggle {
+          display: block;
+        }
+
+        #site-nav {
+          position: fixed;
+          top: 70px;
+          right: 0;
+          bottom: 0;
+          width: 80%;
+          max-width: 300px;
+          background: #fff;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 20px 0;
+          transform: translateX(100%);
+          transition: transform 0.3s ease;
+          box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+          z-index: 1001;
+          gap: 0;
+        }
+
+        #site-nav.open {
+          transform: translateX(0);
+        }
+
+        #site-nav a:not(.btn) {
+          font-size: 18px;
+          color: var(--text-main);
+          font-weight: 600;
+          padding: 12px 24px;
+          width: 100%;
+          display: block;
+          background-color: #fff;
+          border-bottom: 1px solid var(--accent);
+        }
+
+        #site-nav a:not(.btn):hover {
+          color: var(--brand);
+          background-color: var(--bg-body);
+          padding-left: 28px;
+          transition: all 0.2s ease;
+        }
+
+        #site-nav .btn {
+          margin: 24px 20px;
+          width: calc(100% - 40px);
+          justify-content: center;
+          padding: 14px 0;
+        }
+
+        .circle-wrapper {
+          transform: scale(0.85);
+          transform-origin: center;
+        }
+
+        .mobile-cta {
+          display: block;
+        }
+
+        body {
+          padding-bottom: 80px;
+        }
+      }
+
+      /* Animations */
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+      }
+
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .delay-100 {
+        transition-delay: 0.1s;
+      }
+
+      .delay-200 {
+        transition-delay: 0.2s;
+      }
+
+      /* Lightbox */
+      #lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+
+      #lightbox.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .lb-content img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 8px;
+      }
+
+      .lb-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .lb-nav:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      .lb-prev {
+        left: 20px;
+      }
+
+      .lb-next {
+        right: 20px;
+      }
+
+      .lb-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      /* PDF Box */
+      #pdfbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      #pdfbox.open {
+        display: flex;
+      }
+
+      .panel {
+        background: #fff;
+        width: 100%;
+        max-width: 1000px;
+        height: 90vh;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .panel header {
+        padding: 12px 20px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+      }
+
+      .iframe-wrap {
+        flex: 1;
+        background: #eee;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .fallback {
+        padding: 10px;
+        text-align: center;
+        font-size: 13px;
+        border-top: 1px solid var(--border);
+      }
+    </style>
+
+    <!-- Preload LCP image (fallback if video fails or before load) -->
+    <link
+      rel="preload"
+      as="image"
+      href="hero3.jpg"
+      onerror="this.href='https://placehold.co/1920x1080?text=Hero+Image'"
+    />
+
+    <!-- OG / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="TKCシステム×オリジナルツールで、今日の意思決定を加速。"
+    />
+    <meta
+      property="og:description"
+      content="オリジナルツールで、スマホをあなたの参謀に。"
+    />
+    <meta property="og:image" content="hero3.jpg" />
+    <meta
+      property="og:url"
+      content="https://takatrp.github.io/matsumoto-kaikei-jidouka/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="site-header">
+      <div class="container inner">
+        <a
+          class="logo"
+          href="https://www.matsumoto-kaikei.or.jp/"
+          target="_blank"
+          rel="noopener"
+          aria-label="税理士法人松本会計 公式サイトへ"
+        >
+          <img
+            class="mark"
+            src="ロゴ.jpg"
+            onerror="this.src='https://placehold.co/50x50?text=Logo'"
+            alt="税理士法人松本会計 ロゴ"
+          />
+          <img
+            class="word"
+            src="松本会計.png"
+            onerror="this.style.display='none'"
+            alt="税理士法人松本会計 ワードマーク"
+          />
+        </a>
+
+        <nav id="site-nav" aria-label="グローバルナビ">
+          <a href="#ai-funnel">無料ツール</a>
+          <a href="#mobile-screens">スマホUI</a>
+          <a href="#automation">自動化</a>
+          <a href="#approach">アプローチ</a>
+          <a href="#process">伴走</a>
+          <a href="#results">実績</a>
+          <a href="#faq">FAQ</a>
+
+          <a
+            href="https://www.matsumoto-kaikei.or.jp/"
+            target="_blank"
+            rel="noopener"
+            class="external-link"
+          >
+            公式サイト
+            <svg viewBox="0 0 24 24" class="ico-ext">
+              <path
+                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a href="#contact" class="btn btn-sm btn-primary">相談する</a>
+        </nav>
+
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="メニューを開く"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <div id="nav-backdrop" class="backdrop" aria-hidden="true"></div>
+
+    <!-- Mobile Fixed CTA -->
+    <div class="mobile-cta" role="region" aria-label="固定アクション">
+      <a
+        class="btn btn-primary btn-block"
+        href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry"
+        target="_blank"
+        rel="noopener"
+      >
+        相談する
+      </a>
+    </div>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-wrap">
+          <div class="hero-content fade-in-up">
+            <div class="badge-group">
+              <span class="chip">自計化支援</span>
+              <span class="chip">変動損益（限界利益）</span>
+              <span class="chip">継続MAS×月次対話</span>
+              <span class="chip">自動化×効率化</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="hero-title-sub">松本会計ツールポータルで</span>
+              黒字経営を<span class="text-gradient">加速</span>する！
+            </h1>
+
+            <p class="hero-desc">
+              “お客様企業の繁栄は私たちの喜び”——<br />
+              <strong>中小企業の経営者・経理責任者の方へ</strong>。<br />
+              自計化+TKCシステムを前提に、「黒字経営に効く」意思決定を支援するオリジナルツール群です。
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary btn-lg" href="#ai-funnel">
+                無料ツールを使ってみる
+              </a>
+              <a class="btn btn-outline btn-lg" href="#contact">お問い合わせ</a>
+            </div>
+          </div>
+
+          <!-- 動画実装用に変更したブロック -->
+          <div class="hero-media fade-in-up delay-100">
+            <div class="media-frame video-frame">
+              <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="hero3.jpg"
+              >
+                <!-- 動画ファイルはindex.htmlと同じ階層に置いてください -->
+                <source
+                  src="LPヒーロー画像用動画作成.mp4"
+                  type="video/mp4"
+                />
+
+                <!-- 動画非対応ブラウザ用 -->
+                <img
+                  src="hero3.jpg"
+                  onerror="this.src='https://placehold.co/800x600?text=Hero+Image'"
+                  alt="松本会計：数字を意思決定へつなぐ支援イメージ"
+                  width="1920"
+                  height="1080"
+                />
+              </video>
+            </div>
+          </div>
+          <!-- ここまで -->
+        </div>
+
+        <div class="hero-bg-deco"></div>
+      </section>
+
+      <!-- Portal Features (Added) -->
+      <section id="portal-features" class="section-padding">
+        <div class="container">
+          <div class="portal-features-grid fade-in-up">
+            <div class="p-feature-card">
+              <span class="pf-icon">◎</span>
+              <h3>松本会計 専用設計</h3>
+              <p>
+                代表税理士監修のもと開発。<br />
+                松本会計のお客様に最適化された<br />
+                ツールです。
+              </p>
+            </div>
+
+            <div class="p-feature-card">
+              <span class="pf-icon">🛡️</span>
+              <h3>万全のセキュリティ</h3>
+              <p>
+                計算は端末上で行われ、<br />
+                入力情報が送信されることは<br />
+                一切ありません。
+              </p>
+            </div>
+
+            <div class="p-feature-card">
+              <span class="pf-icon">📱</span>
+              <h3>いつでも・どこでも</h3>
+              <p>
+                PC、スマホ、タブレットに対応。<br />
+                ホーム画面からすぐに<br />
+                アクセス可能です。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Funnel -->
+      <section id="ai-funnel" class="section-padding">
+        <div class="container">
+          <div class="section-header text-center fade-in-up">
+            <span class="section-subtitle">Free Tools</span>
+            <h2>まずは無料ツールで体験</h2>
+            <p class="lead">
+              以下の3つのツールをどなたでも無料でお試しいただけます。<br />
+              <small class="note">
+                ※ 入力値はブラウザ内で計算され、当ページでは保存しません。
+              </small>
+            </p>
+          </div>
+
+          <div class="tool-cards grid grid-3 fade-in-up delay-100">
+            <a
+              href="https://takatrp.github.io/hendou_PL_LP/"
+              target="_blank"
+              rel="noopener"
+              class="tool-card"
+            >
+              <h3>ボールで学ぶ<br />変動損益計算書</h3>
+              <p>
+                どの要素に手を加えれば「限界利益＞固定費」となるか直感的に学べます。
+              </p>
+              <span class="link-text">試してみる &rarr;</span>
+            </a>
+
+            <a
+              href="https://takatrp.github.io/jidouka-kouka-LP/"
+              target="_blank"
+              rel="noopener"
+              class="tool-card"
+            >
+              <h3>自動化効果<br />試算ツール</h3>
+              <p>
+                経理業務の自動化によって、どれだけの時間とコストを削減できるか試算します。
+              </p>
+              <span class="link-text">試してみる &rarr;</span>
+            </a>
+
+            <a
+              href="https://takatrp.github.io/price-up-down-LP/"
+              target="_blank"
+              rel="noopener"
+              class="tool-card"
+            >
+              <h3>価格改定<br />検討ツール</h3>
+              <p>
+                値上げ・値下げが利益にどう影響するか、シミュレーションできます。
+              </p>
+              <span class="link-text">試してみる &rarr;</span>
+            </a>
+          </div>
+
+          <!-- GIF Demo -->
+          <div class="demo-gif-wrap fade-in-up delay-200">
+            <figure class="demo-frame">
+              <img
+                src="変動PL.gif"
+                onerror="this.src='https://placehold.co/600x400?text=Demo+GIF'"
+                alt="“ボールで学ぶ変動損益計算書”の動作イメージ"
+                loading="lazy"
+              />
+            </figure>
+            <figcaption>
+              “ボールで学ぶ変動損益計算書” の操作イメージ
+            </figcaption>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobile Screens (Member Only + 4WD Concept) -->
+      <section id="mobile-screens" class="section-padding bg-light">
+        <div class="container">
+          <div class="section-header fade-in-up">
+            <span class="section-subtitle">Member Only</span>
+            <h2>
+              黒字経営を強力に駆動する<br />
+              「黒字経営4WD」
+              <small style="font-size: 0.6em; margin-left: 10px;">
+                ＋その他便利ツール
+              </small>
+            </h2>
+            <p class="lead">
+              顧問先の方には、さらに踏み込んだ会員専用ツールをご提供しています。<br />
+              FXシリーズで表示される「限界利益率」を用い、経営判断に直結するシミュレーションが可能です。
+            </p>
+          </div>
+
+          <div class="feature-list fade-in-up delay-100">
+            <div class="feature-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>売上換算シミュレーター</strong>
+                ：支出額を売上相当額に即換算
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>人件費見える化</strong>：時間単位の人件費を可視化
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>CCC改善</strong>：資金繰りを回転日数から診断
+              </div>
+            </div>
+          </div>
+
+          <div class="screens-container fade-in-up delay-200">
+            <div class="screens-scroll-wrapper">
+              <div class="screens-track">
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック0.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+1'"
+                    alt="ツールポータルの画面イメージ"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック1.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+2'"
+                    alt="費用から必要売上を換算する画面"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック2.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+3'"
+                    alt="受取利息・配当の源泉税計算画面"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック3.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+4'"
+                    alt="価格改定インパクト試算の画面"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック4.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+5'"
+                    alt="人件費の見える化画面"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック5.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+6'"
+                    alt="スマホツール画面 5"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック6.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+7'"
+                    alt="スマホツール画面 6"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック7.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+8'"
+                    alt="スマホツール画面 7"
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure class="screen">
+                  <img
+                    src="iPhoneモック8.png"
+                    onerror="this.src='https://placehold.co/260x500?text=Screen+9'"
+                    alt="スマホツール画面 8"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+            </div>
+
+            <div class="scroll-hint">Scroll &rarr;</div>
+          </div>
+
+          <!-- Benefit Flow -->
+          <div class="benefit-flow fade-in-up delay-200">
+            <div class="benefit-list">
+              <ul>
+                <li>支出額を必要売上金額に換算できる</li>
+                <li>価格改定の影響を可視化できる</li>
+                <li>その作業にかかる人件費が見える</li>
+                <li>資金効率が計算できる</li>
+              </ul>
+            </div>
+
+            <div class="benefit-arrow">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+
+            <div class="benefit-result">
+              根拠に基づく迅速な<br />
+              意思決定が可能に！
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Automation -->
+      <section id="automation" class="section-padding section-dark">
+        <div class="container">
+          <div class="automation-grid">
+            <div class="automation-content fade-in-up">
+              <span class="section-subtitle text-accent">Automation</span>
+              <h2 class="text-white">
+                自動化で、ラクして<br />
+                リアルタイム情報と経費削減を。
+              </h2>
+
+              <p class="text-white-opacity">
+                会計の”自動化”で、少ない負担でリアルタイム性を確保。<br />
+                証憑保存、銀行データ受信、給与計算、販売管理、レジ連携…<br />
+                これらを整備し、仕訳を”入力”から”連携”へ変革します。
+              </p>
+
+              <div class="stat-box">
+                <div class="stat-label">自動化率</div>
+                <div class="stat-value">
+                  90<small>%</small><span class="stat-plus">超</span>
+                </div>
+                <div class="stat-desc">
+                  年間数十万円の人件費削減も可能です
+                </div>
+              </div>
+
+              <div class="cta-row">
+                <a
+                  class="btn btn-accent"
+                  href="https://takatrp.github.io/jidouka-kouka-LP/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  自動化効果を試算する
+                </a>
+                <button class="btn btn-outline-white" id="open-pdf">
+                  自動化実績を見る (PDF)
+                </button>
+              </div>
+            </div>
+
+            <div class="automation-visual fade-in-up delay-100">
+              <div class="circle-wrapper">
+                <div class="auto-circle">
+                  <a
+                    href="https://www.matsumoto-kaikei.or.jp/tkc-tds"
+                    target="_blank"
+                    rel="noopener"
+                    class="orbit-item item-1"
+                  >
+                    証憑（スキャナ・スマホ）
+                  </a>
+                  <a
+                    href="https://www.matsumoto-kaikei.or.jp/tkc-FinTech"
+                    target="_blank"
+                    rel="noopener"
+                    class="orbit-item item-2"
+                  >
+                    銀行・クレジットカード
+                  </a>
+                  <a
+                    href="https://www.tkc.jp/file.jsp?id=166750"
+                    target="_blank"
+                    rel="noopener"
+                    class="orbit-item item-3"
+                  >
+                    販売管理
+                  </a>
+                  <a
+                    href="https://www.tkc.jp/fx/#:~:text=%E3%81%97%E3%81%8F%E3%81%AF%E3%81%93%E3%81%A1%E3%82%89-,%E5%A3%B2%E4%B8%8A%E4%BB%95%E8%A8%B3%E3%81%AE%E5%85%A5%E5%8A%9B%E6%A5%AD%E5%8B%99%E3%82%92%E5%A4%A7%E5%B9%85%E3%81%AB%E7%9C%81%E5%8A%9B%E5%8C%96,-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88POS%E3%83%AC%E3%82%B8"
+                    target="_blank"
+                    rel="noopener"
+                    class="orbit-item item-4"
+                  >
+                    レジ連携
+                  </a>
+                  <a
+                    href="https://www.matsumoto-kaikei.or.jp/tkc-system012"
+                    target="_blank"
+                    rel="noopener"
+                    class="orbit-item item-5"
+                  >
+                    給与計算
+                  </a>
+                </div>
+
+                <a
+                  href="https://www.matsumoto-kaikei.or.jp/tkc-fxcloud"
+                  target="_blank"
+                  rel="noopener"
+                  class="center-logo"
+                >
+                  <img
+                    src="FXCロゴ.png"
+                    onerror="this.src='https://placehold.co/100x40?text=FXC'"
+                    alt="FXCロゴ"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Approach -->
+      <section id="approach" class="section-padding">
+        <div class="container">
+          <div class="section-header text-center fade-in-up">
+            <span class="section-subtitle">Our Approach</span>
+            <h2>解決アプローチ｜3本柱</h2>
+          </div>
+
+          <div class="grid grid-3 gap-lg fade-in-up delay-100">
+            <div class="approach-card">
+              <div class="card-num">01</div>
+              <h3>自計化×リアルタイム</h3>
+              <p>
+                社内で帳簿を付ける“自計化”を標準に。データ連携で“遅い月次”からの脱却を図ります。
+              </p>
+            </div>
+
+            <div class="approach-card">
+              <div class="card-num">02</div>
+              <h3>管理会計×変動PL</h3>
+              <p>
+                限界利益（率）を軸に、価格×数量×原価の3要素で意思決定を設計します。
+              </p>
+            </div>
+
+            <div class="approach-card">
+              <div class="card-num">03</div>
+              <h3>継続伴走×ツール</h3>
+              <p>
+                毎月の対話と専用ツールで、施策の実行と検証を高速に回します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="process" class="section-padding bg-light">
+        <div class="container">
+          <div class="section-header fade-in-up">
+            <span class="section-subtitle">Process</span>
+            <h2>伴走プロセス</h2>
+          </div>
+
+          <div class="process-timeline fade-in-up delay-100">
+            <div class="process-item">
+              <div class="proc-marker">1</div>
+              <div class="proc-content">
+                <h3>現状診断</h3>
+                <p>会計データ×ヒアリングでボトルネックを特定</p>
+              </div>
+            </div>
+
+            <div class="process-item">
+              <div class="proc-marker">2</div>
+              <div class="proc-content">
+                <h3>自動化設計・初期指導</h3>
+                <p>自計化・証憑・データ受信の標準化／初期運用の立上げ</p>
+              </div>
+            </div>
+
+            <div class="process-item">
+              <div class="proc-marker">3</div>
+              <div class="proc-content">
+                <h3>月次巡回監査</h3>
+                <p>記帳・証憑・運用のチェックと改善提案を毎月実施</p>
+              </div>
+            </div>
+
+            <div class="process-item">
+              <div class="proc-marker">4</div>
+              <div class="proc-content">
+                <h3>継続MAS×対話</h3>
+                <p>予実差異レビュー／四半期 業績検討会／決算事前検討会</p>
+              </div>
+            </div>
+
+            <div class="process-item">
+              <div class="proc-marker">5</div>
+              <div class="proc-content">
+                <h3>打ち手の実行と検証</h3>
+                <p>価格・人件費・投資のアクションをツールで検証</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section id="results" class="section-padding">
+        <div class="container">
+          <div class="section-header text-center fade-in-up">
+            <span class="section-subtitle">Results</span>
+            <h2>実績</h2>
+          </div>
+
+          <div class="results-container fade-in-up delay-100">
+            <div class="result-card main-result">
+              <div class="result-head">
+                <h3>黒字申告割合（顧問先）</h3>
+                <span class="badge-highlight">約1.8倍</span>
+              </div>
+
+              <div class="chart-wrap">
+                <div class="bar-group">
+                  <!-- ★修正：ラベル変更 -->
+                  <div class="bar-label">当事務所（自計化関与先）</div>
+                  <div class="bar-area">
+                    <!-- ★修正：65% -->
+                    <div class="bar primary" style="--target-width: 65%;">
+                      <span class="bar-val">65%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bar-group">
+                  <div class="bar-label">全国平均</div>
+                  <div class="bar-area">
+                    <!-- ★修正：36% -->
+                    <div class="bar secondary" style="--target-width: 36%;">
+                      <span class="bar-val">36.0%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="result-note">
+                ※
+                当事務所の黒字申告割合は所内集計による約65%。比較対象として、全国平均
+                36.0%（令和5事務年度、国税庁公開統計）を掲載。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section-padding bg-light">
+        <div class="container max-w-md">
+          <div class="section-header text-center fade-in-up">
+            <span class="section-subtitle">FAQ</span>
+            <h2>よくある質問</h2>
+          </div>
+
+          <div class="accordion fade-in-up delay-100">
+            <details class="acc-item">
+              <summary class="acc-head">
+                記帳代行から自計化へ移行するメリットは？
+                <span class="icon"></span>
+              </summary>
+              <div class="acc-body">
+                <div class="inner">
+                  意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。
+                </div>
+              </div>
+            </details>
+
+            <details class="acc-item">
+              <summary class="acc-head">
+                導入までの期間や進め方のイメージは？
+                <span class="icon"></span>
+              </summary>
+              <div class="acc-body">
+                <div class="inner">
+                  目安は数週間〜数か月です（規模・現状によって変動）。<br />
+                  1. 現状診断<br />
+                  2. 自動化設計・初期指導<br />
+                  3. 月次巡回監査<br />
+                  4. 継続MAS×対話
+                </div>
+              </div>
+            </details>
+
+            <details class="acc-item">
+              <summary class="acc-head">
+                どこまで“自動化”できますか？
+                <span class="icon"></span>
+              </summary>
+              <div class="acc-body">
+                <div class="inner">
+                  銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。
+                </div>
+              </div>
+            </details>
+
+            <details class="acc-item">
+              <summary class="acc-head">
+                電子帳簿保存法・インボイス制度への対応は？
+                <span class="icon"></span>
+              </summary>
+              <div class="acc-body">
+                <div class="inner">
+                  要件整理・運用ルールを整え、システム設定と業務フローに落とし込みます。監査に耐える証跡の残し方まで設計します。
+                </div>
+              </div>
+            </details>
+
+            <details class="acc-item">
+              <summary class="acc-head">
+                既存の会計ソフト（TKC以外）からの移行は可能ですか？
+                <span class="icon"></span>
+              </summary>
+              <div class="acc-body">
+                <div class="inner">
+                  可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も最適化します。
+                </div>
+              </div>
+            </details>
+
+            <details class="acc-item">
+              <summary class="acc-head">
+                コスト（料金）はどのように決まりますか？
+                <span class="icon"></span>
+              </summary>
+              <div class="acc-body">
+                <div class="inner">
+                  規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。初回相談後に提案書と見積をご提示します。
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section-padding">
+        <div class="container max-w-md">
+          <div class="contact-card fade-in-up">
+            <h2>ご相談・お問い合わせ</h2>
+            <p>
+              オンライン／来所どちらも対応可能です。<br />
+              公式サイトの専用フォームからお送りください。
+            </p>
+
+            <a
+              class="btn btn-primary btn-wide"
+              href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry"
+              target="_blank"
+              rel="noopener"
+            >
+              お問い合わせフォームへ
+            </a>
+
+            <div class="contact-info">
+              <p>
+                電話：境港 <a href="tel:0859446195">0859-44-6195</a> ／ 神戸
+                <a href="tel:0782422177">078-242-2177</a>
+              </p>
+              <p>
+                <a
+                  href="https://www.matsumoto-kaikei.or.jp/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  www.matsumoto-kaikei.or.jp
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="credit">
+          Copyright (c) 2026
+          <a
+            href="https://www.matsumoto-kaikei.or.jp/"
+            target="_blank"
+            rel="noopener"
+          >
+            税理士法人松本会計事務所
+          </a>
+          . All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" aria-hidden="true">
+      <button class="lb-nav lb-prev" aria-label="前の画像">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M15 6l-6 6 6 6"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <div class="lb-content">
+        <img src="" alt="拡大表示" />
+      </div>
+
+      <button class="lb-nav lb-next" aria-label="次の画像">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M9 6l6 6-6 6"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <button class="lb-close" aria-label="閉じる">×</button>
+    </div>
+
+    <!-- PDF viewer -->
+    <div
+      id="pdfbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="自動化 実例集"
+    >
+      <div class="panel">
+        <header>
+          <div class="title">自動化 実例集（PDF）</div>
+          <button class="close" id="pdf-close">閉じる</button>
+        </header>
+
+        <div class="iframe-wrap">
+          <iframe
+            id="pdf-frame"
+            title="自動化 実例集（PDF）"
+            src=""
+            allow="autoplay"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="fallback">
+          表示されない場合は
+          <a
+            class="underline-link"
+            href="自動化実例集.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            こちら
+          </a>
+          を開いてください。
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Mobile Navigation ---
+        const navToggle = document.querySelector(".nav-toggle");
+        const nav = document.getElementById("site-nav");
+        const backdrop = document.getElementById("nav-backdrop");
+        const body = document.body;
+
+        function toggleMenu() {
+          const isOpen = nav.classList.contains("open");
+          nav.classList.toggle("open", !isOpen);
+          navToggle.classList.toggle("active", !isOpen);
+          backdrop.classList.toggle("show", !isOpen);
+          body.style.overflow = isOpen ? "" : "hidden";
+          navToggle.setAttribute("aria-expanded", !isOpen);
+        }
+
+        navToggle.addEventListener("click", toggleMenu);
+        backdrop.addEventListener("click", toggleMenu);
+
+        // Close menu when clicking a link
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (nav.classList.contains("open")) toggleMenu();
+          });
+        });
+
+        // --- Scroll Animations ---
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".fade-in-up").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // --- Lightbox ---
+        const lightbox = document.getElementById("lightbox");
+        const lbImg = lightbox.querySelector("img");
+        const lbPrev = lightbox.querySelector(".lb-prev");
+        const lbNext = lightbox.querySelector(".lb-next");
+        const lbClose = lightbox.querySelector(".lb-close");
+        const screens = Array.from(document.querySelectorAll(".screen img"));
+        let currentIndex = -1;
+
+        function openLightbox(index) {
+          if (index < 0 || index >= screens.length) return;
+          currentIndex = index;
+          lbImg.src = screens[index].src;
+          lightbox.classList.add("open");
+          lightbox.setAttribute("aria-hidden", "false");
+          body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("open");
+          lightbox.setAttribute("aria-hidden", "true");
+          body.style.overflow = "";
+          currentIndex = -1;
+        }
+
+        function nextImage(direction) {
+          if (currentIndex === -1) return;
+          let newIndex = currentIndex + direction;
+          if (newIndex < 0) newIndex = screens.length - 1;
+          if (newIndex >= screens.length) newIndex = 0;
+          openLightbox(newIndex);
+        }
+
+        screens.forEach((img, index) => {
+          img.addEventListener("click", () => openLightbox(index));
+        });
+
+        lbClose.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+
+        lbPrev.addEventListener("click", (e) => {
+          e.stopPropagation();
+          nextImage(-1);
+        });
+
+        lbNext.addEventListener("click", (e) => {
+          e.stopPropagation();
+          nextImage(1);
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (!lightbox.classList.contains("open")) return;
+          if (e.key === "Escape") closeLightbox();
+          if (e.key === "ArrowLeft") nextImage(-1);
+          if (e.key === "ArrowRight") nextImage(1);
+        });
+
+        // --- PDF Viewer ---
+        const pdfBtn = document.getElementById("open-pdf");
+        const pdfBox = document.getElementById("pdfbox");
+        const pdfClose = document.getElementById("pdf-close");
+        const pdfFrame = document.getElementById("pdf-frame");
+
+        if (pdfBtn && pdfBox) {
+          pdfBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const pdfUrl = "自動化実例集.pdf";
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(
+              navigator.userAgent
+            );
+
+            if (isMobile) {
+              pdfFrame.src = pdfUrl;
+            } else {
+              pdfFrame.src = pdfUrl;
+            }
+
+            pdfBox.classList.add("open");
+            pdfBox.setAttribute("aria-hidden", "false");
+          });
+
+          pdfClose.addEventListener("click", () => {
+            pdfBox.classList.remove("open");
+            pdfBox.setAttribute("aria-hidden", "true");
+            pdfFrame.src = "";
+          });
+
+          pdfBox.addEventListener("click", (e) => {
+            if (e.target === pdfBox) pdfClose.click();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
