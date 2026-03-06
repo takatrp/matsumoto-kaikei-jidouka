@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>TKCシステム×オリジナルツールで、今日の意思決定を加速。｜税理士法人松本会計</title>
-    <meta name="description" content="オリジナルツールで、スマホをあなたの参謀に。リアルタイム会計×自動化×管理会計×継続伴走で、黒字を増やす意思決定を支援します。" />
+    <title>必要売上を出すだけで終わらせない。打ち手まで数字で決める｜税理士法人松本会計</title>
+    <meta name="description" content="支出額を売上換算し、単価・数量・自動化の3方向から打ち手を整理。松本会計は、必要売上の把握だけで終わらない経営判断支援を行っています。" />
     <link rel="canonical" href="https://takatrp.github.io/matsumoto-kaikei-jidouka/" />
 
     <!-- Google tag (gtag.js) - GA4 -->
@@ -94,10 +94,10 @@
             max-width: 800px;
         }
 
-        /* Typography */
         h1,
         h2,
-        h3 {
+        h3,
+        h4 {
             margin: 0;
             line-height: 1.3;
         }
@@ -121,6 +121,12 @@
         .lead {
             font-size: 1.1rem;
             color: var(--text-sub);
+        }
+
+        .note-text {
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 12px;
         }
 
         .text-gradient {
@@ -280,10 +286,6 @@
             z-index: 1;
         }
 
-        .hero-content {
-            /* max-width: 560px; PCで解除するため削除または上記メディアクエリで上書き */
-        }
-
         .badge-group {
             display: flex;
             flex-wrap: wrap;
@@ -352,7 +354,6 @@
             width: 100%;
         }
 
-        /* --- 動画実装用の追加CSS --- */
         .media-frame.video-frame {
             padding: 0;
             background: #000;
@@ -371,7 +372,6 @@
             transform: scale(1.06);
             transform-origin: center;
         }
-        /* --------------------------- */
 
         /* Portal Features */
         #portal-features {
@@ -517,12 +517,11 @@
             color: var(--text-sub);
         }
 
-        /* AI Funnel Spacing Adjustment */
         #ai-funnel {
             padding-top: 40px;
         }
 
-        /* Mobile Screens */
+        /* Light background sections */
         .bg-light {
             background: #f1f5f9;
         }
@@ -817,7 +816,7 @@
 
         /* Results */
         .main-result {
-            max-width: 600px;
+            max-width: 780px;
             margin: 0 auto;
             background: #fff;
             padding: 40px;
@@ -831,6 +830,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 24px;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
         .result-head h3 {
@@ -864,7 +865,6 @@
             position: relative;
         }
 
-        /* ★修正：幅はCSS変数 --target-width で制御（65%と36%の差が確実に出る） */
         .bar {
             height: 100%;
             display: flex;
@@ -875,9 +875,8 @@
             font-weight: 700;
             font-size: 14px;
             border-radius: 99px;
-
-            width: 0;               /* 初期値（アニメ開始時） */
-            --target-width: 0%;     /* 未指定時の保険 */
+            width: 0;
+            --target-width: 0%;
             animation: grow 1.5s ease-out forwards;
         }
 
@@ -903,6 +902,47 @@
             font-size: 12px;
             color: var(--text-sub);
             margin-top: 20px;
+        }
+
+        .case-example {
+            margin-top: 28px;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            background: #f8fafc;
+            border: 1px solid var(--border);
+        }
+
+        .case-kicker {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: var(--brand);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .case-example h4 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            color: var(--brand-dark);
+        }
+
+        .case-example p {
+            margin-bottom: 10px;
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .case-highlight {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-top: 10px;
         }
 
         /* Benefit Flow */
@@ -1156,13 +1196,11 @@
                 grid-template-columns: 1fr;
             }
 
-            /* スマホでの動画の見え方調整 */
             .media-frame {
                 transform: none !important;
                 margin-top: 20px;
             }
 
-            /* --- 動画モバイル用調整 --- */
             .media-frame.video-frame {
                 aspect-ratio: 16 / 9;
             }
@@ -1375,13 +1413,13 @@
         }
     </style>
 
-    <!-- Preload LCP image (fallback if video fails or before load) -->
+    <!-- Preload LCP image -->
     <link rel="preload" as="image" href="hero3.jpg" onerror="this.href='https://placehold.co/1920x1080?text=Hero+Image'" />
 
     <!-- OG / Twitter -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="TKCシステム×オリジナルツールで、今日の意思決定を加速。">
-    <meta property="og:description" content="オリジナルツールで、スマホをあなたの参謀に。">
+    <meta property="og:title" content="必要売上を出すだけで終わらせない。打ち手まで数字で決める。">
+    <meta property="og:description" content="支出額を売上換算し、単価・数量・自動化の3方向から打ち手を整理。松本会計は、必要売上の把握だけで終わらない経営判断支援を行っています。">
     <meta property="og:image" content="hero3.jpg">
     <meta property="og:url" content="https://takatrp.github.io/matsumoto-kaikei-jidouka/">
     <meta name="twitter:card" content="summary_large_image">
@@ -1399,10 +1437,9 @@
             </a>
 
             <nav id="site-nav" aria-label="グローバルナビ">
-                <a href="#ai-funnel">無料ツール</a>
-                <a href="#mobile-screens">スマホUI</a>
+                <a href="#sale-kit-value">打ち手整理</a>
+                <a href="#ai-funnel">体験ツール</a>
                 <a href="#automation">自動化</a>
-                <a href="#approach">アプローチ</a>
                 <a href="#process">伴走</a>
                 <a href="#results">実績</a>
                 <a href="#faq">FAQ</a>
@@ -1411,7 +1448,8 @@
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
-                    </svg></a>
+                    </svg>
+                </a>
                 <a href="#contact" class="btn btn-sm btn-primary">相談する</a>
             </nav>
 
@@ -1437,75 +1475,181 @@
             <div class="container hero-wrap">
                 <div class="hero-content fade-in-up">
                     <div class="badge-group">
-                        <span class="chip">自計化支援</span>
-                        <span class="chip">変動損益（限界利益）</span>
+                        <span class="chip">必要売上の見える化</span>
+                        <span class="chip">単価・数量・自動化</span>
                         <span class="chip">継続MAS×月次対話</span>
-                        <span class="chip">自動化×効率化</span>
+                        <span class="chip">行動に落とす支援</span>
                     </div>
                     <h1 class="hero-title">
-                        <span class="hero-title-sub">松本会計ツールポータルで</span>
-                        黒字経営を<span class="text-gradient">加速</span>する！
+                        <span class="hero-title-sub">松本会計の経営判断支援で</span>
+                        必要売上を出すだけで終わらせない。<br>
+                        <span class="text-gradient">次の一手まで</span>決める。
                     </h1>
                     <p class="hero-desc">
-                        “お客様企業の繁栄は私たちの喜び”——<br>
-                        <strong>中小企業の経営者・経理責任者の方へ</strong>。<br>
-                        自計化+TKCシステムを前提に、「黒字経営に効く」意思決定を支援するオリジナルツール群です。
+                        設備投資、値上げ、採用、固定費増——。<br>
+                        その支出を「売上に直すといくらか」で終わらせず、<br>
+                        <strong>単価・数量・自動化</strong>のどこで回収するかまで整理。<br>
+                        さらに「明日やること」まで落とし込む。<br>
+                        松本会計は、数字を行動に変える支援を行っています。
                     </p>
                     <div class="cta-row">
-                        <a class="btn btn-primary btn-lg" href="#ai-funnel">無料ツールを使ってみる</a>
-                        <a class="btn btn-outline btn-lg" href="#contact">お問い合わせ</a>
+                        <a class="btn btn-primary btn-lg" href="#sale-kit-value">打ち手整理の考え方を見る</a>
+                        <a class="btn btn-outline btn-lg" href="#contact">相談する</a>
                     </div>
                 </div>
 
-                <!-- 動画実装用に変更したブロック -->
                 <div class="hero-media fade-in-up delay-100">
                     <div class="media-frame video-frame">
                         <video class="hero-video" autoplay muted loop playsinline poster="hero3.jpg">
-                            <!-- 動画ファイルはindex.htmlと同じ階層に置いてください -->
                             <source src="LPヒーロー画像用動画作成.mp4" type="video/mp4">
-                            <!-- 動画非対応ブラウザ用 -->
                             <img src="hero3.jpg" onerror="this.src='https://placehold.co/800x600?text=Hero+Image'"
-                                alt="松本会計：数字を意思決定へつなぐ支援イメージ" width="1920" height="1080">
+                                alt="松本会計：必要売上を打ち手まで落とし込む経営判断支援イメージ" width="1920" height="1080">
                         </video>
                     </div>
                 </div>
-                <!-- ここまで -->
-
             </div>
-            <div class="hero-bg-deco"></div>
         </section>
 
-        <!-- Portal Features (Added) -->
+        <!-- 3 values -->
         <section id="portal-features" class="section-padding">
             <div class="container">
                 <div class="portal-features-grid fade-in-up">
                     <div class="p-feature-card">
-                        <span class="pf-icon">◎</span>
-                        <h3>松本会計 専用設計</h3>
-                        <p>代表税理士監修のもと開発。<br>松本会計のお客様に最適化された<br>ツールです。</p>
+                        <span class="pf-icon">①</span>
+                        <h3>必要売上が見える</h3>
+                        <p>支出・投資・固定費増を、<br>限界利益率から「必要売上」に<br>即座に換算します。</p>
                     </div>
                     <div class="p-feature-card">
-                        <span class="pf-icon">🛡️</span>
-                        <h3>万全のセキュリティ</h3>
-                        <p>計算は端末上で行われ、<br>入力情報が送信されることは<br>一切ありません。</p>
+                        <span class="pf-icon">②</span>
+                        <h3>打ち手が絞れる</h3>
+                        <p>単価・数量・自動化の3方向で、<br>どこから回収するかを<br>数字で整理できます。</p>
                     </div>
                     <div class="p-feature-card">
-                        <span class="pf-icon">📱</span>
-                        <h3>いつでも・どこでも</h3>
-                        <p>PC、スマホ、タブレットに対応。<br>ホーム画面からすぐに<br>アクセス可能です。</p>
+                        <span class="pf-icon">③</span>
+                        <h3>行動に落ちる</h3>
+                        <p>月次の対話の中で、<br>最初の一歩と確認ポイントまで<br>明確にしていきます。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- AI Funnel -->
+        <!-- sale-kit value section -->
+        <section id="sale-kit-value" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-subtitle">For Clients</span>
+                    <h2>必要売上を出した後、<br>どう動くかまで整理できます</h2>
+                    <p class="lead">
+                        松本会計では、顧問先向けに、必要売上の把握だけで終わらない
+                        「打ち手整理」の仕組みをご用意しています。<br>
+                        数字を見て終わるのではなく、行動に変えるための設計です。
+                    </p>
+                    <p class="note-text">
+                        ※ 一部の打ち手整理ツールは、顧問先向けポータル内でご提供しています。
+                    </p>
+                </div>
+
+                <div class="feature-list fade-in-up delay-100">
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <div><strong>売上換算</strong>：支出額を「必要な売上」に変換</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <div><strong>打ち手比較</strong>：単価・数量・自動化の3方向で整理</div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <div><strong>行動化</strong>：最初の一歩と確認ポイントまで明確化</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-3 fade-in-up delay-100">
+                    <div class="approach-card">
+                        <div class="card-num">01</div>
+                        <h3>売上換算する</h3>
+                        <p>支出や投資を、限界利益率から「必要な売上」に換算。まず、回収すべき金額を明確にします。</p>
+                    </div>
+                    <div class="approach-card">
+                        <div class="card-num">02</div>
+                        <h3>打ち手を比較する</h3>
+                        <p>その売上を、単価・数量・自動化のどこで回収するかを整理。感覚ではなく、数字で方向を決めます。</p>
+                    </div>
+                    <div class="approach-card">
+                        <div class="card-num">03</div>
+                        <h3>次の一手を決める</h3>
+                        <p>最初の一歩、やめること、確認指標まで落とし込み、月次の対話の中で実行と検証につなげます。</p>
+                    </div>
+                </div>
+
+                <div class="screens-container fade-in-up delay-200" style="margin-top:40px;">
+                    <p class="lead text-center" style="margin-bottom:24px;">
+                        顧問先向けポータルでは、こうした画面を使って、<br>
+                        必要売上の把握から打ち手の整理までを行っています。
+                    </p>
+                    <div class="screens-scroll-wrapper">
+                        <div class="screens-track">
+                            <figure class="screen">
+                                <img src="iPhoneモック1.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+1'"
+                                    alt="支出を必要売上へ換算する画面"
+                                    loading="lazy">
+                            </figure>
+                            <figure class="screen">
+                                <img src="iPhoneモック3.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+2'"
+                                    alt="単価・数量・自動化の3方向で打ち手を比較する画面"
+                                    loading="lazy">
+                            </figure>
+                            <figure class="screen">
+                                <img src="iPhoneモック4.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+3'"
+                                    alt="最初の一歩と確認ポイントを整理する画面"
+                                    loading="lazy">
+                            </figure>
+                            <figure class="screen">
+                                <img src="iPhoneモック0.png"
+                                    onerror="this.src='https://placehold.co/260x500?text=Screen+4'"
+                                    alt="顧問先向けポータルの利用イメージ"
+                                    loading="lazy">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="scroll-hint">Scroll &rarr;</div>
+                </div>
+
+                <div class="benefit-flow fade-in-up delay-200">
+                    <div class="benefit-list">
+                        <ul>
+                            <li>支出額を「必要売上」に変える</li>
+                            <li>単価・数量・自動化のどれで回収するか整理する</li>
+                            <li>最初の一歩と確認ポイントを明確にする</li>
+                            <li>月次で検証し、打ち手を磨き込む</li>
+                        </ul>
+                    </div>
+                    <div class="benefit-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                    <div class="benefit-result">
+                        数字が「気づき」で終わらず、<br>経営の行動に変わる
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free tools -->
         <section id="ai-funnel" class="section-padding">
             <div class="container">
                 <div class="section-header text-center fade-in-up">
                     <span class="section-subtitle">Free Tools</span>
-                    <h2>まずは無料ツールで体験</h2>
+                    <h2>まずは、数字で考える体験から</h2>
                     <p class="lead">
-                        以下の3つのツールをどなたでも無料でお試しいただけます。<br>
+                        変動損益、自動化、価格改定。<br>
+                        松本会計が大切にしている「数字で判断する感覚」を、無料ツールで体験できます。<br>
                         <small class="note">※ 入力値はブラウザ内で計算され、当ページでは保存しません。</small>
                     </p>
                 </div>
@@ -1513,7 +1657,7 @@
                 <div class="tool-cards grid grid-3 fade-in-up delay-100">
                     <a href="https://takatrp.github.io/hendou_PL_LP/" target="_blank" rel="noopener" class="tool-card">
                         <h3>ボールで学ぶ<br>変動損益計算書</h3>
-                        <p>どの要素に手を加えれば「限界利益＞固定費」となるか直感的に学べます。</p>
+                        <p>どの要素に手を加えれば「限界利益＞固定費」となるかを、直感的に学べます。</p>
                         <span class="link-text">試してみる &rarr;</span>
                     </a>
                     <a href="https://takatrp.github.io/jidouka-kouka-LP/" target="_blank" rel="noopener"
@@ -1525,101 +1669,24 @@
                     <a href="https://takatrp.github.io/price-up-down-LP/" target="_blank" rel="noopener"
                         class="tool-card">
                         <h3>価格改定<br>検討ツール</h3>
-                        <p>値上げ・値下げが利益にどう影響するか、シミュレーションできます。</p>
+                        <p>値上げ・値下げが利益にどう影響するかをシミュレーションできます。</p>
                         <span class="link-text">試してみる &rarr;</span>
                     </a>
                 </div>
 
-                <!-- GIF Demo -->
                 <div class="demo-gif-wrap fade-in-up delay-200">
+                    <p style="margin-bottom:20px; color:var(--text-sub);">
+                        基礎の理解と感覚づくりは無料ツールで。<br>
+                        その先の「では何をするか」は、松本会計の伴走の中で整理していきます。
+                    </p>
+                    <div class="cta-row" style="justify-content:center; margin-bottom:24px;">
+                        <a class="btn btn-primary" href="#contact">打ち手を相談する</a>
+                    </div>
                     <figure class="demo-frame">
                         <img src="変動PL.gif" onerror="this.src='https://placehold.co/600x400?text=Demo+GIF'"
                             alt="“ボールで学ぶ変動損益計算書”の動作イメージ" loading="lazy">
                     </figure>
                     <figcaption>“ボールで学ぶ変動損益計算書” の操作イメージ</figcaption>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mobile Screens (Member Only + 4WD Concept) -->
-        <section id="mobile-screens" class="section-padding bg-light">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <span class="section-subtitle">Member Only</span>
-                    <h2>黒字経営を強力に駆動する<br>「黒字経営4WD」<small style="font-size: 0.6em; margin-left: 10px;">＋その他便利ツール</small></h2>
-                    <p class="lead">顧問先の方には、さらに踏み込んだ会員専用ツールをご提供しています。<br>FXシリーズで表示される「限界利益率」を用い、経営判断に直結するシミュレーションが可能です。</p>
-                </div>
-
-                <div class="feature-list fade-in-up delay-100">
-                    <div class="feature-item">
-                        <span class="check-icon">✓</span>
-                        <div><strong>売上換算シミュレーター</strong>：支出額を売上相当額に即換算</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="check-icon">✓</span>
-                        <div><strong>人件費見える化</strong>：時間単位の人件費を可視化</div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="check-icon">✓</span>
-                        <div><strong>CCC改善</strong>：資金繰りを回転日数から診断</div>
-                    </div>
-                </div>
-
-                <div class="screens-container fade-in-up delay-200">
-                    <div class="screens-scroll-wrapper">
-                        <div class="screens-track">
-                            <figure class="screen"><img src="iPhoneモック0.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+1'" alt="ツールポータルの画面イメージ"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック1.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+2'" alt="費用から必要売上を換算する画面"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック2.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+3'" alt="受取利息・配当の源泉税計算画面"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック3.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+4'" alt="価格改定インパクト試算の画面"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック4.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+5'" alt="人件費の見える化画面"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック5.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+6'" alt="スマホツール画面 5"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック6.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+7'" alt="スマホツール画面 6"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック7.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+8'" alt="スマホツール画面 7"
-                                    loading="lazy"></figure>
-                            <figure class="screen"><img src="iPhoneモック8.png"
-                                    onerror="this.src='https://placehold.co/260x500?text=Screen+9'" alt="スマホツール画面 8"
-                                    loading="lazy"></figure>
-                        </div>
-                    </div>
-                    <div class="scroll-hint">Scroll &rarr;</div>
-                </div>
-
-                <!-- Benefit Flow -->
-                <div class="benefit-flow fade-in-up delay-200">
-                    <div class="benefit-list">
-                        <ul>
-                            <li>支出額を必要売上金額に換算できる</li>
-                            <li>価格改定の影響を可視化できる</li>
-                            <li>その作業にかかる人件費が見える</li>
-                            <li>資金効率が計算できる</li>
-                        </ul>
-                    </div>
-                    <div class="benefit-arrow">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-                    <div class="benefit-result">
-                        根拠に基づく迅速な<br>意思決定が可能に！
-                    </div>
                 </div>
             </div>
         </section>
@@ -1630,16 +1697,18 @@
                 <div class="automation-grid">
                     <div class="automation-content fade-in-up">
                         <span class="section-subtitle text-accent">Automation</span>
-                        <h2 class="text-white">自動化で、ラクして<br>リアルタイム情報と経費削減を。</h2>
+                        <h2 class="text-white">自動化は、<br>コスト削減だけでなく“打ち手”です。</h2>
                         <p class="text-white-opacity">
-                            会計の”自動化”で、少ない負担でリアルタイム性を確保。<br>
-                            証憑保存、銀行データ受信、給与計算、販売管理、レジ連携…<br>
-                            これらを整備し、仕訳を”入力”から”連携”へ変革します。
+                            価格を上げるか、数量を増やすか、それとも自動化で時間を生み出すか。<br>
+                            松本会計では、自動化を単なる効率化ではなく、<br>
+                            <strong>回収に必要な時間を生み出すための打ち手</strong>として位置づけます。<br>
+                            証憑保存、銀行データ受信、給与計算、販売管理、レジ連携まで整備し、
+                            “入力”から“連携”へ変えていきます。
                         </p>
                         <div class="stat-box">
                             <div class="stat-label">自動化率</div>
                             <div class="stat-value">90<small>%</small><span class="stat-plus">超</span></div>
-                            <div class="stat-desc">年間数十万円の人件費削減も可能です</div>
+                            <div class="stat-desc">浮いた時間を、付加価値活動へ振り向ける設計まで支援します</div>
                         </div>
                         <div class="cta-row">
                             <a class="btn btn-accent" href="https://takatrp.github.io/jidouka-kouka-LP/"
@@ -1677,23 +1746,23 @@
             <div class="container">
                 <div class="section-header text-center fade-in-up">
                     <span class="section-subtitle">Our Approach</span>
-                    <h2>解決アプローチ｜3本柱</h2>
+                    <h2>数字を行動に変える 3本柱</h2>
                 </div>
                 <div class="grid grid-3 gap-lg fade-in-up delay-100">
                     <div class="approach-card">
                         <div class="card-num">01</div>
-                        <h3>自計化×リアルタイム</h3>
-                        <p>社内で帳簿を付ける“自計化”を標準に。データ連携で“遅い月次”からの脱却を図ります。</p>
+                        <h3>必要売上の見える化</h3>
+                        <p>支出や投資を「売上に直すといくらか」で把握し、経営判断の前提を揃えます。</p>
                     </div>
                     <div class="approach-card">
                         <div class="card-num">02</div>
-                        <h3>管理会計×変動PL</h3>
-                        <p>限界利益（率）を軸に、価格×数量×原価の3要素で意思決定を設計します。</p>
+                        <h3>単価・数量・自動化で整理</h3>
+                        <p>必要売上をどう作るかを3方向から整理し、感覚ではなく数字で打ち手を選びます。</p>
                     </div>
                     <div class="approach-card">
                         <div class="card-num">03</div>
-                        <h3>継続伴走×ツール</h3>
-                        <p>毎月の対話と専用ツールで、施策の実行と検証を高速に回します。</p>
+                        <h3>月次伴走で実行・検証</h3>
+                        <p>試算して終わらせず、巡回監査と対話の中で、実行状況と結果を毎月見直します。</p>
                     </div>
                 </div>
             </div>
@@ -1711,36 +1780,36 @@
                     <div class="process-item">
                         <div class="proc-marker">1</div>
                         <div class="proc-content">
-                            <h3>現状診断</h3>
-                            <p>会計データ×ヒアリングでボトルネックを特定</p>
+                            <h3>現状把握</h3>
+                            <p>会計データとヒアリングで、何が利益を圧迫しているかを整理します。</p>
                         </div>
                     </div>
                     <div class="process-item">
                         <div class="proc-marker">2</div>
                         <div class="proc-content">
-                            <h3>自動化設計・初期指導</h3>
-                            <p>自計化・証憑・データ受信の標準化／初期運用の立上げ</p>
+                            <h3>必要売上の整理</h3>
+                            <p>支出・投資・固定費増を、限界利益率から必要売上へ換算します。</p>
                         </div>
                     </div>
                     <div class="process-item">
                         <div class="proc-marker">3</div>
                         <div class="proc-content">
-                            <h3>月次巡回監査</h3>
-                            <p>記帳・証憑・運用のチェックと改善提案を毎月実施</p>
+                            <h3>打ち手の整理</h3>
+                            <p>単価・数量・自動化のどこで回収するかを、数字で整理します。</p>
                         </div>
                     </div>
                     <div class="process-item">
                         <div class="proc-marker">4</div>
                         <div class="proc-content">
-                            <h3>継続MAS×対話</h3>
-                            <p>予実差異レビュー／四半期 業績検討会／決算事前検討会</p>
+                            <h3>実行方針の明確化</h3>
+                            <p>最初の一歩、確認指標、優先順位を明確にし、経営判断を前進させます。</p>
                         </div>
                     </div>
                     <div class="process-item">
                         <div class="proc-marker">5</div>
                         <div class="proc-content">
-                            <h3>打ち手の実行と検証</h3>
-                            <p>価格・人件費・投資のアクションをツールで検証</p>
+                            <h3>月次で検証・修正</h3>
+                            <p>巡回監査と継続MASの対話の中で、実行結果を確認し、打ち手を磨き込みます。</p>
                         </div>
                     </div>
                 </div>
@@ -1752,7 +1821,7 @@
             <div class="container">
                 <div class="section-header text-center fade-in-up">
                     <span class="section-subtitle">Results</span>
-                    <h2>実績</h2>
+                    <h2>実績と考え方</h2>
                 </div>
                 <div class="results-container fade-in-up delay-100">
                     <div class="result-card main-result">
@@ -1762,10 +1831,8 @@
                         </div>
                         <div class="chart-wrap">
                             <div class="bar-group">
-                                <!-- ★修正：ラベル変更 -->
                                 <div class="bar-label">当事務所（自計化関与先）</div>
                                 <div class="bar-area">
-                                    <!-- ★修正：65% -->
                                     <div class="bar primary" style="--target-width: 65%;">
                                         <span class="bar-val">65%</span>
                                     </div>
@@ -1774,7 +1841,6 @@
                             <div class="bar-group">
                                 <div class="bar-label">全国平均</div>
                                 <div class="bar-area">
-                                    <!-- ★修正：36% -->
                                     <div class="bar secondary" style="--target-width: 36%;">
                                         <span class="bar-val">36.0%</span>
                                     </div>
@@ -1784,6 +1850,16 @@
                         <p class="result-note">
                             ※ 当事務所の黒字申告割合は所内集計による約65%。比較対象として、全国平均 36.0%（令和5事務年度、国税庁公開統計）を掲載。
                         </p>
+
+                        <div class="case-example">
+                            <span class="case-kicker">Example</span>
+                            <h4>「月3万円の固定費増」を、どう回収するか</h4>
+                            <p>たとえば、固定費が月3万円増える場合、限界利益率が25%なら必要売上は月12万円です。</p>
+                            <p>ここで終わらせず、値上げで回収するのか、数量を増やすのか、自動化で時間を生み出すのかを整理します。</p>
+                            <div class="case-highlight">
+                                必要売上 12万円 → 打ち手を整理 → 最初の一歩まで明確化
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1798,44 +1874,49 @@
                 </div>
                 <div class="accordion fade-in-up delay-100">
                     <details class="acc-item">
-                        <summary class="acc-head">記帳代行から自計化へ移行するメリットは？<span class="icon"></span></summary>
+                        <summary class="acc-head">必要売上を出した後、結局どう動けばいいか分からないのですが？<span class="icon"></span></summary>
                         <div class="acc-body">
                             <div class="inner">
-                                意思決定の速度と再現性が上がります。変動損益（限界利益・率）で「価格×数量×原価」の3要素を即時に検証でき、現場で打ち手を選べます。手戻りが減り、試算→実行→検証のサイクルが短縮します。
+                                松本会計では、必要売上の把握だけで終わらせず、
+                                その回収方法を「単価」「数量」「自動化」の3方向から整理し、
+                                実行の優先順位まで一緒に考えます。
                             </div>
                         </div>
                     </details>
                     <details class="acc-item">
-                        <summary class="acc-head">導入までの期間や進め方のイメージは？<span class="icon"></span></summary>
+                        <summary class="acc-head">こうしたツールは誰でも使えますか？<span class="icon"></span></summary>
                         <div class="acc-body">
-                            <div class="inner">目安は数週間〜数か月です（規模・現状によって変動）。<br>1. 現状診断<br>2. 自動化設計・初期指導<br>3. 月次巡回監査<br>4.
-                                継続MAS×対話</div>
+                            <div class="inner">
+                                一部の基礎ツールはどなたでもお試しいただけます。
+                                ただし、より踏み込んだ打ち手整理ツールは、顧問先向けポータル内でご提供しています。
+                            </div>
+                        </div>
+                    </details>
+                    <details class="acc-item">
+                        <summary class="acc-head">記帳代行から自計化へ移行するメリットは？<span class="icon"></span></summary>
+                        <div class="acc-body">
+                            <div class="inner">
+                                意思決定の速度が上がることです。月次の数字が早く見えることで、
+                                支出・値上げ・採用・投資について、その場で必要売上と打ち手を整理しやすくなります。
+                            </div>
                         </div>
                     </details>
                     <details class="acc-item">
                         <summary class="acc-head">どこまで“自動化”できますか？<span class="icon"></span></summary>
                         <div class="acc-body">
                             <div class="inner">
-                                銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。最終チェックは人が担保し、例外処理はルール化してエラーを減らします。
+                                銀行/カード/売上・仕入のデータ受信、経費ワークフロー、証憑保存、定型仕訳、請求・回収消込などが対象です。
+                                最終チェックは人が担保し、例外処理はルール化してエラーを減らします。
                             </div>
-                        </div>
-                    </details>
-                    <details class="acc-item">
-                        <summary class="acc-head">電子帳簿保存法・インボイス制度への対応は？<span class="icon"></span></summary>
-                        <div class="acc-body">
-                            <div class="inner">要件整理・運用ルールを整え、システム設定と業務フローに落とし込みます。監査に耐える証跡の残し方まで設計します。</div>
-                        </div>
-                    </details>
-                    <details class="acc-item">
-                        <summary class="acc-head">既存の会計ソフト（TKC以外）からの移行は可能ですか？<span class="icon"></span></summary>
-                        <div class="acc-body">
-                            <div class="inner">可能です。CSV等で過去データを整理・移管し、期中切替/期首切替を比較検討します。科目・補助・部門の設計も最適化します。</div>
                         </div>
                     </details>
                     <details class="acc-item">
                         <summary class="acc-head">コスト（料金）はどのように決まりますか？<span class="icon"></span></summary>
                         <div class="acc-body">
-                            <div class="inner">規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。初回相談後に提案書と見積をご提示します。</div>
+                            <div class="inner">
+                                規模・対象範囲（自動化・管理会計・伴走頻度）で変動します。
+                                初回相談後に提案書と見積をご提示します。
+                            </div>
                         </div>
                     </details>
                 </div>
@@ -1846,10 +1927,14 @@
         <section id="contact" class="section-padding">
             <div class="container max-w-md">
                 <div class="contact-card fade-in-up">
-                    <h2>ご相談・お問い合わせ</h2>
-                    <p>オンライン／来所どちらも対応可能です。<br>公式サイトの専用フォームからお送りください。</p>
+                    <h2>必要売上の先まで、整理したい方へ</h2>
+                    <p>
+                        支出や投資を「売上に直すといくらか」で終わらせず、<br>
+                        その回収方法や優先順位まで一緒に整理したい方はご相談ください。<br>
+                        オンライン／来所どちらも対応可能です。
+                    </p>
                     <a class="btn btn-primary btn-wide" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry"
-                        target="_blank" rel="noopener">お問い合わせフォームへ</a>
+                        target="_blank" rel="noopener">打ち手を相談する</a>
                     <div class="contact-info">
                         <p>電話：境港 <a href="tel:0859446195">0859-44-6195</a> ／ 神戸 <a
                                 href="tel:0782422177">078-242-2177</a></p>
@@ -1924,7 +2009,6 @@
             navToggle.addEventListener('click', toggleMenu);
             backdrop.addEventListener('click', toggleMenu);
 
-            // Close menu when clicking a link
             nav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (nav.classList.contains('open')) toggleMenu();
@@ -2014,14 +2098,7 @@
                 pdfBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     const pdfUrl = '自動化実例集.pdf';
-                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-                    if (isMobile) {
-                        pdfFrame.src = pdfUrl;
-                    } else {
-                        pdfFrame.src = pdfUrl;
-                    }
-
+                    pdfFrame.src = pdfUrl;
                     pdfBox.classList.add('open');
                     pdfBox.setAttribute('aria-hidden', 'false');
                 });
