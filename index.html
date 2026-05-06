@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>必要売上を出すだけで終わらせない。打ち手まで数字で決める｜税理士法人松本会計</title>
-    <meta name="description" content="支出額を売上換算し、単価・数量・自動化の3方向から打ち手を整理。松本会計は、月次体制づくりから打ち手の実行・検証まで伴走します。" />
+    <meta name="description" content="支出額を売上換算し、単価・数量・自動化の3方向から打ち手を整理。無料公開ツールで考え方を体験し、松本会計が月次体制づくりから実行・検証まで伴走します。" />
     <link rel="canonical" href="https://takatrp.github.io/matsumoto-kaikei-jidouka/" />
 
     <!-- Google tag (gtag.js) - GA4 -->
@@ -325,6 +325,43 @@
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
+        }
+
+        .route-panel {
+            margin-top: 28px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--brand);
+            border-radius: var(--radius-md);
+            background: #fff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .route-panel strong {
+            color: var(--brand-dark);
+        }
+
+        .route-panel p {
+            margin-bottom: 10px;
+            color: var(--text-sub);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .route-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .route-step {
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--brand-dark);
+            font-size: 12px;
+            font-weight: 700;
         }
 
         .hero-media {
@@ -1460,7 +1497,7 @@
 
     <div class="mobile-cta" role="region" aria-label="固定アクション">
         <a class="btn btn-primary btn-block" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry"
-            target="_blank" rel="noopener">相談する</a>
+            target="_blank" rel="noopener" data-cta="mobile-contact">顧問契約を相談する</a>
     </div>
 
     <main>
@@ -1482,11 +1519,22 @@
                         設備投資、値上げ、採用、固定費増——。<br>
                         その支出を「売上に直すといくらか」で終わらせず、<br>
                         <strong>単価・数量・自動化</strong>のどこで回収するかまで整理。<br>
-                        さらに、月次の数字をもとに「明日やること」まで落とし込みます。
+                        さらに、月次の数字をもとに「明日やること」まで落とし込みます。<br>
+                        記帳代行ではなく、自計化と月次の数字で、必要売上と次の打ち手まで一緒に決める会計事務所です。
                     </p>
                     <div class="cta-row">
-                        <a class="btn btn-primary btn-lg" href="#sale-kit-value">打ち手整理の考え方を見る</a>
-                        <a class="btn btn-outline btn-lg" href="#contact">相談する</a>
+                        <a class="btn btn-primary btn-lg" href="https://takatrp.github.io/tool-portal/?start=1" target="_blank" rel="noopener" data-cta="hero-tool-portal">無料ツールを試す</a>
+                        <a class="btn btn-outline btn-lg" href="#contact" data-cta="hero-contact">顧問契約を相談する</a>
+                    </div>
+                    <div class="route-panel">
+                        <p><strong>このページの位置づけ：</strong>自計化で数字を早く見る体制をつくり、TKCの変動損益計算書で必要売上を把握し、公開ツールで打ち手を体験し、月次伴走で実行まで進めます。</p>
+                        <div class="route-steps" aria-label="ページ導線">
+                            <span class="route-step">自計化のメリット</span>
+                            <span class="route-step">TKCシステム</span>
+                            <span class="route-step">打ち手整理</span>
+                            <span class="route-step">無料ツール体験</span>
+                            <span class="route-step">顧問契約相談</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1527,15 +1575,15 @@
         <section id="sale-kit-value" class="section-padding bg-light">
             <div class="container">
                 <div class="section-header fade-in-up">
-                    <span class="section-subtitle">For Clients</span>
+                    <span class="section-subtitle">From Free Tools to Advisory</span>
                     <h2>必要売上を出した後、<br>どう動くかまで整理できます</h2>
                     <p class="lead">
-                        松本会計では、顧問先向けに、必要売上の把握だけで終わらない
-                        「打ち手整理」の仕組みをご用意しています。<br>
-                        数字を見て終わるのではなく、行動に変えるための設計です。
+                        松本会計では、必要売上の把握だけで終わらない
+                        「打ち手整理」の考え方とツールを公開しています。<br>
+                        まずは無料で体験し、その先の実行・検証は月次伴走の中で一緒に深めていきます。
                     </p>
                     <p class="note-text">
-                        ※ 一部の打ち手整理ツールは、顧問先向けポータル内でご提供しています。
+                        ※ 無料公開ツールは一般的な試算用です。個社別の判断、入力ルール整備、月次レビューは顧問契約後に支援します。
                     </p>
                 </div>
 
@@ -1587,8 +1635,8 @@
 
                 <div class="screens-container fade-in-up delay-200" style="margin-top:40px;">
                     <p class="lead text-center" style="margin-bottom:24px;">
-                        顧問先向けポータルでは、こうした画面を使って、<br>
-                        必要売上の把握から打ち手の整理までを行っています。
+                        公開中のツールポータルでは、こうした考え方を実際に触れます。<br>
+                        顧問契約後は、月次の数字と対話の中で個社別の打ち手に落とし込みます。
                     </p>
                     <div class="screens-scroll-wrapper">
                         <div class="screens-track">
@@ -1613,7 +1661,7 @@
                             <figure class="screen">
                                 <img src="iPhoneモック0.png"
                                     onerror="this.src='https://placehold.co/260x500?text=Screen+4'"
-                                    alt="顧問先向けポータルの利用イメージ"
+                                    alt="公開ツールポータルの利用イメージ"
                                     loading="lazy">
                             </figure>
                         </div>
@@ -1682,7 +1730,8 @@
                         その先の「では何をするか」は、松本会計の伴走の中で整理していきます。
                     </p>
                     <div class="cta-row" style="justify-content:center; margin-bottom:24px;">
-                        <a class="btn btn-primary" href="#contact">打ち手を相談する</a>
+                        <a class="btn btn-primary" href="https://takatrp.github.io/tool-portal/?start=1" target="_blank" rel="noopener" data-cta="free-tools-portal">無料ツールを試す</a>
+                        <a class="btn btn-outline" href="#contact" data-cta="free-tools-contact">顧問契約を相談する</a>
                     </div>
                     <figure class="demo-frame">
                         <img src="変動PL.gif" onerror="this.src='https://placehold.co/600x400?text=Demo+GIF'"
@@ -1902,8 +1951,8 @@
                         <summary class="acc-head">こうしたツールは誰でも使えますか？<span class="icon"></span></summary>
                         <div class="acc-body">
                             <div class="inner">
-                                一部の基礎ツールはどなたでもお試しいただけます。
-                                ただし、より踏み込んだ打ち手整理ツールは、顧問先向けポータル内でご提供しています。
+                                はい。松本会計ツールポータルは無料公開し、数字で考える入口としてどなたでもお試しいただけます。
+                                ただし、試算結果を会社ごとの実行方針に落とし込み、月次で検証する支援は顧問契約の中で行います。
                             </div>
                         </div>
                     </details>
@@ -1950,7 +1999,7 @@
                         オンライン／来所どちらも対応可能です。
                     </p>
                     <a class="btn btn-primary btn-wide" href="https://www.matsumoto-kaikei.or.jp/form/masatomi/inquiry"
-                        target="_blank" rel="noopener">打ち手を相談する</a>
+                        target="_blank" rel="noopener" data-cta="contact-contract">顧問契約を相談する</a>
                     <div class="contact-info">
                         <p>電話：境港 <a href="tel:0859446195">0859-44-6195</a> ／ 神戸 <a
                                 href="tel:0782422177">078-242-2177</a></p>
@@ -2117,6 +2166,19 @@
                     if (e.target === pdfBox) pdfClose.click();
                 });
             }
+        });
+    </script>
+    <script>
+        document.querySelectorAll('[data-cta]').forEach((link) => {
+            link.addEventListener('click', () => {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'cta_click', {
+                        cta_id: link.dataset.cta,
+                        link_url: link.href || location.href,
+                        page_role: 'decision_lp'
+                    });
+                }
+            }, { passive: true });
         });
     </script>
 </body>
